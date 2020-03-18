@@ -1,24 +1,135 @@
 # README
+## productテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|name           |string |null: false|
+|explain        |text   ||
+|price          |integer|null: false|
+|category_id    |integer|null: false, foreign_key: true|
+|brand_id       |integer|foreign_key: true|
+|condition_id   |integer|null: false, foreign_key: true|
+|delivery_way_id|integer|null: false, foreign_key: true|
+|delivery_day_id|integer|null: false, foreign_key: true|
+|prefecture_id  |integer|null: false, foreign_key: true|
+|user_id        |integer|null: false, foreign_key: true|
+### Association
+has_many :images
+belongs_to :category
+belongs_to :brand
+belongs_to :condition
+belongs_to :delivery_way
+belongs_to :delivery_day
+belongs_to :prefecture
+belongs_to :user
+belongs_to :order
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## categoryテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|genre          |string |null: false|
+### Association
+has_many :products
 
-Things you may want to cover:
+## brandテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|name           |string |null: false|
+### Association
+has_many :products
 
-* Ruby version
+## conditionテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|status         |string |null: false|
+### Association
+has_many :products
 
-* System dependencies
+## delivery_wayテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|postage        |string |null: false|
+### Association
+has_many :products
 
-* Configuration
+## delivery_dayテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|turm           |string |null: false|
+### Association
+has_many :products
 
-* Database creation
+## prefectureテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|name           |string |null: false|
+### Association
+has_many :products
+has_many :addresses
 
-* Database initialization
+## imageテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|image          |text   |null: false|
+|product_id     |integer|null: false, foreign_key: true|
+### Association
+belongs_to :product
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## userテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|nickname       |string |null: false|
+|email          |string |null: false, uniqe: true|
+|encrypted_password|string |null: false, uniqe: true, min: 7|
+|last_name      |string |null: false|
+|first_name     |string |null: false|
+|last_name_kana |string |null: false|
+|first_name_kana|string |null: false|
+|phone_number   |integer|null: false, uniqe: true|
+|birthday       |integer|null: false|
+|image          |string ||
+### Association
+has_many :products
+has_many :addresses
+has_many :cards
+has_many :orders
 
-* ...
+## addressテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|zip_code       |integer|null: false|
+|city           |string |null: false|
+|address        |text   |null: false|
+|building       |text   ||
+|prefecture_id  |integer|null: false, foreign_key: true|
+|user_id        |integer|null: false, foreign_key: true|
+### Association
+belongs_to :prefecture
+belongs_to :user
+
+## cardテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|card_company   |integer|null: false|
+|card_user      |string |null: false|
+|card_number    |integer|null: false|
+|card_key       |integer|null: false|
+|effective_date_yy|integer|null: false,limit: 2|
+|effective_date_mm|integer|null: false,limit: 2|
+|user_id        |integer|null: false, foreign_key: true|
+### Association
+belongs_to :user
+
+
+## orderテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|order_day      |string |null: false|
+|order_price    |integer|null: false|
+|shipping_address|string|null: false|
+|product_id     |integer|null: false, foreign_key: true|
+|user_id        |integer|null: false, foreign_key: true|
+### Association
+has_one :product
+belongs_to :user
