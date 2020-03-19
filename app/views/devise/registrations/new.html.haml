@@ -27,7 +27,7 @@
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード", class: "field__input"  
 
       
-      .user-ditail
+      .user-register
         %h1本人確認情報
         .field
           = f.label :ユーザー（氏名）
@@ -45,7 +45,7 @@
           = f.date_field :password_confirmation, autocomplete: "user-name", class: "field__input"
 
       
-      .send-imfomation
+      .user-register
         %h1商品送信機能
         .field
           = f.label :送付先（氏名）, class: "field__text"
