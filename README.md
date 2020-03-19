@@ -10,7 +10,7 @@
 |condition_id   |integer|null: false, foreign_key: true|
 |delivery_way_id|integer|null: false, foreign_key: true|
 |delivery_day_id|integer|null: false, foreign_key: true|
-|prefecture_id  |integer|null: false, foreign_key: true|
+|prefecture_id  |integer|null: false|
 |user_id        |integer|null: false, foreign_key: true|
 ### Association
 has_many :images, dependent: :destroy
@@ -19,9 +19,8 @@ belongs_to :brand
 belongs_to :condition
 belongs_to :delivery_way
 belongs_to :delivery_day
-belongs_to :prefecture
 belongs_to :user
-belongs_to :order, dependent: :destroy
+has_one :order, dependent: :destroy
 
 ## categoryテーブル
 |Column         |Type   |Options|
@@ -58,13 +57,6 @@ has_many :products
 ### Association
 has_many :products
 
-## prefectureテーブル
-|Column         |Type   |Options|
-|---------------|-------|-------|
-|name           |string |null: false|
-### Association
-has_many :products
-has_many :addresses
 
 ## imageテーブル
 |Column         |Type   |Options|
@@ -102,10 +94,9 @@ has_many :orders, dependent: :destroy
 |city           |string |null: false|
 |address        |text   |null: false|
 |building       |text   ||
-|prefecture_id  |integer|null: false, foreign_key: true|
+|prefecture_id  |integer|null: false|
 |user_id        |integer|null: false, foreign_key: true|
 ### Association
-belongs_to :prefecture
 belongs_to :user
 
 ## cardテーブル
@@ -131,5 +122,5 @@ belongs_to :user
 |product_id     |integer|null: false, foreign_key: true|
 |user_id        |integer|null: false, foreign_key: true|
 ### Association
-has_one :product
+belongs_to :product
 belongs_to :user
