@@ -1,21 +1,98 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.header
+  
+.contents
+  %h2 Sign up
+
+  %h1 ユーザー新規登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :nickname
+      %br/
+      = f.text_field :email, autofocus: true, autocomplete: "nickname"
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"  
+    %h1本人確認情報
+    .user
+      .field
+        = f.label :ユーザー氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :ユーザー氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :ユーザー氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :ユーザー氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :生年月日
+        %br/
+        = f.date_field :password_confirmation, autocomplete: "user-name"
+
+    %h1商品送信機能
+    .name
+      .field
+        = f.label :送付先の氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :送付先の氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :送付先の氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :送付先の氏名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+    .address
+      .field
+        = f.label :郵便番号
+        %br/
+        = f.number_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :都道府県
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :市区町村
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :番地
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :マンション名
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+      .field
+        = f.label :お届け先の電話番号
+        %br/
+        = f.text_field :password_confirmation, autocomplete: "user-name"
+
+
+    .actions
+      = f.submit "Sign up"
+  = render "devise/shared/links"
