@@ -1,6 +1,36 @@
 .reason{
-  .title{
-    display
+  &__title{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
 
+  }
+  &__cards{
+    display: flex;
+    justify-content: center;
+    padding: 5px 50px;
+    width: 100vw;
+    .reason__card{
+      width: 25%;
+      padding-right: 5%;
+      
+      position: relative;
+      &--photo{
+        width: 100%;        
+      }
+      &--number{
+        position: absolute;
+        background-color:#3CCACE;
+        color: white;
+        font-size: large;
+        width: 35px;
+        height: 35px;
+        top: 0;
+        left: 0;
+      }
+      &--head{
+        font-weight: bold;
+      }    
+    }
   }
 }
