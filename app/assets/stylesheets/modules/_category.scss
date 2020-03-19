@@ -1,4 +1,4 @@
-.pickup-category{
+.pickup-product{
   height: 100vh;
   width: 100vw;
   padding-top: 80px;
@@ -13,19 +13,20 @@
     color: #3CCACE;
     font-size: 100%;
     }
-    .category-lists{
+    .product-lists{
       width: 780px;
       margin: 26px auto;
       display: flex;
       justify-content:  space-around;
       box-sizing: border-box;
-      .category-list{
+      .product-list{
         width: 220px;
         display: inline-block;
         background-repeat: no-repeat;
-        .category-link{
-          background-color: red;
+        .product-link{
+          background-color:white;
           display: inline-block;
+          text-decoration: none;
           &__image{
            width: 220px;
            height: 150px;
@@ -46,7 +47,7 @@
            }
           }
           &__description{
-            background-color: blue;
+            background-color:gray;
             padding: 16px;
             color: black;
             .product-name{
@@ -58,11 +59,18 @@
             .product-cost{
               display: flex;
               font-size: 16px;
-              .cost-list{
+              &__list{
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
-                justify-content: space-evenly;
+                .like-btn{
+                  margin-left: 50px;
+                }
               }
+            }
+            .product-tax {
+              font-size: 10px;
+              text-align: left;
             }
           }
         }
