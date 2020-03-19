@@ -64,14 +64,15 @@
             text-align: left;
           }
           .product-cost{
-            display: flex;
             font-size: 16px;
             &__list{
               display: flex;
               justify-content: space-between;
               align-items: center;
-              .like-btn{
-                margin-left: 50px;
+              .like-icon{
+                display: inline-block;
+                font-size: inherit;
+                text-rendering: auto;
               }
             }
           }
