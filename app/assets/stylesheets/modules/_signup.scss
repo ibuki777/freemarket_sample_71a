@@ -1,5 +1,25 @@
-.header {
-  height: 50px;
+.singup {
   width: 100vw;
-  background-color: #FFFFFF;
+  height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+  .singup-form {
+    width: 400px;
+    padding: 20px;
+    display: block;
+    .user-register  {
+      border:inset 5px #3ccace;
+    }
+    .user-ditail  {
+      border:inset 5px #3ccace;
+    }
+    .send-imfomation  {
+      border:inset 5px #3ccace;
+    }
+  }
+  .singup-footer  {
+  }
 }
+
+
+
