@@ -10,14 +10,14 @@
     .field{
       &__text{
         display: block;
-        font-size: 20px;
-        text-align: center;
+        font-size: 18px;
+        margin-bottom: 8px;
       }
       &__input{
         font-size: 16px;
         width: 364px;
         padding: 10px 16px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
     }
     .link-signup{
@@ -39,14 +39,32 @@
     }
   }
   &-footer{
-    height: 220px;
-    width: 400px;
-    margin: 0 auto;
-    .clearfix{
-      display: flex;
-      justify-content: space-between;
-      & > li{
-        font-size: 12px;
+    width: 100vw;
+    background-color: #272727;
+    &-box{
+      height: 220px;
+      width: 400px;
+      margin: 0 auto;
+      padding: 40px 0px;
+      .clearfix{
+        display: flex;
+        justify-content: space-between;
+        & > a{
+          font-size: 12px;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      .footer-image{
+        height: 62px;
+        width: 214px;
+        color:#333;
+        display: block;
+        margin: 40px auto 0;
+      }
+      .footer-text{
+        color:#fff;
+        text-align: center;
       }
     }
   }

@@ -1,16 +1,14 @@
 .signin
   .signin-header
     %a{href: root_path}
-      =image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "image"
+      =image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
   .signin-form
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
         = f.label :メールアドレス, class: "field__text"
-        %br/
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "field__input"
       .field
         = f.label :パスワード, class: "field__text"
-        %br/
         = f.password_field :password, autocomplete: "current-password", placeholder:"パスワード", class: "field__input"
       - if devise_mapping.rememberable?
         .field
@@ -19,10 +17,11 @@
       = f.submit "ログイン", class: "actions"
     = render "devise/shared/links"
   .signin-footer
-    %ul{class: "clearfix"}
-      %li
+    .signin-footer-box
+      .clearfix
         = link_to "プライバシーポリシー", "#"
-      %li
         = link_to "FURIMA利用規約"
-      %li
         = link_to "ポイントに関する特約"
+      %a{href: root_path, class:"footer-image"}
+        =image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
+      %p{class: "footer-text"}©︎FURAMA
