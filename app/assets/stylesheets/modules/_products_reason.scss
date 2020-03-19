@@ -4,11 +4,18 @@
     justify-content: center;
     font-weight: bold;
     font-size: 26px;
-    margin: 10px 50px;
-    &__bar{      
-      padding-bottom: 10px;
-    }
+    padding: 20px 50px;
   }
+  &__bar{      
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+      &--line{
+        height: 4px;
+        width: 70px;
+        background-color: #3CCACE;
+      }
+    }
   &__cards{
     display: flex;
     justify-content: center;
