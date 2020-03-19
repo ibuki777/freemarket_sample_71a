@@ -1,4 +1,5 @@
 .pickup-category{
+  height: 100vh;
   width: 100vw;
   padding-top: 80px;
   background-color: #f8f8f8;
@@ -11,6 +12,46 @@
     .link-btn{
     color: #3CCACE;
     font-size: 100%;
+    }
+    .category-lists{
+      width: 780px;
+      margin: 26px auto;
+      display: flex;
+      justify-content:  space-around;
+      box-sizing: border-box;
+      .category-list{
+        width: 220px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        .category-link{
+          background-color: red;
+          display: inline-block;
+          &__image{
+           width: 220px;
+           height: 150px;
+           position: relative;
+           overflow: hidden;
+           margin: 0;
+           z-index: auto;
+           .product-image{
+             position: absolute;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             width: 100%;
+             z-index: auto;
+             height: 150px;
+             object-fit: cover;
+           }
+          }
+          &__description{
+            background-color: blue;
+            padding: 16px;
+            color: black;
+          }
+        }
+      }
     }
   }
 }

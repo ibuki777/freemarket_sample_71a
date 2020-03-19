@@ -3,4 +3,13 @@
   .pickup-category__main
     = link_to "/", class: "link-btn" do
       新規投稿商品
-  
+    .category-lists
+      .category-list
+        = link_to new_user_registration_path, class:"category-link" do
+          .category-link__image
+            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "product-image")
+          .category-link__description
+            .product-name
+            .product-cost
+              30000円
+              （税込み）
