@@ -1,0 +1,26 @@
+.signin{
+  &-header{
+    text-align: center;
+  }
+  &-form{
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px 50px;
+    .field{
+      &__text{
+        display: block;
+        font-size: 20px;
+        text-align: center;
+      }
+      &__input{
+        height: 38px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .actions{
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+}

@@ -1,17 +1,21 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.signin
+  .signin-header
+    %a{href: root_path}
+      =image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "image"
+  .signin-form
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :メールアドレス, class: "field__text"
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input"
+      .field
+        = f.label :パスワード, class: "field__text"
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class: "field__input"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      = f.submit "ログイン", class: "actions"
+    = render "devise/shared/links"
+  .signin-footer
