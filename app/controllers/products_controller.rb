@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    
+    @products = Product.includes(/)
   end
 
   def show
