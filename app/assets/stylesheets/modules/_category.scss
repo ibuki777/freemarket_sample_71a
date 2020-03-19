@@ -49,6 +49,21 @@
             background-color: blue;
             padding: 16px;
             color: black;
+            .product-name{
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            .product-cost{
+              display: flex;
+              font-size: 16px;
+              .cost-list{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+              }
+            }
           }
         }
       }
