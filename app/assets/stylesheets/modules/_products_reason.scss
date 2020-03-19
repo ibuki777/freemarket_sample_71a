@@ -4,12 +4,14 @@
     justify-content: center;
     font-weight: bold;
     font-size: 26px;
-
+    margin: 10px 50px;
+    &__bar{      
+      padding-bottom: 10px;
+    }
   }
   &__cards{
     display: flex;
     justify-content: center;
-    padding: 5px 50px;
     width: 100vw;;
     .reason__card{
       width: 25%;
@@ -17,21 +19,31 @@
       
       position: relative;
       &--photo{
-        width: 100%;        
+        width: 100%;
+        margin-bottom: 10px;      
       }
       &--number{
         position: absolute;
         background-color:#3CCACE;
         color: white;
         font-size: 30px;
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
         top: 0;
         left: 0;
+        text-align: center;
+        line-height: 45px;
+        border-radius: 3px;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
       }
       &--head{
         font-weight: bold;
         font-size: 24px;
+        margin-bottom: 15px;
+        text-align: center;
+        .card__text--color{
+          color: #3CCACE;
+        }
       }
       &--text{
         font-size: 18px;
