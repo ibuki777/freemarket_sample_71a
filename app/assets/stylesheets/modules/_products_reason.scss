@@ -3,13 +3,14 @@
     display: flex;
     justify-content: center;
     font-weight: bold;
+    font-size: 26px;
 
   }
   &__cards{
     display: flex;
     justify-content: center;
     padding: 5px 50px;
-    width: 100vw;
+    width: 100vw;;
     .reason__card{
       width: 25%;
       padding-right: 5%;
@@ -22,7 +23,7 @@
         position: absolute;
         background-color:#3CCACE;
         color: white;
-        font-size: large;
+        font-size: 30px;
         width: 35px;
         height: 35px;
         top: 0;
@@ -30,7 +31,11 @@
       }
       &--head{
         font-weight: bold;
-      }    
+        font-size: 24px;
+      }
+      &--text{
+        font-size: 18px;
+      }
     }
   }
 }
