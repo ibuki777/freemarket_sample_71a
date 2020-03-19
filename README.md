@@ -13,7 +13,7 @@
 |prefecture_id  |integer|null: false, foreign_key: true|
 |user_id        |integer|null: false, foreign_key: true|
 ### Association
-has_many :images
+has_many :images, dependent: :destroy
 belongs_to :category
 belongs_to :brand
 belongs_to :condition
@@ -21,7 +21,7 @@ belongs_to :delivery_way
 belongs_to :delivery_day
 belongs_to :prefecture
 belongs_to :user
-belongs_to :order
+belongs_to :order, dependent: :destroy
 
 ## categoryテーブル
 |Column         |Type   |Options|
@@ -90,10 +90,10 @@ belongs_to :product
 |birthday       |integer|null: false|
 |image          |string ||
 ### Association
-has_many :products
-has_many :addresses
-has_many :cards
-has_many :orders
+has_many :products, dependent: :destroy
+has_many :addresses, dependent: :destroy
+has_many :cards, dependent: :destroy
+has_many :orders, dependent: :destroy
 
 ## addressテーブル
 |Column         |Type   |Options|
