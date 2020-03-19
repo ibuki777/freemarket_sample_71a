@@ -2,11 +2,11 @@
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  text-align: center;
-  .singup-form {
+  &-form {
     width: 400px;
     padding: 20px;
     display: block;
+    margin: 0 auto;
     .user-register  {
       border:inset 5px #3ccace;
     }
@@ -17,7 +17,7 @@
       border:inset 5px #3ccace;
     }
   }
-  .singup-footer  {
+  &-footer  {
   }
 }
 
