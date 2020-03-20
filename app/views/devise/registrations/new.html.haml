@@ -1,12 +1,12 @@
-.singup
+.signup
   .signin-header
     %a{href: root_path}
       =image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
-  .singup-form
+  .signup-form
     -# 以下保存先カラム名は仮置きです。
     = form_with model: @user, url: user_registration_path, local: true do |f|
       = render "devise/shared/error_messages", resource: resource
-      .singup-form-box
+      .signup-form-box
         %h1.singup-form-box__title ユーザー新規登録
         .field
           = f.label :ニックネーム, class: "field__text"
@@ -27,7 +27,7 @@
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード", class: "field__input"  
 
 
-      .singup-form-box
+      .signup-form-box
         %h1.singup-form-box__title 本人確認情報
         .field
           = f.label :お名前（全角）, class: "field__text"
@@ -48,8 +48,8 @@
 
       -# 以下保存先モデル名、カラム名は仮置きです。
       = f.fields_for :addresses do |address|
-        .singup-form-box.singup-form-box-last
-          %h1.singup-form-box__title 商品送信機能
+        .signup-form-box.signup-form-box-last
+          %h1.signup-form-box__title 商品送信機能
           .field
             = address.label :送付先氏名（全角）, class: "field__text"
             %p.field__text-setting 必須
@@ -65,12 +65,12 @@
           .field
             = address.label :郵便番号, class: "field__text"
             %p.field__text-setting 必須
-            = address.number_field :zip_code, placeholder: "郵便番号", class: "field__input"
+            = address.text_field :zip_code, placeholder: "郵便番号", class: "field__input"
           .field
             -# 仮のフォームを作成しています
             = address.label :都道府県, class: "field__text"
             %p.field__text-setting 必須
-            = address.text_field :prefecture_id, placeholder: "指定あり", class: "field__input"
+            = address.text_field :prefecture_id, placeholder: "都道府県", class: "field__input"
           .field
             = address.label :市区町村, class: "field__text"
             %p.field__text-setting 必須
@@ -87,8 +87,8 @@
             = address.label :お届け先の電話番号, class: "field__text"
             %p.field__text-setting.setting-blue 任意
             -# カラムの場所を変更可能性あり
-            = address.number_field :phone_number, placeholder: "電話番号", class: "field__input"
+            = address.text_field :phone_number, placeholder: "電話番号", class: "field__input"
       = f.submit "新規登録", class: "actions"
-  = render "devise/shared/links"
+    = render "devise/shared/links"
 
   = render "devise/shared/footer"

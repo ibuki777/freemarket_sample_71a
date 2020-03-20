@@ -1,4 +1,4 @@
-.singup {
+.signup {
   &-header{
     text-align: center;
     margin-top: 40px;
@@ -64,6 +64,15 @@
       width: 100%;
       margin-top: 36px;
       cursor: pointer;
+    }
+    .link-signup{
+      display: block;
+      margin-top: 30px;
+      color: #3CCACE;
+      text-decoration: none;
+    }
+    .link-signup:hover{
+      text-decoration: underline;
     }
   }
 }
