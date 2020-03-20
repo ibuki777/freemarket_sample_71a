@@ -3,8 +3,7 @@
   width: 100vw;
   background-color: #272727;
   color: #ffffff;
-  position: absolute;
-  bottom: 0;
+  text-align: center;
   padding: 60px 0;
   &__box{
     display: flex;
@@ -12,17 +11,6 @@
     margin: 0 auto;
     justify-content: space-between;
     text-align: center;
-    &-info{
-      & > a{
-
-      }
-    
-      &__link{
-        & > a{
-
-        }
-      }
-    }
   }
   &__furima{
     max-width: 160px;
@@ -44,11 +32,33 @@ h2{
   margin-bottom: 20px;
 }
 
-a{
-  color: #ffffff;
-}
+
 
 li{
   margin-bottom: 10px;
   font-size: 12px;
+  a{
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+a:hover::after {
+  bottom: 0px;
+  opacity: 1;
+  visibility: visible;
 }
