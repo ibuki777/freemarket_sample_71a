@@ -6,7 +6,10 @@
     margin: 0 auto;
     padding: 40px 0px;
     .clearfix{
+      display: flex;
+      justify-content: space-between;
       a{
+        display: block;
         font-size: 12px;
         color: #fff;
       }
