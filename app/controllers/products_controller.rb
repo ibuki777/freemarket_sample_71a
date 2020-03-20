@@ -1,10 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @image = Product.order(created_at desc)
-    @names = Product.order(:name desc)
-    @costs = Product.order(:price desc)
-    
+    @products = Product.order(:created_at desc)
   end
 
   def show
