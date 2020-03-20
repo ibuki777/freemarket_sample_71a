@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .hover{
   text-decoration: none;
 }
@@ -11,7 +14,7 @@
     margin-top: 40px;
   }
   &-form{
-    width: 400px;
+    width: 500px;
     margin: 0 auto;
     padding: 20px 50px 30px;
     &-title{
@@ -28,7 +31,7 @@
       }
       &__input{
         font-size: 16px;
-        width: 364px;
+        width: 400px;
         padding: 10px 16px;
         margin-bottom: 30px;
         border: 1px solid #a9a9a9;
