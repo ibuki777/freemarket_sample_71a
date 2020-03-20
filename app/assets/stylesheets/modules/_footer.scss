@@ -5,11 +5,13 @@
   color: #ffffff;
   position: absolute;
   bottom: 0;
-  text-align: center;
   padding: 60px 0;
   &__box{
     display: flex;
-    // justify-content: space-around;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: space-between;
+    text-align: center;
     &-info{
       & > a{
 
@@ -21,21 +23,32 @@
         }
       }
     }
-    &__furima{
-      &__logo{
+  }
+  &__furima{
+    max-width: 160px;
+    width: 100vw;
+    margin: 0 auto;
+      .logo{
+        width: 100%;
 
       }
-      &__mark{
-
-      }
+    &__mark{
+      text-align: center;
     }
   }
 }
 
 h2{
   font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 a{
   color: #ffffff;
+}
+
+li{
+  margin-bottom: 10px;
+  font-size: 12px;
 }
