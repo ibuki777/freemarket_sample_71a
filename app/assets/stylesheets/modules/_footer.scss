@@ -3,8 +3,7 @@
   width: 100vw;
   background-color: #272727;
   color: #ffffff;
-  position: absolute;
-  bottom: 0;
+  text-align: center;
   padding: 60px 0;
   &__box{
     display: flex;
@@ -12,17 +11,6 @@
     margin: 0 auto;
     justify-content: space-between;
     text-align: center;
-    &-info{
-      & > a{
-
-      }
-    
-      &__link{
-        & > a{
-
-        }
-      }
-    }
   }
   &__furima{
     max-width: 160px;
