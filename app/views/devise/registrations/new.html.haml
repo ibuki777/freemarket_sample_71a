@@ -74,10 +74,8 @@
           = f.label :お届け先の電話番号, class: "field__text"
           -# カラムの場所を変更可能性あり
           = f.text_field :phone_number, placeholder: "電話番号", autocomplete: "user-name", class: "field__input"
-
-
-      .actions
-        = f.submit "Sign up"
+          -# 両方のモデルに一括保存できるか不明
+      = f.submit "Sign up", class: "actions"
   = render "devise/shared/links"
 
   = render "devise/shared/footer"
