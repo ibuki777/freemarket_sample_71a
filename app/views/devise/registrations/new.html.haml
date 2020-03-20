@@ -1,5 +1,7 @@
 .singup
-  %a{href: 'http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg'}
+  .signin-header
+    %a{href: root_path}
+      =image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
   .singup-form
     = form_with model: @user, url: user_registration_path, local: true do |f|
       = render "devise/shared/error_messages", resource: resource
