@@ -39,10 +39,18 @@
           border: 1px solid #a9a9a9;
           border-radius: 4px;
         }
-        .field-box__input {
-          width: 200px;
-          margin-right: 15px;
-          border-radius: 0.67em;
+        .field-box{
+          display: flex;
+          justify-content: space-between;
+          // width: 364px;
+          &__input{
+            font-size: 16px;
+            width: 160px;
+            padding: 10px 16px;
+            margin: 8px 0 30px 0;
+            border: 1px solid #a9a9a9;
+            border-radius: 4px;
+          }
         }
       }
     }
