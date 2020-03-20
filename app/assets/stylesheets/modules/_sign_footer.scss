@@ -1,0 +1,26 @@
+.footer{
+  width: 100vw;
+  background-color: #272727;
+  &-box{
+    width: 400px;
+    margin: 0 auto;
+    padding: 40px 0px;
+    .clearfix{
+      a{
+        font-size: 12px;
+        color: #fff;
+      }
+    }
+    .footer-image{
+      height: 62px;
+      width: 214px;
+      color:#333;
+      display: block;
+      margin: 40px auto 0;
+    }
+    .footer-text{
+      color:#fff;
+      text-align: center;
+    }
+  }
+}
