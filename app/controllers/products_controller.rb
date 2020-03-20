@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
 
   def index
+    binding.pry
     @products = Product.order(created_at: :desc).limit(3)
-    @images = Image.all.includes(:products)
+    @images = Image.all.includes(:product)
 
   end
 
