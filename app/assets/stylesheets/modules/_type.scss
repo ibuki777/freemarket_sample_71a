@@ -1,10 +1,10 @@
-.reason{
+.type{
   &__title{
     display: flex;
     justify-content: center;
     font-weight: bold;
     font-size: 26px;
-    padding: 50px 50px 20px;
+    padding: 20px 50px;
   }
   &__bar{      
     padding-bottom: 40px;
@@ -19,12 +19,11 @@
   &__cards{
     display: flex;
     justify-content: center;
-    width: 100vw;
-    padding-bottom: 100px;
-    .reason__card{
+    width: 100vw;;
+    // padding-bottom
+    .type__card{
       width: 25%;
       padding-right: 5%;
-      margin-left: 5%;
       
       position: relative;
       &--photo{
@@ -50,9 +49,9 @@
         font-size: 24px;
         margin-bottom: 15px;
         text-align: center;
-        .card__text--color{
-          color: #3CCACE;
-        }
+      //   .card__text--color{
+      //     color: #3CCACE;
+      //   }
       }
       &--text{
         font-size: 18px;

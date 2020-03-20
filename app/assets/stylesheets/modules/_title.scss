@@ -1,3 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+
+.wrapper{
+
+  width: 100vw;
+}
+
+
 .title{
   height: 560px;
   padding: 0 60px;
@@ -9,6 +19,8 @@
   &__box{
     position: absolute;
     bottom: 170px;
+    margin: 0 200px;
+    padding: 35px 0 0 0;
     &__sentence{
       font-size: 60px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
