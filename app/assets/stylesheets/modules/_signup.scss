@@ -1,27 +1,25 @@
-h1 {
-  font-size: 50px;
-}
-
 .singup {
-  height: 100vh;
-  box-sizing: border-box;
+  &-header{
+    text-align: center;
+    margin-top: 40px;
+  }
   &-form {
-    width: 500px;
-    padding: 20px;
-    display: block;
+    width: 400px;
     margin: 0 auto;
-    .user-register  {
+    padding: 20px 50px;
+    &-box{
       margin-top: 10px;
-      .field {
-        margin-top: 10px;
-        width: 500px;
-        &__input {
-          width: 496px;
-          border-radius: 0.67em;
+      .field{
+        &__text{
+          display: block;
+          font-size: 18px;
+          margin-bottom: 8px;
         }
-        &__text {
-          font-size: 20px;
-          
+        &__input{
+          font-size: 16px;
+          width: 364px;
+          padding: 10px 16px;
+          margin-bottom: 30px;
         }
         .field-box__input {
           width: 200px;
