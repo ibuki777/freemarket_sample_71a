@@ -1,21 +1,90 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.singup
+  %a{href: 'http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg'}
+  .singup-form
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      
+      .user-register
+        %h1ユーザー新規登録
+        .field
+          = f.label :ニックネーム, class: "field__text"
+          %br/
+          = f.text_field :email, autofocus: true, autocomplete: "nickname", class: "field__input", placeholder: "ニックネーム" 
+        .field
+          = f.label :Eメール, class: "field__text"
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "e-mail"
+        .field
+          = f.label :パスワード, class: "field__text"
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
+          = f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "field__input"
+        .field
+          = f.label :パスワード（確認用）, class: "field__text"
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード", class: "field__input"  
+
+      
+      .user-register
+        %h1本人確認情報
+        .field
+          = f.label :ユーザー（氏名）
+          .field-box
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"   
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
+        .field
+          = f.label :ユーザー（しめい）
+          .field-box
+            = f.text_field :password_confirmation, placeholder: "指定あり",autocomplete: "user-name", class: "field-box__input"
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
+        .field
+          = f.label :生年月日, class: "field__text"
+          %br/
+          = f.date_field :password_confirmation, autocomplete: "user-name", class: "field__input", class: "field__input"
+
+      
+      .user-register
+        %h1商品送信機能
+        .field
+          = f.label :送付先（氏名）, class: "field__text"
+          .field-box
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"   
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
+        .field
+          = f.label :送付先（しめい）, class: "field__text"
+          .field-box
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"   
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
+        .field
+          = f.label :郵便番号, class: "field__text"
+          %br/
+          = f.number_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+        .field
+          = f.label :都道府県, class: "field__text"
+          %br/
+          = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+        .field
+          = f.label :市区町村, class: "field__text"
+          %br/
+          = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+        .field
+          = f.label :番地, class: "field__text"
+          %br/
+          = f.text_field :password_confirmation, placeholder: "番地", autocomplete: "user-name", class: "field__input"
+        .field
+          = f.label :マンション名, class: "field__text"
+          %br/
+          = f.text_field :password_confirmation, placeholder: "マンション名", autocomplete: "user-name", class: "field__input"
+        .field
+          = f.label :お届け先の電話番号, class: "field__text"
+          %br/
+          = f.text_field :password_confirmation, placeholder: "電話番号", autocomplete: "user-name", class: "field__input"
+
+
+      .actions
+        = f.submit "Sign up"
+  = render "devise/shared/links"
+
+  .singup-footer
