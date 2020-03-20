@@ -42,7 +42,7 @@
         .field
           = f.label :生年月日, class: "field__text"
           %br/
-          = f.date_field :password_confirmation, autocomplete: "user-name", class: "field__input"
+          = f.date_field :password_confirmation, autocomplete: "user-name", class: "field__input", class: "field__input"
 
       
       .user-register
@@ -60,11 +60,11 @@
         .field
           = f.label :郵便番号, class: "field__text"
           %br/
-          = f.number_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name"
+          = f.number_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
         .field
           = f.label :都道府県, class: "field__text"
           %br/
-          = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name"
+          = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
         .field
           = f.label :市区町村, class: "field__text"
           %br/
@@ -72,15 +72,15 @@
         .field
           = f.label :番地, class: "field__text"
           %br/
-          = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+          = f.text_field :password_confirmation, placeholder: "番地", autocomplete: "user-name", class: "field__input"
         .field
           = f.label :マンション名, class: "field__text"
           %br/
-          = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+          = f.text_field :password_confirmation, placeholder: "マンション名", autocomplete: "user-name", class: "field__input"
         .field
           = f.label :お届け先の電話番号, class: "field__text"
           %br/
-          = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name"
+          = f.text_field :password_confirmation, placeholder: "電話番号", autocomplete: "user-name", class: "field__input"
 
 
       .actions
