@@ -1,3 +1,7 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.mypage_contents{
+  margin: 30px 120px;
+  background-color:#b3d4fc ;
+  display: flex;
+  @import "modules/users_left_content";
+  @import "modules/users_right_content";
+}
