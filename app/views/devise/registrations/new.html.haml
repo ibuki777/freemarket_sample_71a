@@ -5,8 +5,8 @@
   .singup-form
     = form_with model: @user, url: user_registration_path, local: true do |f|
       = render "devise/shared/error_messages", resource: resource
-      .user-register
-        %h1ユーザー新規登録
+      .singup-form-box
+        %h1.singup-form-box__title ユーザー新規登録
         .field
           = f.label :ニックネーム, class: "field__text"
           %br/
@@ -27,36 +27,36 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード", class: "field__input"  
 
-      
-      .user-register
-        %h1本人確認情報
+
+      .singup-form-box
+        %h1.singup-form-box__title 本人確認情報
         .field
-          = f.label :ユーザー（氏名）
+          = f.label :ユーザー（氏名）, class: "field__text"
           .field-box
-            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"   
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
             = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
         .field
-          = f.label :ユーザー（しめい）
+          = f.label :ユーザー（しめい）, class: "field__text"
           .field-box
             = f.text_field :password_confirmation, placeholder: "指定あり",autocomplete: "user-name", class: "field-box__input"
             = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
         .field
           = f.label :生年月日, class: "field__text"
           %br/
-          = f.date_field :password_confirmation, autocomplete: "user-name", class: "field__input", class: "field__input"
+          = f.date_field :password_confirmation, autocomplete: "user-name", class: "field__input"
 
-      
-      .user-register
-        %h1商品送信機能
+
+      .singup-form-box
+        %h1.singup-form-box__title 商品送信機能
         .field
           = f.label :送付先（氏名）, class: "field__text"
           .field-box
-            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"   
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
             = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
         .field
           = f.label :送付先（しめい）, class: "field__text"
           .field-box
-            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"   
+            = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
             = f.text_field :password_confirmation, placeholder: "指定あり", autocomplete: "user-name", class: "field-box__input"
         .field
           = f.label :郵便番号, class: "field__text"
