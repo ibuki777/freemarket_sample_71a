@@ -75,3 +75,4 @@ end
 gem 'devise'
 gem 'haml-rails'
 gem 'carrierwave'
+gem 'mini_magick'

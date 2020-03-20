@@ -10,15 +10,15 @@
         = link_to new_user_registration_path, class:"product-link" do
           - @products.each do |product|
             .product-image-box
-              = product.image_ids
-              -# = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "product-image")
+              -# = product.image_ids
+              -# = image_tag product.image_ids class: "product-image"
             .product-link__description
               .product-name
                 = product.name
               .product-cost
                 %ul{class: "product-cost__list"}
                   %li
-                    -# = product.cost
+                    = product.costs
                   %li{class: "like-icon"}
                     ★0
               .product-tax
