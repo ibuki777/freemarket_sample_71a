@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_03_20_071624) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
+    t.bigint "category_id", null: false
     t.bigint "brand_id"
     t.index ["brand_id"], name: "index_products_on_brand_id"
     t.index ["category_id"], name: "index_products_on_category_id"
