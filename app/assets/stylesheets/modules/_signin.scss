@@ -1,3 +1,10 @@
+.hover{
+  text-decoration: none;
+}
+.hover:hover{
+  text-decoration: underline;
+}
+
 .signin{
   &-header{
     text-align: center;
@@ -42,18 +49,10 @@
       .link-signin{
         font-size: 18px;
         color: #3CCACE;
-        text-decoration: none;
-      }
-      .link-signin:hover{
-        text-decoration: underline;
       }
       .link-password{
         font-size: 18px;
         color: #3CCACE;
-        text-decoration: none;
-      }
-      .link-password:hover{
-        text-decoration: underline;
       }
     }
   }
@@ -65,15 +64,9 @@
       margin: 0 auto;
       padding: 40px 0px;
       .clearfix{
-        display: flex;
-        justify-content: space-between;
-        & > a{
+        a{
           font-size: 12px;
           color: #fff;
-          text-decoration: none;
-        }
-        & > a:hover{
-          text-decoration: underline;
         }
       }
       .footer-image{
