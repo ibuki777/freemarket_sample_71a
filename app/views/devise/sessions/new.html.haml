@@ -16,5 +16,6 @@
           = f.check_box :remember_me
           = f.label :ログイン状態を保存する
       = f.submit "ログイン", class: "actions"
-    = render "devise/shared/links"
+    .shared-links
+      = render "devise/shared/links"
   = render "devise/shared/footer"

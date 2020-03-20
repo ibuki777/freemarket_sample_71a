@@ -7,7 +7,7 @@
     = form_with model: @user, url: user_registration_path, local: true do |f|
       = render "devise/shared/error_messages", resource: resource
       .signup-form-box
-        %h1.singup-form-box__title ユーザー新規登録
+        %h1.signup-form-box__title ユーザー新規登録
         .field
           = f.label :ニックネーム, class: "field__text"
           %p.field__text-setting 必須
@@ -28,7 +28,7 @@
 
 
       .signup-form-box
-        %h1.singup-form-box__title 本人確認情報
+        %h1.signup-form-box__title 本人確認情報
         .field
           = f.label :お名前（全角）, class: "field__text"
           %p.field__text-setting 必須
@@ -89,6 +89,7 @@
             -# カラムの場所を変更可能性あり
             = address.text_field :phone_number, placeholder: "電話番号", class: "field__input"
       = f.submit "新規登録", class: "actions"
-    = render "devise/shared/links"
+    .shared-links
+      = render "devise/shared/links"
 
   = render "devise/shared/footer"

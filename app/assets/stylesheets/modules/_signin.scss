@@ -6,7 +6,7 @@
   &-form{
     width: 400px;
     margin: 0 auto;
-    padding: 20px 50px;
+    padding: 20px 50px 30px;
     &-title{
       font-size: 28px;
       text-align: center;
@@ -34,23 +34,27 @@
       line-height: 48px;
       width: 100%;
       margin-top: 36px;
+      border: none;
       cursor: pointer;
     }
-    .link-signin{
-      display: block;
-      margin-top: 30px;
-      color: #3CCACE;
-      text-decoration: none;
-    }
-    .link-signin:hover{
-      text-decoration: underline;
-    }
-    .link-password{
-      color: #3CCACE;
-      text-decoration: none;
-    }
-    .link-password:hover{
-      text-decoration: underline;
+    .shared-links{
+      margin-top: 20px;
+      .link-signin{
+        font-size: 18px;
+        color: #3CCACE;
+        text-decoration: none;
+      }
+      .link-signin:hover{
+        text-decoration: underline;
+      }
+      .link-password{
+        font-size: 18px;
+        color: #3CCACE;
+        text-decoration: none;
+      }
+      .link-password:hover{
+        text-decoration: underline;
+      }
     }
   }
   &-footer{
