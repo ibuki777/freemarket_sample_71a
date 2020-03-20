@@ -28,16 +28,16 @@
         .field
           = f.label :お名前（全角）, class: "field__text"
           .field-box
-            = f.text_field :last_name, placeholder: "性", autocomplete: "user-name", class: "field-box__input"
-            = f.text_field :first_name, placeholder: "名", autocomplete: "user-name", class: "field-box__input"
+            = f.text_field :last_name, placeholder: "性", class: "field-box__input"
+            = f.text_field :first_name, placeholder: "名", class: "field-box__input"
         .field
           = f.label :お名前かな（全角）, class: "field__text"
           .field-box
-            = f.text_field :last_name_kana, placeholder: "せい",autocomplete: "user-name", class: "field-box__input"
-            = f.text_field :first_name_kana, placeholder: "めい", autocomplete: "user-name", class: "field-box__input"
+            = f.text_field :last_name_kana, placeholder: "せい", class: "field-box__input"
+            = f.text_field :first_name_kana, placeholder: "めい", class: "field-box__input"
         .field
           = f.label :生年月日, class: "field__text"
-          = f.date_field :birthday, autocomplete: "user-name", class: "field__input"
+          = f.date_field :birthday, class: "field__input"
 
       -# 以下保存先モデル名、カラム名は仮置きです。
       = f.fields_for :addresses do |address|
@@ -46,32 +46,33 @@
           .field
             = address.label :送付先氏名（全角）, class: "field__text"
             .field-box
-              = address.text_field :last_name, placeholder: "性", autocomplete: "user-name", class: "field-box__input"
-              = address.text_field :first_name, placeholder: "名", autocomplete: "user-name", class: "field-box__input"
+              = address.text_field :last_name, placeholder: "性", class: "field-box__input"
+              = address.text_field :first_name, placeholder: "名", class: "field-box__input"
           .field
             = address.label :送付先氏名かな（全角）, class: "field__text"
             .field-box
-              = address.text_field :last_name_kana, placeholder: "せい", autocomplete: "user-name", class: "field-box__input"
-              = address.text_field :first_name_kana, placeholder: "めい", autocomplete: "user-name", class: "field-box__input"
+              = address.text_field :last_name_kana, placeholder: "せい", class: "field-box__input"
+              = address.text_field :first_name_kana, placeholder: "めい", class: "field-box__input"
           .field
             = address.label :郵便番号, class: "field__text"
-            = address.number_field :zip_code, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+            = address.number_field :zip_code, placeholder: "郵便番号", class: "field__input"
           .field
+            -# 仮のフォームを作成しています
             = address.label :都道府県, class: "field__text"
-            = address.text_field :prefecture_id, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+            = address.text_field :prefecture_id, placeholder: "指定あり", class: "field__input"
           .field
             = address.label :市区町村, class: "field__text"
-            = address.text_field :city, placeholder: "指定あり", autocomplete: "user-name", class: "field__input"
+            = address.text_field :city, placeholder: "市区町村", class: "field__input"
           .field
             = address.label :番地, class: "field__text"
-            = address.text_field :address, placeholder: "番地", autocomplete: "user-name", class: "field__input"
+            = address.text_field :address, placeholder: "番地", class: "field__input"
           .field
             = address.label :マンション名, class: "field__text"
-            = f.text_field :building, placeholder: "マンション名", autocomplete: "user-name", class: "field__input"
+            = f.text_field :building, placeholder: "マンション名", class: "field__input"
           .field
             = address.label :お届け先の電話番号, class: "field__text"
             -# カラムの場所を変更可能性あり
-            = address.text_field :phone_number, placeholder: "電話番号", autocomplete: "user-name", class: "field__input"
+            = address.number_field :phone_number, placeholder: "電話番号", class: "field__input"
       = f.submit "新規登録", class: "actions"
   = render "devise/shared/links"
 
