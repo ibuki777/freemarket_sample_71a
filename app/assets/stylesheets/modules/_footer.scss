@@ -1,0 +1,41 @@
+.footer{
+  height: 230px;
+  width: 100vw;
+  background-color: #272727;
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 60px 0;
+  &__box{
+    display: flex;
+    // justify-content: space-around;
+    &-info{
+      & > a{
+
+      }
+    
+      &__link{
+        & > a{
+
+        }
+      }
+    }
+    &__furima{
+      &__logo{
+
+      }
+      &__mark{
+
+      }
+    }
+  }
+}
+
+h2{
+  font-weight: bold;
+}
+
+a{
+  color: #ffffff;
+}
