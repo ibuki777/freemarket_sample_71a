@@ -4,7 +4,7 @@
       %h2 FURIMAについて
       %ul.footer__box-info-link
         %li
-          %a{href: "#", class: 'company'}
+          %a{href: "#"}
             会社概要（運営会社）
         %li
           %a{href: "#", class: 'privacy'}
@@ -25,6 +25,7 @@
         %li
           %a{href: "#", class: 'brand'}
             ブランド一覧
+            
     .footer__box__info
       %h2 ヘルプ＆ガイド
       %ul.footer__box-info-link
@@ -38,7 +39,6 @@
           %a{href: "#", class: 'news'}
             お知らせ
   .footer__furima
-    .footer__furima__logo
-      ロゴ
+    = image_tag 'material/logo/logo-white.png', class: 'logo'
     .footer__furima__mark
       ©️ FURIMA
