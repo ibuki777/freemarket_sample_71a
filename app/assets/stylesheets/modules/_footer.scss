@@ -7,33 +7,36 @@
   padding: 60px 0;
   &__box{
     display: flex;
-    // justify-content: space-around;
-    &-info{
-      & > a{
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: space-between;
+    text-align: center;
+  }
+  &__furima{
+    max-width: 160px;
+    width: 100vw;
+    margin: 0 auto;
+      .logo{
+        width: 100%;
 
       }
-    
-      &__link{
-        & > a{
-
-        }
-      }
-    }
-    &__furima{
-      &__logo{
-
-      }
-      &__mark{
-
-      }
+    &__mark{
+      text-align: center;
     }
   }
 }
 
 h2{
   font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 a{
   color: #ffffff;
+}
+
+li{
+  margin-bottom: 10px;
+  font-size: 12px;
 }
