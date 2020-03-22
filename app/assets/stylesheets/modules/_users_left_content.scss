@@ -1,5 +1,27 @@
 .left_content{
-  width: 20%;
+  width: 300px;
   margin-right: 3%;
   background-color:rgb(245, 245, 245) ;
+  float: right;
+
+  .table_title{
+    font-weight: bold;
+    
+  }
+  table{
+    background-color: white;
+    margin-bottom: 20px;
+    width: 100%;
+    tr{
+      height: 50px;
+      font-size: 14px;
+      td{
+        border-bottom:rgb(245, 245, 245) 3px solid;
+        padding: 0px 15px ;
+        .icon{
+          float: right;
+        }
+      }
+    }
+  }
 }
