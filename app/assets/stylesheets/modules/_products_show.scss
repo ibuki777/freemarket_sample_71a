@@ -101,6 +101,17 @@
             color: #3ccace;
           }
         }
+        .option{
+          display: flex;
+          justify-content: space-between;
+          .like-btn{
+            padding: 6px 10px;
+            border-radius: 40px;
+            color: #3ccace;
+            border: 1px solid #ffb340;
+            margin-top: 10px;
+          }
+        }
       }
     }
   }
