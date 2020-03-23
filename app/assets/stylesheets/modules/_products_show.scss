@@ -1,0 +1,16 @@
+.show-main{
+  background-color:#f8f8f8;
+  height: 100vh;
+  &__box{
+    background-color:white;
+    padding: 40px;
+    margin: 0 auto;
+    height: 80%;
+    width: 980px; 
+    .product-content{
+      width: 700px;
+      margin: 0 auto;
+    }
+  
+  }
+}
