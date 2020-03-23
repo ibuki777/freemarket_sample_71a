@@ -1,0 +1,9 @@
+@mixin image (){
+  height: 560px;
+  padding: 0 60px;
+  background-size: cover;
+  background-position: center;
+  color: $mainWhite;
+  position: relative;
+}
+
