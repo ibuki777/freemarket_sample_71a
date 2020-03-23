@@ -37,4 +37,5 @@
         メール/パスワード
     %tr  
       %td
-        ログアウト
+        =link_to logout_user_path(current_user) ,class:"table-link" do
+          ログアウト
