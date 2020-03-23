@@ -1,0 +1,37 @@
+
+
+.title{
+  @include image();
+  background-image: url(/images/material/pict/bg-mainVisual-pict_pc.jpg);
+  &__box{
+    position: absolute;
+    bottom: 100px;
+    padding: 35px 0 0 0;
+    &__sentence{
+      font-size: 60px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      margin-bottom: 10px;
+    }
+    &__letter{
+      font-size: 18px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      margin-bottom: 30px;
+    }
+    &__store{
+      width: 100%;
+      a{
+        text-decoration: none;
+        .apple{
+          width: 160px;
+          margin-right: 2%;
+        }
+        .google{
+          width: 160px;
+    
+        }
+      }
+
+    }
+  }
+}
+

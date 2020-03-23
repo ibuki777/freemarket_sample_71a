@@ -1,0 +1,34 @@
+.ad{
+  height: 350px;
+  padding: 100px 40px;
+  background-image: url(/images/material/pict/bg-appBanner-pict.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: $mainWhite;
+  &__sentence{
+    font-size: 24px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
+  }
+  &__download{
+    font-size: 35px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+  }
+  &__store{
+    width: 100%;
+    a{
+      text-decoration: none;
+    }
+    &__apple{
+      width: 160px;
+      margin-right: 2%;
+    }
+    &__google{
+      width: 160px;
+
+    }
+  }
+}
+

@@ -1,0 +1,58 @@
+.type{
+  &__title{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 26px;
+    padding: 50px 50px 20px;
+  }
+  &__bar{      
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+      &--line{
+        height: 4px;
+        width: 70px;
+        background-color: $mainThemeColor;
+      }
+    }
+  &__cards{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding-bottom: 100px;
+    .type__card{
+      width: 25%;
+      padding-right: 5%;
+      
+      position: relative;
+      &--photo{
+        width: 100%;
+        margin-bottom: 10px;      
+      }
+      &--number{
+        position: absolute;
+        background-color:$mainThemeColor;
+        color: $mainWhite;
+        font-size: 30px;
+        width: 45px;
+        height: 45px;
+        top: 0;
+        left: 0;
+        text-align: center;
+        line-height: 45px;
+        border-radius: 3px;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+      }
+      &--head{
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      &--text{
+        font-size: 18px;
+      }
+    }
+  }
+}

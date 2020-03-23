@@ -1,0 +1,36 @@
+.popular{
+  @include image();
+  background-image: url(/images/material/pict/bg-topMiddleDl-pict.jpg);
+  &__box{
+    position: absolute;
+    bottom: 170px;
+    &__sentence{
+      font-size: 27px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    &__letter{
+      font-size: 18px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      margin-bottom: 30px;
+    }
+    &__store{
+      width: 100%;
+      a{
+        text-decoration: none;
+        .apple{
+          width: 160px;
+          margin-right: 2%;
+        }
+        .google{
+          width: 160px;
+    
+        }
+      }
+
+    }
+  }
+}
+
+
