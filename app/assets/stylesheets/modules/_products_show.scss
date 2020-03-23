@@ -57,26 +57,24 @@
           }
         }
         &--price{
-          margin: 24px 0 24px;
+          margin: 24px 0 ;
           text-align: center;
-          .product-cost{
-          font-size: 46px;
-          font-weight: bold;
-          margin: 0 10px 0 0;
-          .product-postage{
-            font-size: 16px;
-            display: flex;
-            justify-content: center;
-          }
+            .product-cost{
+            font-size: 46px;
+            font-weight: bold;
+            margin: 0 10px 0 0;
+            .product-postage{
+              font-size: 16px;
+              display: flex;
+              justify-content: center;
+            }
           }
         }
-      }
-      &__comment-box{
-        padding: 24px;
-        background-color: blue;
-        margin: 10px 0;
-
-
+        &--date{
+          font-size: 18px;
+          margin-bottom: 30px;
+          line-height: 1.5;
+        }
       }
     }
   }
