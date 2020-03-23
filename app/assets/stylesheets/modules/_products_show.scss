@@ -4,14 +4,13 @@
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   position: relative;
   padding: 0 60px;
-  ul{
+  .tag{
     padding: 17px 0 16px;
     width: 100%;
     height: 55px;
     max-width: 1040px;
     font-size: 14px;
     margin: 0 auto;
-    // display: flex;
     li{
       padding-left:0 10px 0 0;
       float: left;
@@ -30,6 +29,26 @@
       &__item-box{
         background-color: white;
         padding: 24px 40px 40px;
+        &--name{
+          text-align: center;
+          font-size: 24px;
+          font-weight: bold;
+        }
+        &--image-body{
+          margin-top: 16px;
+          .top-images{
+           display: flex;
+           position: relative;
+          }
+        }
+        &--price{
+          font-size: 46px;
+          font-weight: bold;
+          margin: 0 10px 0 0;
+        }
+        .product-cost{
+          display: flex;
+        }
       }
       &__comment-box{
         padding: 24px;

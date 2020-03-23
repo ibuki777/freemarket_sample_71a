@@ -1,7 +1,7 @@
 .wrapper
   = render partial: 'header'
   %nav.header-bottom
-    %ul
+    %ul{class: "tag"}
       %li
         FURiMA>
       %li
@@ -16,4 +16,15 @@
   .show-main__box
     .product-content
       .product-content__item-box
+        .product-content__item-box--name
+          product3
+        .product-content__item-box--image-body
+          .top-images
+            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "top-image")
+        .product-content__item-box--price
+        %ul{class: "product-cost"}
+          %li
+            (税込み) 
+          %li
+            送料込み
       .product-content__comment-box
