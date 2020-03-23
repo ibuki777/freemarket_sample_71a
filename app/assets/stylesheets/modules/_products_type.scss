@@ -13,7 +13,7 @@
       &--line{
         height: 4px;
         width: 70px;
-        background-color: #3CCACE;
+        background-color: $mainThemeColor;
       }
     }
   &__cards{
@@ -32,8 +32,8 @@
       }
       &--number{
         position: absolute;
-        background-color:#3CCACE;
-        color: white;
+        background-color:$mainThemeColor;
+        color: $mainWhite;
         font-size: 30px;
         width: 45px;
         height: 45px;
@@ -49,9 +49,6 @@
         font-size: 24px;
         margin-bottom: 15px;
         text-align: center;
-      //   .card__text--color{
-      //     color: #3CCACE;
-      //   }
       }
       &--text{
         font-size: 18px;

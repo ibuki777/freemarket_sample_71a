@@ -1,7 +1,6 @@
 .pickup-product{
-  padding-top: 26px;
-  padding-bottom: 80px;
-  background-color: #f8f8f8;
+  padding-top: 80px;
+  background-color: $subBackGround;
   &__head{
   text-align: center;
   font-size: 28px;
@@ -14,7 +13,7 @@
     &--head{
     text-align: center;
       .link-btn{
-      color: #3CCACE;
+      color: $mainThemeColor;
       font-size: 24px;
       font-weight: bold;
       text-decoration: none;
@@ -30,7 +29,7 @@
       width: 220px;
       display: inline-block;
       .product-link{
-        background-color:white;
+        background-color:$mainWhite;
         display: inline-block;
         text-decoration: none;
         .product-image-box{
@@ -53,7 +52,7 @@
          }
         }
         &__description{
-          background-color:white;
+          background-color:$mainWhite;
           padding: 16px;
           color: black;
           .product-name{

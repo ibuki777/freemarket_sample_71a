@@ -1,8 +1,8 @@
 .footer{
   height: 350px;
   width: 100vw;
-  background-color: #272727;
-  color: #ffffff;
+  background-color: $footerColor;
+  color: $mainWhite;
   text-align: center;
   padding: 60px 0;
   &__box{
@@ -15,7 +15,7 @@
       margin-bottom: 10px;
       font-size: 12px;
       a{
-        color: #ffffff;
+        color: $mainWhite;
         position: relative;
         display: inline-block;
         text-decoration: none;
@@ -29,7 +29,7 @@
       content: '';
       width: 100%;
       height: 2px;
-      background: #ffffff;
+      background: $mainWhite;
       opacity: 0;
       visibility: hidden;
     }

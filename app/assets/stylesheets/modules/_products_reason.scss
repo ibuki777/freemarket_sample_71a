@@ -13,7 +13,7 @@
       &--line{
         height: 4px;
         width: 70px;
-        background-color: #3CCACE;
+        background-color: $mainThemeColor;
       }
     }
   &__cards{
@@ -33,7 +33,7 @@
       }
       &--number{
         position: absolute;
-        background-color:#3CCACE;
+        background-color:mainThemeColor;
         color: white;
         font-size: 30px;
         width: 45px;
@@ -43,7 +43,7 @@
         text-align: center;
         line-height: 45px;
         border-radius: 3px;
-        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+        font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", sans-serif;
       }
       &--head{
         font-weight: bold;
@@ -51,7 +51,7 @@
         margin-bottom: 15px;
         text-align: center;
         .card__text--color{
-          color: #3CCACE;
+          color: mainThemeColor;
         }
       }
       &--text{
