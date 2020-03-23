@@ -11,5 +11,6 @@
     .right_box{
       width: 65%;
       @import "modules/users_right_content";
+      @import "modules/users_logout";      
     }
   }
