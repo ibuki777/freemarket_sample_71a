@@ -48,15 +48,11 @@
             display: flex;
             justify-content: center;
             margin-top: 10px;
-            .sub-images{
-              .sub-image{
-                width: 25%;
-                margin-right: 10px;
-                .sub-image{
-                  object-fit: cover;
-                  height: 87px;
-                }
-              }
+            .sub-image{
+              width: 25%;
+              margin-right: 10px;
+              object-fit: cover;
+              height: 87px;
             }
           }
         }
@@ -69,6 +65,8 @@
           margin: 0 10px 0 0;
           .product-postage{
             font-size: 16px;
+            display: flex;
+            justify-content: center;
           }
           }
         }
