@@ -1,3 +1,11 @@
 @import "reset";
+*{
+  box-sizing: border-box;
+}
+
+.wrapper{
+  width: 100vw;
+}
+
 @import "config/variable";
 @import "products";
