@@ -7,19 +7,12 @@
   width: 100vw;
 }
 
-
 .title{
-  height: 560px;
-  padding: 0 60px;
+  @include image();
   background-image: url(material/pict/bg-mainVisual-pict_pc.jpg);
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
-  position: relative;
   &__box{
     position: absolute;
-    bottom: 170px;
-    margin: 0 200px;
+    bottom: 100px;
     padding: 35px 0 0 0;
     &__sentence{
       font-size: 60px;

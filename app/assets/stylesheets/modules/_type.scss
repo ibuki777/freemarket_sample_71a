@@ -4,7 +4,7 @@
     justify-content: center;
     font-weight: bold;
     font-size: 26px;
-    padding: 20px 50px;
+    padding: 50px 50px 20px;
   }
   &__bar{      
     padding-bottom: 40px;
@@ -19,8 +19,8 @@
   &__cards{
     display: flex;
     justify-content: center;
-    width: 100vw;;
-    // padding-bottom
+    width: 100vw;
+    padding-bottom: 100px;
     .type__card{
       width: 25%;
       padding-right: 5%;
