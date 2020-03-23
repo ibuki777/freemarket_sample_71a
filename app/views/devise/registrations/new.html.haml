@@ -1,7 +1,6 @@
 .sign
   .sign-header
-    %a{href: root_path}
-      =image_tag "logo.svg"
+    = link_to image_tag("logo.svg"), root_path
   .sign-main
     -# 以下保存先カラム名は仮置きです。
     = form_with model: @user, url: user_registration_path, local: true do |f|
