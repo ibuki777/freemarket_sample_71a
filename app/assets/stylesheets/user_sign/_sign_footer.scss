@@ -11,8 +11,9 @@
       a{
         display: block;
         font-size: 12px;
-        color: #fff;
+        color: $text-color-white;
       }
+      @include hover;
     }
     .footer-image{
       height: 62px;
@@ -22,7 +23,7 @@
       margin: 40px auto 0;
     }
     .footer-text{
-      color:#fff;
+      color:$text-color-white;
       text-align: center;
     }
   }

@@ -2,9 +2,6 @@
   box-sizing: border-box;
 }
 
-@import "sign_footer";
-
-$theme-color: #3CCACE;
 @mixin input($width: 400px) {
   font-size: 16px;
   width: $width;
@@ -16,18 +13,12 @@ $theme-color: #3CCACE;
 
 @mixin text-constraint(){
   display: inline;
-  color: #fff;
+  color: $text-color-white;
   padding: 2px 4px;
   margin-left: 8px;
   border-radius: 2px;
 }
 
-.hover{
-  text-decoration: none;
-}
-.hover:hover{
-  text-decoration: underline;
-}
 
 .sign{
   &-header{
@@ -89,6 +80,7 @@ $theme-color: #3CCACE;
         font-size: 18px;
         color: $theme-color;
       }
+      @include hover;
     }
   }
 }
