@@ -4,3 +4,71 @@
   width: 700px;
   float: left;
 }
+.pictures
+
+.product_view {
+  width: 700px;
+  padding: 24px 35px 0px;
+}
+
+
+.tab_wrap {
+  width: 700px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.tab_area {
+  font-size: 0;
+  label {
+    width: 50%;
+    display: inline-block;
+    padding: 12px 0;
+    color: #999;
+    background: #ddd;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    transition: ease 0.2s opacity;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.panel_area {
+  background: #fff;
+}
+.tab_panel {
+  width: 100%;
+  padding: 80px 0;
+  display: none;
+  p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}
+
+#tab1:checked ~ {
+  .tab_area .tab1_label {
+    background: #fff;
+    color: #000;
+  }
+  .panel_area #panel1 {
+    display: block;
+  }
+}
+
+#tab2:checked ~ {
+  .tab_area .tab2_label {
+    background: #fff;
+    color: #000;
+  }
+  .panel_area #panel2 {
+    display: block;
+  }
+}
+

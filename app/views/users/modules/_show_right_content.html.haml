@@ -1,2 +1,14 @@
 .right_content
-  右です
+  .pictures
+  .product_view
+    .tab_wrap
+      %input#tab1{checked: "checked",name: "tab_btn",type: "radio"}/
+      %input#tab2{name: "tab_btn",type: "radio"}/
+      .tab_area
+        %label.tab1_label{for: "tab1"} tab1
+        %label.tab2_label{for: "tab2"} tab2
+      .panel_area
+        #panel1.tab_panel
+          %p panel1
+        #panel2.tab_panel
+          %p panel2
