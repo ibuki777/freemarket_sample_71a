@@ -1,11 +1,11 @@
 .ad{
-  height: 150px;
+  height: 350px;
   padding: 100px 40px;
   background-image: url(material/pict/bg-appBanner-pict.jpg);
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: #ffffff;
+  color: $mainWhite;
   &__sentence{
     font-size: 24px;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -18,6 +18,9 @@
   }
   &__store{
     width: 100%;
+    a{
+      text-decoration: none;
+    }
     &__apple{
       width: 160px;
       margin-right: 2%;
