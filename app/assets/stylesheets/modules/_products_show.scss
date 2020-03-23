@@ -20,7 +20,7 @@
 .show-main{
   height: 100vh;
   &__box{
-    background-color:red;
+    background-color:#f8f8f8;
     padding: 40px;
     margin: 0 auto;
     .product-content{
@@ -36,9 +36,28 @@
         }
         &--image-body{
           margin-top: 16px;
-          .top-images{
-           display: flex;
-           position: relative;
+          .top-image{
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            object-fit: cover;
+            height: 346px;
+            width: 560px;
+          }
+          .sub-images{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            .sub-images{
+              .sub-image{
+                width: 25%;
+                margin-right: 10px;
+                .sub-image{
+                  object-fit: cover;
+                  height: 87px;
+                }
+              }
+            }
           }
         }
         &--price{
