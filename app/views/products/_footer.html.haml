@@ -4,39 +4,39 @@
       %h2 FURIMAについて
       %ul.footer__box-info-link
         %li
-          %a{href: "#"}
+          = link_to '#' do
             会社概要（運営会社）
         %li
-          %a{href: "#", class: 'privacy'}
+          = link_to '#', class: 'privacy' do
             プライバシーポリシー
         %li
-          %a{href: "#", class: 'rule'}
+          = link_to '#', class: 'rule' do
             FURIMA利用規約
         %li
-          %a{href: "#", class: 'point'}
+          = link_to '#', class: 'point' do
             ポイントに関する特約
 
     .footer__box-info
       %h2 FURIMAを見る
       %ul.footer__box-info-link
         %li
-          %a{href: "#", class: 'category'}
+          = link_to '#', class: 'category' do
             カテゴリー一覧
         %li
-          %a{href: "#", class: 'brand'}
+          = link_to '#', class: 'brand' do
             ブランド一覧
             
     .footer__box__info
       %h2 ヘルプ＆ガイド
       %ul.footer__box-info-link
         %li
-          %a{href: "#", class: 'guide'}
+          = link_to '#', class: 'guide' do
             FURIMAガイド
         %li
-          %a{href: "#", class: 'line'}
+          = link_to '#', class: 'line' do
             FURMAロゴ利用ガイドライン
         %li
-          %a{href: "#", class: 'news'}
+          = link_to '#', class: 'news' do
             お知らせ
   .footer__furima
     = image_tag 'material/logo/logo-white.png', class: 'logo'
