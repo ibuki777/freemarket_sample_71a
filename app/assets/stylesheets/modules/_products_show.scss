@@ -42,12 +42,16 @@
           }
         }
         &--price{
+          margin: 24px 0 24px;
+          text-align: center;
+          .product-cost{
           font-size: 46px;
           font-weight: bold;
           margin: 0 10px 0 0;
-        }
-        .product-cost{
-          display: flex;
+          .product-postage{
+            font-size: 16px;
+          }
+          }
         }
       }
       &__comment-box{

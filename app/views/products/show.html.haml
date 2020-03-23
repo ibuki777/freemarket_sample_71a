@@ -22,9 +22,11 @@
           .top-images
             = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "top-image")
         .product-content__item-box--price
-        %ul{class: "product-cost"}
-          %li
-            (税込み) 
-          %li
-            送料込み
+          .product-cost
+            ¥30000
+            %ul{class: "product-postage"}
+              %li
+                (税込み) 
+              %li
+                送料込み
       .product-content__comment-box
