@@ -1,6 +1,6 @@
 .left_content{
   width: 300px;
-  margin-right: 3%;
+  margin-right: 30px;
   background-color:rgb(245, 245, 245) ;
   float: right;
 
@@ -18,8 +18,10 @@
       td{
         border-bottom:rgb(245, 245, 245) 3px solid;
         padding: 0px 15px ;
-        .icon{
+        i{
           float: right;
+          font-size: 1.25em;
+          color:gray ;
         }
       }
     }
