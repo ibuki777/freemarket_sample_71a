@@ -1,12 +1,13 @@
 - if controller_name != 'sessions'
-  = link_to "ログイン", new_session_path(resource_name), class: "link-signup hover"
+  = link_to "ログイン", new_session_path(resource_name), class: "link hover"
   %br/
 - if devise_mapping.registerable? && controller_name != 'registrations'
-  = link_to "新規登録", new_registration_path(resource_name), class: "link-signin hover"
+  = link_to "新規登録", new_registration_path(resource_name), class: "link hover"
   %br/
-- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-  = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "link-password hover"
-  %br/
+  -# 一応残してあります
+-# - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
+-#   = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "link hover"
+-#   %br/
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
   = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
   %br/
@@ -17,3 +18,4 @@
   - resource_class.omniauth_providers.each do |provider|
     = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
     %br/
+

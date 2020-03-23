@@ -1,9 +1,40 @@
-.signup {
+*{
+  box-sizing: border-box;
+}
+
+@import "sign_footer";
+
+$theme-color: #3CCACE;
+@mixin input($width: 400px) {
+  font-size: 16px;
+  width: $width;
+  padding: 10px 16px;
+  margin: 8px 0 30px 0;
+  border: 1px solid #a9a9a9;
+  border-radius: 4px;
+}
+
+@mixin text-constraint(){
+  display: inline;
+  color: #fff;
+  padding: 2px 4px;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+.hover{
+  text-decoration: none;
+}
+.hover:hover{
+  text-decoration: underline;
+}
+
+.sign{
   &-header{
     text-align: center;
     margin-top: 40px;
   }
-  &-form {
+  &-main{
     width: 500px;
     margin: 0 auto;
     padding: 20px 50px 30px;
@@ -20,35 +51,22 @@
           font-size: 18px;
           margin-bottom: 8px;
         }
-        &__text-setting{
-          display: inline;
-          color: #fff;
+        &__text-constraint{
           background-color: red;
-          padding: 2px 4px;
-          margin-left: 8px;
-          border-radius: 2px;
+          @include text-constraint;
         }
-        .setting-blue{
+        &__text-constraint--blue{
           background-color: blue;
+          @include text-constraint;
         }
         &__input{
-          font-size: 16px;
-          width: 400px;
-          padding: 10px 16px;
-          margin: 8px 0 30px 0;
-          border: 1px solid #a9a9a9;
-          border-radius: 4px;
+          @include input;
         }
-        .field-box{
+        &-box{
           display: flex;
           justify-content: space-between;
           &__input{
-            font-size: 16px;
-            width: 194px;
-            padding: 10px 16px;
-            margin: 8px 0 30px 0;
-            border: 1px solid #a9a9a9;
-            border-radius: 4px;
+            @include input(194px);
           }
         }
       }
@@ -57,7 +75,7 @@
       margin-bottom: 0;
     }
     .actions{
-      background-color: #3CCACE;
+      background-color: $theme-color;
       font-size: 16px;
       line-height: 48px;
       width: 100%;
@@ -67,18 +85,10 @@
     }
     .shared-links{
       margin-top: 20px;
-    }
-    .link-signup{
-      font-size: 18px;
-      color: #3CCACE;
-      text-decoration: none;
-    }
-    .link-signup:hover{
-      text-decoration: underline;
+      .link{
+        font-size: 18px;
+        color: $theme-color;
+      }
     }
   }
 }
-
-
-
-
