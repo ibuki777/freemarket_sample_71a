@@ -1,6 +1,8 @@
 *{
   box-sizing: border-box;
 }
+@import "config/variable";
+@import "sign_footer";
 
 @mixin input($width: 400px) {
   font-size: 16px;
