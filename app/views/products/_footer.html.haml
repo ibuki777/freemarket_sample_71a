@@ -1,0 +1,44 @@
+.footer
+  .footer__box
+    .footer__box-info
+      %h2 FURIMAについて
+      %ul.footer__box-info-link
+        %li
+          %a{href: "#"}
+            会社概要（運営会社）
+        %li
+          %a{href: "#", class: 'privacy'}
+            プライバシーポリシー
+        %li
+          %a{href: "#", class: 'rule'}
+            FURIMA利用規約
+        %li
+          %a{href: "#", class: 'point'}
+            ポイントに関する特約
+
+    .footer__box-info
+      %h2 FURIMAを見る
+      %ul.footer__box-info-link
+        %li
+          %a{href: "#", class: 'category'}
+            カテゴリー一覧
+        %li
+          %a{href: "#", class: 'brand'}
+            ブランド一覧
+            
+    .footer__box__info
+      %h2 ヘルプ＆ガイド
+      %ul.footer__box-info-link
+        %li
+          %a{href: "#", class: 'guide'}
+            FURIMAガイド
+        %li
+          %a{href: "#", class: 'line'}
+            FURMAロゴ利用ガイドライン
+        %li
+          %a{href: "#", class: 'news'}
+            お知らせ
+  .footer__furima
+    = image_tag 'material/logo/logo-white.png', class: 'logo'
+    .footer__furima__mark
+      ©️ FURIMA

@@ -1,10 +1,12 @@
 .left_content
   %table
-    %tr
-      %td
-        マイページ
-        %i{class:"fas fa-chevron-right"}
-        //ホバーした時の効果はまとめて定義する
+    %label
+      %tr
+        %td{id:"mypage-td"}
+          =link_to user_path(current_user) ,class:"table-link" do
+            マイページ
+            %i{class:"fas fa-chevron-right",id:"mypage-arrow"}
+            //ホバーした時の効果はまとめて定義する
     %tr      
       %td
         出品する
@@ -13,20 +15,26 @@
         いろいろある
     %tr
       %td
-        いろいろある
+        購入した商品 -取引中
     %tr  
       %td
-        いろいろある
+        いろいろある -過去の取引
 
   .table_title
     設定
   %table      
     %tr
       %td
-        いろいろある
+        プロフィール
     %tr
       %td
-        いろいろある
+        発送元・お届け住所変更
     %tr  
       %td
-        いろいろある
+        お支払い方法
+    %tr  
+      %td
+        メール/パスワード
+    %tr  
+      %td
+        ログアウト
