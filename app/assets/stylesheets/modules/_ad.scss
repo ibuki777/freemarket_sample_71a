@@ -18,6 +18,9 @@
   }
   &__store{
     width: 100%;
+    a{
+      text-decoration: none;
+    }
     &__apple{
       width: 160px;
       margin-right: 2%;

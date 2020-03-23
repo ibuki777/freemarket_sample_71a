@@ -1,11 +1,6 @@
 .popular{
-  height: 560px;
-  padding: 0 60px;
+  @include image();
   background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
-  background-size: cover;
-  background-position: center;
-  color: #ffffff;
-  position: relative;
   &__box{
     position: absolute;
     bottom: 170px;
@@ -37,4 +32,5 @@
     }
   }
 }
+
 
