@@ -75,3 +75,4 @@ end
 gem 'devise'
 gem 'haml-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem "payjp"
