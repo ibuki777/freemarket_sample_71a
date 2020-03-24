@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all.order(created_at: :desc).limit(3)
+    @products = Product.all.order(created_at: :desc).limit(1)
     @images = Image.all.includes(params[:image])
   end
 

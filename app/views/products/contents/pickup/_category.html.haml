@@ -7,23 +7,22 @@
         新規投稿商品
     .product-lists
       .product-list
-        = link_to "#", class:"product-link" do
-          .product-image-box
-            - @images.each do |image|
-              = image.image
-          .product-link__description
-            .product-name
-              -@products.each do |product|
-                = product.name
-            .product-cost
-              %ul.product-cost__list
-                %li
-                  -@products.each do |product|
-                    = product.price
-                %li.like-btn
-                  ★0
-            .product-tax
-              (税込み)
+        - @images.each do |image|
+          -@products.each do |product|
+            = link_to "#", class:"product-link" do
+              .product-image-box
+                = image.image
+              .product-link__description
+                .product-name
+                  = product.name
+                .product-cost
+                  %ul.product-cost__list
+                    %li
+                      = product.price
+                    %li.like-btn
+                      ★0
+                .product-tax
+                  (税込み)
       -# .product-list
       -#   = link_to new_user_registration_path, class:"product-link" do
       -#     .product-image-box

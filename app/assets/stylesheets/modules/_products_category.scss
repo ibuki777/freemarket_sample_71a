@@ -23,11 +23,12 @@
   .product-lists{
     width: 780px;
     margin: 26px auto;
-    display: flex;
-    justify-content: space-around;
     .product-list{
       width: 220px;
-      display: inline-block;
+      // display: inline-block;
+      // display: flex;
+      // justify-content: space-between;
+      flex-direction: row;
       .product-link{
         background-color:$mainWhite;
         display: inline-block;
