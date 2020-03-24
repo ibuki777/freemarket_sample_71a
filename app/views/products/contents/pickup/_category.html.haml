@@ -19,7 +19,7 @@
               %ul{class: "product-cost__list"}
                 %li
                   -@products.each do |product|
-                    = product.
+                    = product.price
                 %li{class: "like-btn"}
                   ★0
             .product-tax
@@ -27,7 +27,8 @@
       .product-list
         = link_to new_user_registration_path, class:"product-link" do
           .product-image-box
-            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "product-image")
+            - @images.each do |image|
+              = image.image
           .product-link__description
             .product-name
               product2
