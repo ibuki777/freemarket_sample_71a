@@ -24,10 +24,10 @@
     width: 780px;
     margin: 26px auto;
     .product-list{
+      display: flex;
+      justify-content: space-between;
       width: 220px;
-      // display: inline-block;
-      // display: flex;
-      // justify-content: space-between;
+      display: inline-block;
       flex-direction: row;
       .product-link{
         background-color:$mainWhite;

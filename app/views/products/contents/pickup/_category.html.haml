@@ -6,8 +6,8 @@
       = link_to "/", class: "link-btn" do
         新規投稿商品
     .product-lists
-      .product-list
-        - @images.each do |image|
+      - @images.each do |image|
+        .product-list
           -@products.each do |product|
             = link_to "#", class:"product-link" do
               .product-image-box
