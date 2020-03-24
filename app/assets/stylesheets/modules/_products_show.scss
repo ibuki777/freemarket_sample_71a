@@ -110,6 +110,10 @@
             color: #3ccace;
             border: 1px solid #ffb340;
             margin-top: 10px;
+            &:hover{
+              opacity: 0.5;
+            }
+            
           }
           .report-btn{
             margin-top: 10px;
@@ -119,6 +123,9 @@
             color:black;
             font-size: 14px;
             padding: 6px 10px;
+            &:hover{
+              opacity: 0.5;
+            }
           }
         }
       }
