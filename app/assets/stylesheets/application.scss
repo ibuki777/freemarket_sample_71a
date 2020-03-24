@@ -1,4 +1,7 @@
 @import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "config/variable";
 *{
   box-sizing: border-box;
 }
@@ -6,6 +9,6 @@
   width: 100vw;
 }
 @import "mixin/hover";
-@import "config/variable";
 @import "user_sign/user_sign";
 @import "products";
+
