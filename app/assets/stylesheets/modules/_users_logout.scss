@@ -1,0 +1,14 @@
+.logout-button{
+  padding: 50px 200px;
+  .logout-link{
+    text-decoration: none;
+
+  }
+   &-red{
+    background-color: #e62017;
+    color: white;
+    line-height: 48px;
+    font-size: 14px;
+    text-align: center;
+   }
+}
