@@ -6,20 +6,86 @@
       = form_with model: @product, local: true do |f|
         .field
           .label
-            = f.label :image, "出品画像"
-            %p.label__letter 必須
+            = f.label :image, "出品画像", class: "label__name"
+            %p.label__need 必須
           .field__sentence
             最大10枚までアップロードできます
-          = f.file_field :image
+          = f.file_field :image, class: "image__discription"
         .box__border
+
         .field
+          .label
+            = f.label :name, "商品名", class: "label__name"
+            %p.label__need 必須
+          = f.text_field :name, class: "input", placeholder: "40文字まで"
+          .label
+            = f.label :explain, "商品の説明", class: "label__name"
+            %p.label__need 必須
+          = f.text_area :explain, class: "image__discription", placeholder: "商品の説明（必須 1,000文字以内）　（色、素材、色、素材、重さ、定価、注意点など）　例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+          .text-count
+            0/1000
         .box__border
+
         .field
+          .field__title
+            商品の詳細
+          .label
+            = f.label :genre, "カテゴリ", class: "label__name"
+            %p.label__need 必須
+          = f.text_field :genre, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          .label
+            = f.label :name, "ブランド", class: "label__name"
+            %p.label__need 任意
+          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          .label
+            = f.label :image, "商品の状態", class: "label__name"
+            %p.label__need 必須
+          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
         .box__border
+
         .field
+          .field__title
+            配送について
+            .question　？
+          .label
+            = f.label :image, "配送料の負担", class: "label__name"
+            %p.label__need 必須
+          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          .label
+            = f.label :image, "発送元の地域", class: "label__name"
+            %p.label__need 必須
+          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          .label
+            = f.label :image, "発送までの日数", class: "label__name"
+            %p.label__need 必須
+          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
         .box__border
+
         .field
-        .box__border
+          .field__title
+            価格（¥300〜9,999,999）
+            .question　？
+          .label
+            = f.label :image, "販売価格", class: "label__name"
+            %p.label__need 必須
+            = f.label :price, "¥"
+            = f.text_field :name, placeholder: "金額の入れ方知らないので仮置きです"
+          .cost
+            .cost__fee
+              販売手数料（10%）
+            .period
+              ー
+          .box__border
+          .profit
+            .profit__title
+              販売利益
+            .period
+              ー
+          .option
+            %button.execute 出品する
+            %button.save 下書きを保存
+            = link_to '#', class: 'back' 
+            
   .exhibition__footer
     .exhibition__footer-box
       .clearfix
