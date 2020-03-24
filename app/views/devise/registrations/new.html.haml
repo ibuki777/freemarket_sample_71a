@@ -1,21 +1,93 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.sign
+  .sign-header
+    = link_to image_tag("logo.svg"), root_path
+  .sign-main
+    -# 以下保存先カラム名は仮置きです。
+    = form_with model: @user, url: user_registration_path, local: true do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .sign-main-box
+        %h1.sign-main-box__title ユーザー新規登録
+        .field
+          = f.label :ニックネーム, class: "field__text"
+          %p.field__text-constraint 必須
+          = f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "field__input", placeholder: "ニックネーム"
+        .field
+          = f.label :メールアドレス, class: "field__text"
+          %p.field__text-constraint 必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "PC・携帯どちらでも可"
+        .field
+          = f.label :パスワード, class: "field__text"
+          %p.field__text-constraint 必須
+          - if @minimum_password_length
+            = f.password_field :password, autocomplete: "new-password", placeholder: "#{@minimum_password_length} 文字以上の半角英数字", class: "field__input"
+        .field
+          = f.label :パスワード（確認用）, class: "field__text"
+          %p.field__text-constraint 必須
+          = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード", class: "field__input"
+
+
+      .sign-main-box
+        %h1.sign-main-box__title 本人確認情報
+        .field
+          = f.label :お名前（全角）, class: "field__text"
+          %p.field__text-constraint 必須
+          .field-box
+            = f.text_field :last_name, placeholder: "性", class: "field-box__input"
+            = f.text_field :first_name, placeholder: "名", class: "field-box__input"
+        .field
+          = f.label :お名前かな（全角）, class: "field__text"
+          %p.field__text-constraint 必須
+          .field-box
+            = f.text_field :last_name_kana, placeholder: "せい", class: "field-box__input"
+            = f.text_field :first_name_kana, placeholder: "めい", class: "field-box__input"
+        .field
+          = f.label :生年月日, class: "field__text"
+          %p.field__text-constraint 必須
+          = f.date_field :birthday, class: "field__input"
+
+      -# 以下保存先モデル名、カラム名は仮置きです。
+      = f.fields_for :addresses do |address|
+        .sign-main-box.sign-main-box-last
+          %h1.sign-main-box__title 商品送信機能
+          .field
+            = address.label :送付先氏名（全角）, class: "field__text"
+            %p.field__text-constraint 必須
+            .field-box
+              = address.text_field :last_name, placeholder: "性", class: "field-box__input"
+              = address.text_field :first_name, placeholder: "名", class: "field-box__input"
+          .field
+            = address.label :送付先氏名かな（全角）, class: "field__text"
+            %p.field__text-constraint 必須
+            .field-box
+              = address.text_field :last_name_kana, placeholder: "せい", class: "field-box__input"
+              = address.text_field :first_name_kana, placeholder: "めい", class: "field-box__input"
+          .field
+            = address.label :郵便番号, class: "field__text"
+            %p.field__text-constraint 必須
+            = address.text_field :zip_code, placeholder: "郵便番号", class: "field__input"
+          .field
+            -# 仮のフォームを作成しています
+            = address.label :都道府県, class: "field__text"
+            %p.field__text-constraint 必須
+            = address.text_field :prefecture_id, placeholder: "都道府県", class: "field__input"
+          .field
+            = address.label :市区町村, class: "field__text"
+            %p.field__text-constraint 必須
+            = address.text_field :city, placeholder: "市区町村", class: "field__input"
+          .field
+            = address.label :番地, class: "field__text"
+            %p.field__text-constraint 必須
+            = address.text_field :address, placeholder: "番地", class: "field__input"
+          .field
+            = address.label :マンション名, class: "field__text"
+            %p.field__text-constraint--blue 任意
+            = f.text_field :building, placeholder: "マンション名", class: "field__input"
+          .field
+            = address.label :お届け先の電話番号, class: "field__text"
+            %p.field__text-constraint--blue 任意
+            -# カラムの場所を変更可能性あり
+            = address.text_field :phone_number, placeholder: "電話番号", class: "field__input"
+      = f.submit "新規登録", class: "actions"
+    .shared-links
+      = render "devise/shared/links"
+  = render "devise/shared/footer"

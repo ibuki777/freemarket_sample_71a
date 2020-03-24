@@ -1,0 +1,8 @@
+@mixin hover(){
+  .hover{
+    text-decoration: none;
+  }
+  .hover:hover{
+    text-decoration: underline;
+  }
+}

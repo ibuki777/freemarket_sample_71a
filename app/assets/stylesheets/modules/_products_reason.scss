@@ -33,7 +33,7 @@
       }
       &--number{
         position: absolute;
-        background-color:mainThemeColor;
+        background-color:$mainThemeColor;
         color: white;
         font-size: 30px;
         width: 45px;
@@ -51,7 +51,7 @@
         margin-bottom: 15px;
         text-align: center;
         .card__text--color{
-          color: mainThemeColor;
+          color: $mainThemeColor;
         }
       }
       &--text{

@@ -1,6 +1,6 @@
 .popular{
   @include image();
-  background-image: url(material/pict/bg-topMiddleDl-pict.jpg);
+  background-image: url(/images/material/pict/bg-topMiddleDl-pict.jpg);
   &__box{
     position: absolute;
     bottom: 170px;
