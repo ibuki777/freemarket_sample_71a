@@ -1,2 +1,15 @@
 @import "reset";
+
+*{
+  box-sizing: border-box;
+}
+
+.wrapper{
+  width: 100vw;
+}
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "users";
+@import "config/variable";
+@import "products";

@@ -1,8 +1,15 @@
-.mypage_contents{
-  padding: 2% 12%;
-  background-color:rgb(245, 245, 245) ;
-  display: flex;
-  width: 100vw;
-  @import "modules/users_left_content";
-  @import "modules/users_right_content";
-}
+.wrapper
+  .mypage_contents{
+    padding: 30px 5%;
+    background-color:rgb(245, 245, 245) ;
+    display: flex;
+    width: 100vw;
+    .left_box{
+      width: 35%;
+      @import "modules/users_left_content";
+    }
+    .right_box{
+      width: 65%;
+      @import "modules/users_right_content";
+    }
+  }
