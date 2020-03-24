@@ -10,7 +10,10 @@
             %p.label__need 必須
           .field__sentence
             最大10枚までアップロードできます
-          = f.file_field :image, class: "image__discription"
+          .cage
+            = f.file_field :image, class: "image__discription"
+            .cage__icon
+            %p.cage__text
         .box__border
 
         .field

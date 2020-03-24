@@ -19,11 +19,13 @@
       margin: 0 auto;
       .field{
         height: 400px;
+        padding: 40px;
+        font-size: 14px;
         &__title{
           background-color: orange;
         }
         .label{
-          background-color: greenyellow;
+          font-weight: bold;
           &__name{
           }
           &__need{
@@ -36,10 +38,37 @@
           }
         }
         &__sentence{
-          background-color: khaki;
+          opacity: 0.5;
+          font-size: 12px;
+          margin-top: 10px;
         }
-        .image__discription{
-          background-color: lightslategrey;
+        .cage{
+          align-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          background-color: rgb(245, 245, 245);
+          cursor: pointer;
+          display: flex;
+          height: calc(100% - 60px);
+          flex-wrap: wrap;
+          -webkit-box-pack: center;
+          justify-content: center;
+          position: relative;
+          border-width: 1px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          transition: all 0.5s ease-out 0s;
+          margin-top: 10px;
+          .image__discription{
+            display: none;
+          }
+          &__icon{
+
+          }
+          &__text{
+
+          }
         }
         .text-count{
           background-color: mediumblue;
