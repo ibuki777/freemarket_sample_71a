@@ -17,15 +17,75 @@
       background-color: $mainWhite;
       width: 700px;
       margin: 0 auto;
-      &__form{
+      .field{
         height: 400px;
+        &__title{
+          background-color: orange;
+        }
+        .label{
+          background-color: greenyellow;
+          &__name{
+          }
+          &__need{
+            background-color: red;
+            display: inline;
+            color: #ffffff;
+            padding: 2px 4px;
+            margin-left: 8px;
+            border-radius: 2px;
+          }
+        }
+        &__sentence{
+          background-color: khaki;
+        }
+        .image__discription{
+          background-color: lightslategrey;
+        }
+        .text-count{
+          background-color: mediumblue;
+        }
+        .input{
+          background-color: hotpink;
+        }
+        .cost{
+          background-color: gold;
+          &__fee{
+
+          }
+          .period{
+            
+          }
+        }
+        .profit{
+          background-color: darkmagenta;
+          &__title{
+
+          }
+          .period{
+
+          }
+        }
+        .option{
+          background-color: cornflowerblue;
+          .execute{
+            background-color: black;
+          }
+          .save{
+            background-color: black;
+
+          }
+          a{
+            background-color: black;
+
+          }
+        }
       }
-      &__border{
+      .box__border{
         border-top: solid 1px #ca1e1e;
       }
     }
   }
-  // ログイン・新規登録と同じ構造のフッター
+  // ログイン・新規登録と同じフッター
   &__footer{
     width: 100vw;
     background-color: $footerColor;
@@ -58,3 +118,9 @@
   }
 }
 
+// .field{
+//   height: 400px;
+// }
+// .box__border{
+//   border-top: solid 1px #ca1e1e;
+// }
