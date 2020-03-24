@@ -5,6 +5,9 @@
       .right_content{
         .card__head{
           font-size: 24px;
+          font-weight: bold;
+          height: 40px;
+          line-height: 40px;
           border-bottom: $subBackGround 3px solid;
           text-align: center;
         }
@@ -15,14 +18,21 @@
 
           &--head{
             font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
             
           }
           &--box{
-            background-color: red;
+            background-color: #ea352d;
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
             text-align: center;
             .card-reggister-link{
               text-decoration: none;
               color: #fff;
+              font-size: 14px;
+              display: block;
             }
           }
         }
