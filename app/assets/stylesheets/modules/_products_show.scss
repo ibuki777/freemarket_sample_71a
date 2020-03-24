@@ -110,9 +110,15 @@
             color: #3ccace;
             border: 1px solid #ffb340;
             margin-top: 10px;
-            .fas{
-              font-size: inherit;
-            }
+          }
+          .report-btn{
+            margin-top: 10px;
+            border-radius: 4px;
+            border: 1px solid;
+            text-align: center;
+            color:black;
+            font-size: 14px;
+            padding: 6px 10px;
           }
         }
       }
