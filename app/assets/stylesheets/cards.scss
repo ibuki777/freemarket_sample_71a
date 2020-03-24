@@ -1,0 +1,61 @@
+//index
+.wrapper{
+  .mypage_contents{
+    .right_box{
+      .right_content{
+        .card__head{
+          font-size: 24px;
+          font-weight: bold;
+          height: 40px;
+          line-height: 40px;
+          border-bottom: $subBackGround 2px solid;
+          text-align: center;
+        }
+        .card__index-add{
+          margin: 80px 80px 0px;
+          padding: 0 120px 30px;
+          border-bottom: $subBackGround 2px solid;
+
+          &--head{
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            
+          }
+          &--box{
+            background-color: #ea352d;
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            &:hover{
+              background-color: #ea352d90;
+              transition: 1s;            
+            }
+            .card-reggister-link{
+              text-decoration: none;
+              color: #fff;
+              font-size: 14px;
+              display: block;
+              i{
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+        .card__info{
+          text-align: right;
+          font-size: 14px;
+          height: 100px;
+          line-height: 100px;
+          margin: 0 80px;
+          &--link{
+            text-decoration: none;
+            color: #0099e8;
+
+          }
+        }
+      }
+    }
+  }
+}

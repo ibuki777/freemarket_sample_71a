@@ -25,16 +25,19 @@
   %table      
     %tr
       %td
-        プロフィール
+        =link_to edit_user_path ,class:"table-link" do
+          プロフィール
     %tr
       %td
         発送元・お届け住所変更
     %tr  
       %td
-        お支払い方法
+        =link_to user_cards_path ,class:"table-link" do
+          お支払い方法
     %tr  
       %td
-        メール/パスワード
+        =link_to edit_user_password_path ,class:"table-link" do
+          メール/パスワード
     %tr  
       %td
         =link_to logout_user_path(current_user) ,class:"table-link" do
