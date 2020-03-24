@@ -1,0 +1,32 @@
+//index
+.wrapper{
+  .mypage_contents{
+    .right_box{
+      .right_content{
+        .card__head{
+          font-size: 32px;
+        }
+        .card__index-add{
+          padding: 100px 200px 50px;
+          &--head{
+            border-bottom: $subBackGround 2px solid;
+            
+          }
+          &--box{
+            background-color: red;
+            .card-reggister-link{
+              text-decoration: none;
+              color: #fff;
+
+            }
+
+          }
+          &--info{
+            text-align: right;
+          }
+
+        }
+      }
+    }
+  }
+}

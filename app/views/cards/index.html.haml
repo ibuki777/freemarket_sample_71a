@@ -1,0 +1,19 @@
+.wrapper
+  = render partial: 'products/header'
+  .mypage_contents
+    .left_box
+      =render "users/modules/show_left_content"
+    .right_box
+      .right_content
+        .card__head
+          支払い方法
+        .card__index-add
+          .card__index-add--head
+            クレジットカード一覧
+            %ul{class:"card__index-add--list"}
+              //ここにカードの一覧が入るようにする
+          .card__index-add--box
+            =link_to destroy_user_session_path, method: :delete, class:"card-reggister-link" do
+              %i{class:"far fa-credit-card"}   クレジットカードを追加する
+          .card__index-add--info
+            支払い方法について
