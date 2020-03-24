@@ -1,0 +1,26 @@
+.exhibition
+  .exhibition__header
+    = image_tag '/images/material/logo/logo.png', class: 'logo'
+  .exhibition__contents
+    .exhibition__contents__box
+      .exhibition__contents__box__form
+      .exhibition__contents__box__border
+      .exhibition__contents__box__form
+      .exhibition__contents__box__border
+      .exhibition__contents__box__form
+      .exhibition__contents__box__border
+      .exhibition__contents__box__form
+      .exhibition__contents__box__border
+      .exhibition__contents__box__form
+      .exhibition__contents__box__border
+  .exhibition__footer
+    .exhibition__footer-box
+      .clearfix
+        = link_to "プライバシーポリシー", "#", class: "hover"
+        = link_to "FURIMA利用規約", "#", class: "hover"
+        = link_to "ポイントに関する特約", "#", class: "hover"
+      %a{href: root_path, class:"footer-image"}
+        =image_tag "logo-white.svg"
+      %p{class: "footer-text"}©︎FURAMA
+
+
