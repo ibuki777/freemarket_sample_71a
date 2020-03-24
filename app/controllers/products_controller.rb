@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.order(created_at: :desc).limit(1)
-    @images = Image.all.includes(:product)
+    @images = Image.find_by(:)
 
   end
 
