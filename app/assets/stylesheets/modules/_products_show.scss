@@ -135,9 +135,24 @@
       background-color: white;
       margin: 10px 0;
       text-align: center;
+      .comment-box{
+        width: 100%;
+        padding: 10px;
+        min-height: 104px;
+      }
       .warning-comment{
         background-color: gray;
         text-align: left;
+        margin: 10px 0;
+      }
+      .comment-btn{
+        background-color: #3ccace;
+        width: 50%;
+        margin: 0 auto;
+        font-size: 18px;
+        border-radius: 100px;
+        line-height: 48px;
+        color: white;
       }
     }
   }
