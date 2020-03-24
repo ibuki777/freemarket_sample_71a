@@ -1,0 +1,60 @@
+.exhibition{
+  background-color: $subBackGround;
+  width: 100vw;
+  &__header{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo{
+      height: 53px;
+      width: 177px;
+    }
+  }
+  &__contents{
+    &__box{
+      background-color: $mainWhite;
+      width: 700px;
+      margin: 0 auto;
+      &__form{
+        height: 400px;
+      }
+      &__border{
+        border-top: solid 1px #ca1e1e;
+      }
+    }
+  }
+  // ログイン・新規登録と同じ構造のフッター
+  &__footer{
+    width: 100vw;
+    background-color: $footerColor;
+    &-box{
+      width: 400px;
+      margin: 0 auto;
+      padding: 40px 0px;
+      .clearfix{
+        display: flex;
+        justify-content: space-between;
+        a{
+          display: block;
+          font-size: 12px;
+          color: $mainWhite;
+        }
+        @include hover;
+      }
+      .footer-image{
+        height: 62px;
+        width: 214px;
+        color:#333;
+        display: block;
+        margin: 40px auto 0;
+      }
+      .footer-text{
+        color:$mainWhite;
+        text-align: center;
+      }
+    }
+  }
+}
+
