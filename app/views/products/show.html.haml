@@ -102,6 +102,15 @@
         .comment-btn
           =icon('fa','comment')
           コメントする
-    .links
-      .
-
+      .links
+        %ul
+          %li
+            =link_to "#",class:"product__link" do
+              <前の商品
+          %li
+            =link_to "#",class:"product__link" do
+              後ろの商品>
+      .category-back
+        = link_to "#",class:"category-back__link" do
+          ベビー・キッズをもっと見る
+  =

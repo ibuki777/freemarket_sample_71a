@@ -154,6 +154,26 @@
           color: white;
         }
       }
+      .links{
+        ul{
+          display: flex;
+          justify-content: space-between;
+          .product__link{
+            color: #3ccace;
+            text-decoration: none;
+          }
+        }
+      }
+      .category-back{
+        &__link{
+          color: #3ccace;
+          text-decoration: none;
+          font-weight: bold;
+          display: block;
+          margin-top: 25px;
+          font-size: 22px;
+        }
+      }
     }
   }
 }
