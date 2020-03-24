@@ -35,7 +35,8 @@
           お支払い方法
     %tr  
       %td
-        メール/パスワード
+        =link_to edit_user_password_path ,class:"table-link" do
+          メール/パスワード
     %tr  
       %td
         =link_to logout_user_path(current_user) ,class:"table-link" do
