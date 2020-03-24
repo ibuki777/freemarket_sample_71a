@@ -1,3 +1,5 @@
+ $maingry:#f8f8f8;
+
 .header-bottom{
   width: 100%;
   border-top: 1px solid #eee;
@@ -20,7 +22,7 @@
 .show-main{
   height: 100vh;
   &__box{
-    background-color:#f8f8f8;
+    background-color:$maingry;
     padding: 40px;
     margin: 0 auto;
     .product-content{
@@ -79,7 +81,7 @@
           width: 100%;
           height: 375px;
           border-collapse:collapse ;
-          border: 1px solid #f8f8f8;
+          border: 1px solid $maingry;
           margin-bottom: 20px;
           th{
             width: 20%;
@@ -140,7 +142,7 @@
           min-height: 104px;
         }
         .warning-comment{
-          background-color: #f8f8f8;
+          background-color: $maingry;
           text-align: left;
           margin: 30px 0;
         }
