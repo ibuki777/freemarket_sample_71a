@@ -20,7 +20,7 @@
 .show-main{
   height: 100vh;
   &__box{
-    background-color:red;
+    background-color:#f8f8f8;
     padding: 40px;
     margin: 0 auto;
     .product-content{
@@ -129,30 +129,30 @@
           }
         }
       }
-    }
-    .product-comment{
-      padding: 24px;
-      background-color: white;
-      margin: 10px 0;
-      text-align: center;
-      .comment-box{
-        width: 100%;
-        padding: 10px;
-        min-height: 104px;
-      }
-      .warning-comment{
-        background-color: gray;
-        text-align: left;
+      .product-comment{
+        padding: 24px;
+        background-color: white;
         margin: 10px 0;
-      }
-      .comment-btn{
-        background-color: #3ccace;
-        width: 50%;
-        margin: 0 auto;
-        font-size: 18px;
-        border-radius: 100px;
-        line-height: 48px;
-        color: white;
+        text-align: center;
+        .comment-box{
+          width: 100%;
+          padding: 10px;
+          min-height: 104px;
+        }
+        .warning-comment{
+          background-color: gray;
+          text-align: left;
+          margin: 30px 0;
+        }
+        .comment-btn{
+          background-color: #3ccace;
+          width: 50%;
+          margin: 0 auto;
+          font-size: 18px;
+          border-radius: 100px;
+          line-height: 48px;
+          color: white;
+        }
       }
     }
   }
