@@ -3,16 +3,23 @@
     = image_tag '/images/material/logo/logo.png', class: 'logo'
   .exhibition__contents
     .exhibition__contents__box
-      .exhibition__contents__box__form
-      .exhibition__contents__box__border
-      .exhibition__contents__box__form
-      .exhibition__contents__box__border
-      .exhibition__contents__box__form
-      .exhibition__contents__box__border
-      .exhibition__contents__box__form
-      .exhibition__contents__box__border
-      .exhibition__contents__box__form
-      .exhibition__contents__box__border
+      = form_with model: @product, local: true do |f|
+        .field
+          .label
+            = f.label :image, "出品画像"
+            %p.label__letter 必須
+          .field__sentence
+            最大10枚までアップロードできます
+          = f.file_field :image
+        .box__border
+        .field
+        .box__border
+        .field
+        .box__border
+        .field
+        .box__border
+        .field
+        .box__border
   .exhibition__footer
     .exhibition__footer-box
       .clearfix
@@ -22,5 +29,3 @@
       %a{href: root_path, class:"footer-image"}
         =image_tag "logo-white.svg"
       %p{class: "footer-text"}©︎FURAMA
-
-
