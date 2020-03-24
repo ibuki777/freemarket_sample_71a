@@ -98,7 +98,8 @@
         .comment-box
         .warning-comment
           相手のことを考え丁寧なコメントを心がけましょう。
-          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
         .comment-btn
           =icon('fa','comment')
           コメントする
@@ -113,4 +114,5 @@
       .category-back
         = link_to "#",class:"category-back__link" do
           ベビー・キッズをもっと見る
-  =
+  = render '/products/contents/ad'
+  = render partial: 'footer'
