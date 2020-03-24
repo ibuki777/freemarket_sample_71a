@@ -1,14 +1,34 @@
 .right_content
-  .pictures
+  .picture
+    .picture_icon
+      = image_tag src="material/icon/member_photo_noimage_thumb", class:"picture_icon_img"
+      .user_name ユーザーネーム
+      .user_score 出品　評価
+
   .product_view
+    .text 購入した商品
     .tab_wrap
       %input#tab1{checked: "checked",name: "tab_btn",type: "radio"}/
       %input#tab2{name: "tab_btn",type: "radio"}/
       .tab_area
-        %label.tab1_label{for: "tab1"} tab1
-        %label.tab2_label{for: "tab2"} tab2
+        %label.tab1_label{for: "tab1"} 取引中
+        %label.tab2_label{for: "tab2"} 過去の取引
       .panel_area
         #panel1.tab_panel
-          %p panel1
+          .first_product
+            = image_tag src="material/icon/icon-01", class:"produck_icon_img"
+            %p 商品名
+          .second_product
+            = image_tag src="material/icon/icon-02", class:"produck_icon_img"
+            %p 商品名
         #panel2.tab_panel
-          %p panel2
+          .first_product
+            = image_tag src="material/icon/icon-03", class:"produck_icon_img"
+            %p 商品名
+          .second_product
+            -# %p
+            -#   %a{:href => "#"}
+            -#     %img{:src => "material/icon/icon-03"}
+            -# %p 商品名
+
+
