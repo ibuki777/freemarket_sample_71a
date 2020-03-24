@@ -4,27 +4,30 @@
     .right_box{
       .right_content{
         .card__head{
-          font-size: 32px;
+          font-size: 24px;
+          border-bottom: $subBackGround 3px solid;
+          text-align: center;
         }
         .card__index-add{
-          padding: 100px 200px 50px;
+          margin: 100px 100px 50px;
+          padding: 0 100px 30px;
+          border-bottom: $subBackGround 3px solid;
+
           &--head{
-            border-bottom: $subBackGround 2px solid;
+            font-size: 16px;
             
           }
           &--box{
             background-color: red;
+            text-align: center;
             .card-reggister-link{
               text-decoration: none;
               color: #fff;
-
             }
-
           }
-          &--info{
-            text-align: right;
-          }
-
+        }
+        .card__info{
+          text-align: right;
         }
       }
     }

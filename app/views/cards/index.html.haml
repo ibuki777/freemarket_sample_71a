@@ -14,6 +14,7 @@
               //ここにカードの一覧が入るようにする
           .card__index-add--box
             =link_to destroy_user_session_path, method: :delete, class:"card-reggister-link" do
-              %i{class:"far fa-credit-card"}   クレジットカードを追加する
-          .card__index-add--info
-            支払い方法について
+              %i{class:"far fa-credit-card"}
+              ="クレジットカードを追加する"
+        .card__info
+          支払い方法について
