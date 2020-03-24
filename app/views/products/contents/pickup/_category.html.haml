@@ -16,11 +16,11 @@
               -@products.each do |product|
                 = product.name
             .product-cost
-              %ul{class: "product-cost__list"}
+              %ul.product-cost__list
                 %li
                   -@products.each do |product|
                     = product.price
-                %li{class: "like-btn"}
+                %li.like-btn
                   ★0
             .product-tax
               (税込み)
