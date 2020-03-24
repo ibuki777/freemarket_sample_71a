@@ -6,12 +6,12 @@
       = link_to "/", class: "link-btn" do
         新規投稿商品
     .product-lists
-      - @images.each do |image|
+      -@products.each do |product|
         .product-list
-          -@products.each do |product|
+          - @images.each do |image|
             = link_to "#", class:"product-link" do
               .product-image-box
-                = image.image
+                = image.id
               .product-link__description
                 .product-name
                   = product.name
