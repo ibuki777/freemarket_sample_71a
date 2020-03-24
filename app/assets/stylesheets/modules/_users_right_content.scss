@@ -27,7 +27,7 @@
 }
 
 
-.product_view {
+.product_buy {
   width: 100%;
   .text {
     font-size: 20px;
@@ -56,13 +56,6 @@
   }
 }
 
-
-
-
-
-
-
-
 .panel_area {
   background: #fff;
 }
@@ -81,7 +74,7 @@
   .tab_area .tab1_label {
     background: #fff;
     color: #000;
-    border-top: outset 2px #ff0000;
+    border-top: outset 2px #3ccace;
   }
   .panel_area #panel1 {
     display: block;
@@ -121,7 +114,7 @@
   .tab_area .tab2_label {
     background: #fff;
     color: #000;
-    border-top: solid 2px #ff0000;
+    border-top: solid 2px #3ccace;
   }
   .panel_area #panel2 {
     display: block;
