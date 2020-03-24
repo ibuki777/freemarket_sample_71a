@@ -6,5 +6,6 @@
     .right_box
       .right_content
         .logout-button
-          .logout-button-red
-            ログアウト
+          =link_to destroy_user_session_path, method: :delete, class:"logout-link" do
+            .logout-button-red
+              ログアウト
