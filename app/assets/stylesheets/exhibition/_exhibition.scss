@@ -3,7 +3,7 @@
   width: 100vw;
   &__header{
     width: 100%;
-    height: 150px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,17 +15,20 @@
   &__contents{
     &__box{
       background-color: $mainWhite;
-      width: 700px;
+      width: 630px;
       margin: 0 auto;
       .field{
-        padding: 40px 60px;
+        padding: 40px;
         font-size: 12px;
         &__title{
-          background-color: orange;
+          color: rgb(136, 136, 136);
+          font-weight: bold;
+          margin-bottom: 20px;
+          display: flex;
         }
         .label{
           font-weight: bold;
-          margin-top: 10px;
+          margin-bottom: 15px;
 
           &__name{
           }
@@ -37,22 +40,28 @@
             margin-left: 8px;
             border-radius: 2px;
           }
-
+          .mark{
+            margin-left: 287px;
+          }
+          .price{
+            height: 45px;
+            border-radius: 4px;
+          }
         }
         &__sentence{
-          opacity: 0.5;
-          font-size: 12px;
-          margin-top: 10px;
+          font-size: 10px;
+          margin-bottom: 10px;
         }
         .cage{
-          height: 180px;
-          margin-top: 10px;
+          height: 140px;
+          margin-bottom: 10px;
           background-color: rgb(245, 245, 245);
           border-width: 1px;
           border-style: dashed;
           border-color: rgb(204, 204, 204);
           border-image: initial;
           cursor: pointer;
+          
           // align-content: center;
           // -webkit-box-align: center;
           // align-items: center;
@@ -74,22 +83,29 @@
           }
         }
         .discription{
-          height: 180px;
+          height: 150px;
           width: 100%;
-          margin-top: 10px;
+          margin-bottom: 10px;
+          padding: 20px;
+          border-radius: 4px;
+
         }
         .text-count{
           padding-left: 530px;
-          margin-top: 15px;
+          margin-bottom: 15px;
         }
         .input{
           height: 45px;
           width: 100%;
           padding: 0 10px;
-          margin-top: 10px;
+          margin-bottom: 30px;
+          border-radius: 4px;
+
         }
+
         .cost{
-          background-color: gold;
+          display: flex;
+          justify-content: space-between;
           &__fee{
 
           }
@@ -98,9 +114,9 @@
           }
         }
         .profit{
-          background-color: darkmagenta;
+          display: flex;
+          justify-content: space-between;
           &__title{
-
           }
           .period{
 
@@ -108,15 +124,13 @@
         }
         .option{
           background-color: cornflowerblue;
+          height: 200px;
           .execute{
-            background-color: black;
           }
           .save{
-            background-color: black;
-
+            display: block;
           }
           a{
-            background-color: black;
 
           }
         }
