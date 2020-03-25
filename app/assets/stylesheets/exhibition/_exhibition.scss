@@ -1,0 +1,208 @@
+.exhibition{
+  width: 100vw;
+  &__header{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo{
+      height: 53px;
+      width: 177px;
+      margin-top: 50px;
+    }
+  }
+  &__contents{
+    &__box{
+      background-color: $mainWhite;
+      width: 630px;
+      margin: 0 auto;
+      .field{
+        padding: 40px;
+        font-size: 12px;
+        &__title{
+          color: rgb(136, 136, 136);
+          font-weight: bold;
+          margin-bottom: 20px;
+          display: flex;
+        }
+        .label{
+          font-weight: bold;
+          margin-bottom: 15px;
+
+          &__name{
+          }
+          &__need{
+            background-color: red;
+            display: inline;
+            color: #ffffff;
+            padding: 2px 4px;
+            margin-left: 8px;
+            border-radius: 2px;
+            &-blue{
+              background-color: blue;
+              display: inline;
+              color: #ffffff;
+              padding: 2px 4px;
+              margin-left: 8px;
+              border-radius: 2px;
+            }
+          }
+          .mark{
+            margin-left: 287px;
+          }
+          .price{
+            height: 45px;
+            border-radius: 4px;
+          }
+        }
+        &__sentence{
+          font-size: 10px;
+          margin-bottom: 10px;
+        }
+        .cage{
+          height: 140px;
+          margin-bottom: 10px;
+          background-color: rgb(245, 245, 245);
+          border-width: 1px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          cursor: pointer;
+          text-align: center;
+          padding: 35px 0;
+
+          // ここのコメントアウトはわざと残してあります
+          // align-content: center;
+          // -webkit-box-align: center;
+          // align-items: center;
+          // display: flex;
+          // flex-wrap: wrap;
+          // -webkit-box-pack: center;
+          // justify-content: center;
+          // position: relative;
+          // transition: all 0.5s ease-out 0s;
+          
+          .image{
+            display: none;
+
+          }
+          &__icon{
+            font-size: 25px;
+
+          }
+          &__text{
+
+          }
+        }
+        .discription{
+          height: 150px;
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 20px;
+          border-radius: 4px;
+
+        }
+        .text-count{
+          padding-left: 530px;
+          margin-bottom: 15px;
+        }
+        .input{
+          height: 45px;
+          width: 100%;
+          padding: 0 10px;
+          margin-bottom: 30px;
+          border-radius: 4px;
+
+        }
+
+        .cost{
+          display: flex;
+          justify-content: space-between;
+          margin: 30px 0;
+
+          &__fee{
+
+          }
+          .period{
+            
+          }
+        }
+
+        .option{
+          width: 360px;
+          margin: 0 auto 30px;
+          text-align: center;
+          .execute{
+            background-color: $mainThemeColor;
+            color: $mainWhite;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+
+          }
+          .save{
+            display: block;
+            background-color: $subBackGround;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+
+          }
+
+          a{
+            text-decoration: none;
+            color: $mainThemeColor;
+          }
+        }
+        .report{
+          font-size: 10px;
+        }
+      }
+      .box__border{
+        border-top: solid 3px $subBackGround;
+      }
+    }
+  }
+  // ログイン・新規登録と同じフッター
+  &__footer{
+    width: 100vw;
+    background-color: $footerColor;
+    &-box{
+      width: 400px;
+      margin: 0 auto;
+      padding: 40px 0px;
+      .clearfix{
+        display: flex;
+        justify-content: space-between;
+        a{
+          display: block;
+          font-size: 12px;
+          color: $mainWhite;
+        }
+        @include hover;
+      }
+      .footer-image{
+        height: 62px;
+        width: 214px;
+        color:#333;
+        display: block;
+        margin: 40px auto 0;
+      }
+      .footer-text{
+        color:$mainWhite;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
