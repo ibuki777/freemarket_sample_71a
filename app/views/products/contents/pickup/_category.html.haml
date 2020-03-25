@@ -8,21 +8,20 @@
     .product-lists
       -@products.each do |product|
         .product-list
-          - @images.each do |image|
-            = link_to "#", class:"product-link" do
-              .product-image-box
-                = image.id
-              .product-link__description
-                .product-name
-                  = product.name
-                .product-cost
-                  %ul.product-cost__list
-                    %li
-                      = product.price
-                    %li.like-btn
-                      ★0
-                .product-tax
-                  (税込み)
+          = link_to "#", class:"product-link" do
+            .product-image-box
+              = image_tag product.images[0].image#.urlをあとで書きこむ、イメージアップローダーで大きめの画像を保存し、CSSでサイズを調節する
+            .product-link__description
+              .product-name
+                = product.name
+              .product-cost
+                %ul.product-cost__list
+                  %li
+                    = product.price
+                  %li.like-btn
+                    ★0
+              .product-tax
+                (税込み)
       -# .product-list
       -#   = link_to new_user_registration_path, class:"product-link" do
       -#     .product-image-box
