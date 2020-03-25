@@ -54,7 +54,7 @@
           %p.field__text-constraint 必須
           .field__birthday
             != sprintf(f.date_select(:birthday, use_month_numbers: true,start_year: Time.now.year, end_year: 1910, prompt:"--", date_separator:'%s'),'年','月')+'日'
-            = render partial: '/errors/error-messages', locals: {user: @user, column: "birthday"}
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "birthday"}
 
 
 
