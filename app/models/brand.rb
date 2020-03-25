@@ -1,3 +1,4 @@
-class Brand < ActiveHash::Base
+class Brand < ApplicationRecord
   has_many :products
+  
 end
