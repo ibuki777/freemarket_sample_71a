@@ -38,7 +38,8 @@
           .label
             = f.label :genre, "カテゴリ", class: "label__name"
             %p.label__need 必須
-          = f.text_field :genre, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          = f.collection_select :category_id, Category.all, :id, :name
+          -# = f.text_field :genre, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need 任意
