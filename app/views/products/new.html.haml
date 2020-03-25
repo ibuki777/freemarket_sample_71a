@@ -14,8 +14,9 @@
             最大10枚までアップロードできます
           .cage
             = f.file_field :image, class: "image"
-            .cage__icon
-            %p.cage__text
+            %i.fas.fa-camera-retro.cage__icon
+            %p.cage__text ドラッグ&ドロップ
+            %p.cage__text　またはクリックしてクリックしてファイルをアップロード
         .box__border
 
         .field
@@ -74,7 +75,7 @@
             = f.label :image, "販売価格", class: "label__name"
             %p.label__need 必須
             = f.label :price, "¥", class: "mark"
-            = f.text_field :name, class: "price", placeholder: "金額の入れ方知らないので仮置きです"
+            = f.number_field :price, class: "price"
           .cost
             .cost__fee
               販売手数料（10%）

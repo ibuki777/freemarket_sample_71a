@@ -69,6 +69,8 @@
           border-color: rgb(204, 204, 204);
           border-image: initial;
           cursor: pointer;
+          text-align: center;
+          padding: 35px 0;
           
           // align-content: center;
           // -webkit-box-align: center;
@@ -84,6 +86,7 @@
 
           }
           &__icon{
+            font-size: 25px;
 
           }
           &__text{
@@ -206,3 +209,4 @@
 // .box__border{
 //   border-top: solid 1px #ca1e1e;
 // }
+
