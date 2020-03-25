@@ -3,10 +3,9 @@ ja:
     attributes:
       product:
         name: 商品名
-        explain: 商品の説明
-      category:
-        genre: カテゴリー
-      brand:
-        name: ブランド
+      #   explain: 商品の説明
+      # brand:
+      #   name: ブランド
 
+      
     
