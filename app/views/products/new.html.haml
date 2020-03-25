@@ -21,7 +21,7 @@
           .label
             = f.label :name, "商品名", class: "label__name"
             %p.label__need 必須
-            = render 'layouts/error_messages', model: f.object
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "name"}
           = f.text_field :name, class: "input", placeholder: "40文字まで"
           .label
             = f.label :explain, "商品の説明", class: "label__name"
