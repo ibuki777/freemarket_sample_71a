@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      product:
+        name: 商品名
+        explain: 商品の説明
+      category:
+        genre: カテゴリー
+      brand:
+        name: ブランド
+
+    
