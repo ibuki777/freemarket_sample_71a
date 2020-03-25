@@ -6,7 +6,7 @@
   color: #333;
 
   .table_title{
-    font-weight: bold;   
+    font-weight: bold;
   }
   table{
     background-color: white;
@@ -17,18 +17,17 @@
       font-size: 14px;
       line-height: 50px;
       :hover{
-        background-color:#f5f5f5;
+        background-color:rgba(60,202,206,0.5);
         position: relative;
-
       }
-      // #mypage-td:hover{
-      //   padding-right: 10px;
-      //   transition: 0.5s;
-      // }
+      #mypage-td:hover{
+        padding-right: 10px;
+        transition: 0.5s;
+      }
       :hover > #mypage-arrow{
         color:black ;
         position: absolute;
-        right: -5px;
+        right: 10px;
         transition: 1s;
       }
       td{
@@ -54,5 +53,4 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  
 }
