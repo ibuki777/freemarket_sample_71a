@@ -11,7 +11,7 @@ class Product < ApplicationRecord
 
   belongs_to_active_hash :category
   belongs_to_active_hash :condition
-  # belongs_to_active_hash :burden
-  # belongs_to_active_hash :deliveryday
+  belongs_to_active_hash :burden
+  belongs_to_active_hash :deliveryday
   has_many :images, dependent: :destroy
 end
