@@ -124,7 +124,9 @@
         }
         #product_burden_id{
           @include hash;
-
+        }
+        #product_prefecture_id{
+          @include hash;
         }
         #product_deliveryday_id{
           @include hash;
