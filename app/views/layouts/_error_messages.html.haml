@@ -1,5 +1,6 @@
--if @product.errors.any? 
-  .alert
-    %ul
-      -@product.errors.full_messages.each do |message| 
-        %li= message
+-if @product.errors.any?
+  - unless @product.valid?
+    - if errors = @product.errors.full_messages_for(column.to_sym)
+      %ul
+        - errors.each do |error|
+          %li=error
