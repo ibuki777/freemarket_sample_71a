@@ -32,6 +32,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.addresses.build(@address.attributes)
     @user.save
     sign_in(:user, @user)
+    redirect_to root_path
   end
 
   # GET /resource/edit
@@ -85,7 +86,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-    params.require(:address).permit(:zip_code, :city, :address, :building, :phone_number, :prefecture_id)
+    params.require(:address).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :zip_code, :city, :address, :building, :phone_number, :prefecture_id)
   end
 
 end
