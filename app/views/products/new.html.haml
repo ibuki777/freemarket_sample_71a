@@ -1,3 +1,4 @@
+-# CSSは合わしただけなので各々で変更あればしてください
 .exhibition
   .exhibition__header
     = image_tag '/images/material/logo/logo.png', class: 'logo'
@@ -10,7 +11,10 @@
             %p.label__need 必須
           .field__sentence
             最大10枚までアップロードできます
-          = f.file_field :image, class: "image__discription"
+          .cage
+            = f.file_field :image, class: "image"
+            .cage__icon
+            %p.cage__text
         .box__border
 
         .field
@@ -21,7 +25,7 @@
           .label
             = f.label :explain, "商品の説明", class: "label__name"
             %p.label__need 必須
-          = f.text_area :explain, class: "image__discription", placeholder: "商品の説明（必須 1,000文字以内）　（色、素材、色、素材、重さ、定価、注意点など）　例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+          = f.text_area :explain, class: "discription", placeholder: "商品の説明（必須 1,000文字以内）                                                                                        （色、素材、色、素材、重さ、定価、注意点など）                                                                                                                例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
           .text-count
             0/1000
         .box__border
@@ -68,8 +72,8 @@
           .label
             = f.label :image, "販売価格", class: "label__name"
             %p.label__need 必須
-            = f.label :price, "¥"
-            = f.text_field :name, placeholder: "金額の入れ方知らないので仮置きです"
+            = f.label :price, "¥", class: "mark"
+            = f.text_field :name, class: "price", placeholder: "金額の入れ方知らないので仮置きです"
           .cost
             .cost__fee
               販売手数料（10%）
@@ -84,8 +88,7 @@
           .option
             %button.execute 出品する
             %button.save 下書きを保存
-            = link_to '#', class: 'back' 
-            
+            = link_to 'もどる', "#", class: 'back' 
   .exhibition__footer
     .exhibition__footer-box
       .clearfix

@@ -5,8 +5,10 @@
 .wrapper{
   width: 100vw;
 }
-@import "mixin/hover";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "config/variable";
+@import "mixin/hover";
 @import "user_sign/user_sign";
 @import "products";
 @import "exhibition/exhibition";
