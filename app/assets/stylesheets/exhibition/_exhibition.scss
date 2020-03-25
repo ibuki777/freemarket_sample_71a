@@ -71,7 +71,8 @@
           cursor: pointer;
           text-align: center;
           padding: 35px 0;
-          
+
+          // ここのコメントアウトはわざと残してあります
           // align-content: center;
           // -webkit-box-align: center;
           // align-items: center;
@@ -81,6 +82,7 @@
           // justify-content: center;
           // position: relative;
           // transition: all 0.5s ease-out 0s;
+          
           .image{
             display: none;
 
@@ -203,10 +205,4 @@
   }
 }
 
-// .field{
-//   height: 400px;
-// }
-// .box__border{
-//   border-top: solid 1px #ca1e1e;
-// }
 
