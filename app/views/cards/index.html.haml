@@ -20,3 +20,10 @@
           =link_to "#", class:"card__info--link" do
             支払い方法について
             %i{class:"fas fa-chevron-right"}
+          = form_with action: :pay, method: :post do
+            %script{type:"text/javascript",
+                    src:"https://checkout.pay.jp/",
+                    class:"payjp-button",
+                    data:{key:"pk_test_0383a1b8f91e8a6e3ea0e2a9",
+                          submit:{text:"トークンを作成する"},
+                          partial:"true"}}
