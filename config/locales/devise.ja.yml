@@ -5,6 +5,9 @@ ja:
         nickname: 名前
         last_name: 姓
         first_name: 名
+        last_name_kana: 姓かな
+        first_name_kana: 名かな
+        birthday: 生年月日
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻

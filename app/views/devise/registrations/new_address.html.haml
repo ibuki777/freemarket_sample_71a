@@ -35,7 +35,7 @@
         .field
           = f.label :都道府県, class: "field__text"
           %p.field__text-constraint 必須
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "field__input"
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt:"--", class: "field__input"
           = render partial: '/errors/address-error-messages', locals: {address: @address, column: "prefecture_id"}
 
         .field
