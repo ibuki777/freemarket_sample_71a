@@ -22,6 +22,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
     render :new_address
   end
 
+  def create_address
+    @user = User.new(session["devise.regist_data"]["user"])
+    @address = Address.new(address_params)
+    unless @address.valid?
+      flash.now[:alert] = @address.errors.full_messages
+      render :new_address and return
+    end
+    @user.addresses.build(@address.attributes)
+    @user.save
+    sign_in(:user, @user)
+  end
+
   # GET /resource/edit
   # def edit
   #   super
