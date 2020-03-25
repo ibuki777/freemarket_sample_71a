@@ -4,6 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name, null: false,length: {maximum: 40}
       t.text :explain,null: false,length: {maximum: 1000}
       t.integer :price, null: false
+      t.integer :prefecture_id, null: false
       t.timestamps
     end
   end
