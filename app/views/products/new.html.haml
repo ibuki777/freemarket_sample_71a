@@ -23,10 +23,12 @@
           .label
             = f.label :name, "商品名", class: "label__name"
             %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "name"}
           = f.text_field :name, class: "input", placeholder: "40文字まで"
           .label
             = f.label :explain, "商品の説明", class: "label__name"
             %p.label__need 必須
+          = render partial: 'layouts/error_messages', locals: {product: @product, column: "explain"}
           = f.text_area :explain, class: "discription", placeholder: "商品の説明（必須 1,000文字以内）                                                                                        （色、素材、色、素材、重さ、定価、注意点など）                                                                                                                例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
           .text-count
             0/1000
@@ -38,7 +40,8 @@
           .label
             = f.label :genre, "カテゴリ", class: "label__name"
             %p.label__need 必須
-          = f.text_field :genre, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          = f.collection_select :category_id, Category.all, :id, :name
+          -# = f.text_field :genre, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
@@ -52,7 +55,7 @@
         .field
           .field__title
             配送について
-            .question　？
+            .question ？
           .label
             = f.label :image, "配送料の負担", class: "label__name"
             %p.label__need 必須
@@ -70,10 +73,11 @@
         .field
           .field__title
             価格（¥300〜9,999,999）
-            .question　？
+            .question ？
           .label
             = f.label :image, "販売価格", class: "label__name"
             %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "price"}
             = f.label :price, "¥", class: "mark"
             = f.number_field :price, class: "price"
           .cost

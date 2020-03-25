@@ -1,3 +1,4 @@
+@import "mixin/hash";
 .exhibition{
   width: 100vw;
   &__header{
@@ -95,27 +96,39 @@
 
           }
         }
+        textarea{
+          resize: vertical;
+        }
         .discription{
           height: 150px;
           width: 100%;
           margin-bottom: 10px;
           padding: 20px;
           border-radius: 4px;
-
         }
         .text-count{
           padding-left: 530px;
           margin-bottom: 15px;
         }
         .input{
-          height: 45px;
-          width: 100%;
-          padding: 0 10px;
-          margin-bottom: 30px;
-          border-radius: 4px;
+          @include hash;
 
         }
+        #product_category_id{
+          @include hash;
 
+        }
+        #product_condition_id{
+          @include hash;
+
+        }
+        #product_burden_id{
+          @include hash;
+
+        }
+        #product_deliveryday_id{
+          @include hash;
+        }
         .cost{
           display: flex;
           justify-content: space-between;
