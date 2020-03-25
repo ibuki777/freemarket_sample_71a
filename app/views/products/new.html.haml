@@ -11,7 +11,7 @@
           .field__sentence
             最大10枚までアップロードできます
           .cage
-            = f.file_field :image, class: "image__discription"
+            = f.file_field :image, class: "image"
             .cage__icon
             %p.cage__text
         .box__border
@@ -24,7 +24,7 @@
           .label
             = f.label :explain, "商品の説明", class: "label__name"
             %p.label__need 必須
-          = f.text_area :explain, class: "image__discription", placeholder: "商品の説明（必須 1,000文字以内）　（色、素材、色、素材、重さ、定価、注意点など）　例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+          = f.text_area :explain, class: "discription", placeholder: "商品の説明（必須 1,000文字以内）                                                                        （色、素材、色、素材、重さ、定価、注意点など）                                                                                                                例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
           .text-count
             0/1000
         .box__border

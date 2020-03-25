@@ -18,14 +18,15 @@
       width: 700px;
       margin: 0 auto;
       .field{
-        height: 400px;
-        padding: 40px;
-        font-size: 14px;
+        padding: 40px 60px;
+        font-size: 12px;
         &__title{
           background-color: orange;
         }
         .label{
           font-weight: bold;
+          margin-top: 10px;
+
           &__name{
           }
           &__need{
@@ -36,6 +37,7 @@
             margin-left: 8px;
             border-radius: 2px;
           }
+
         }
         &__sentence{
           opacity: 0.5;
@@ -43,25 +45,26 @@
           margin-top: 10px;
         }
         .cage{
-          align-content: center;
-          -webkit-box-align: center;
-          align-items: center;
+          height: 180px;
+          margin-top: 10px;
           background-color: rgb(245, 245, 245);
-          cursor: pointer;
-          display: flex;
-          height: calc(100% - 60px);
-          flex-wrap: wrap;
-          -webkit-box-pack: center;
-          justify-content: center;
-          position: relative;
           border-width: 1px;
           border-style: dashed;
           border-color: rgb(204, 204, 204);
           border-image: initial;
-          transition: all 0.5s ease-out 0s;
-          margin-top: 10px;
-          .image__discription{
+          cursor: pointer;
+          // align-content: center;
+          // -webkit-box-align: center;
+          // align-items: center;
+          // display: flex;
+          // flex-wrap: wrap;
+          // -webkit-box-pack: center;
+          // justify-content: center;
+          // position: relative;
+          // transition: all 0.5s ease-out 0s;
+          .image{
             display: none;
+
           }
           &__icon{
 
@@ -70,11 +73,20 @@
 
           }
         }
+        .discription{
+          height: 180px;
+          width: 100%;
+          margin-top: 10px;
+        }
         .text-count{
-          background-color: mediumblue;
+          padding-left: 530px;
+          margin-top: 15px;
         }
         .input{
-          background-color: hotpink;
+          height: 45px;
+          width: 100%;
+          padding: 0 10px;
+          margin-top: 10px;
         }
         .cost{
           background-color: gold;
