@@ -39,7 +39,6 @@
             = f.label :genre, "カテゴリ", class: "label__name"
             %p.label__need 必須
           = f.collection_select :category_id, Category.all, :id, :name
-          -# = f.text_field :genre, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need 任意
@@ -47,7 +46,7 @@
           .label
             = f.label :image, "商品の状態", class: "label__name"
             %p.label__need 必須
-          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          = f.collection_select :condition_id, Condition.all, :id, :name
         .box__border
 
         .field
@@ -57,7 +56,8 @@
           .label
             = f.label :image, "配送料の負担", class: "label__name"
             %p.label__need 必須
-          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          = f.collection_select :burden_id, Burden.all, :id, :name
+          -# = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
           .label
             = f.label :image, "発送元の地域", class: "label__name"
             %p.label__need 必須
@@ -65,7 +65,7 @@
           .label
             = f.label :image, "発送までの日数", class: "label__name"
             %p.label__need 必須
-          = f.text_field :name, class: "input", placeholder: "アクティブハッシュを使うための仮置きです"
+          = f.collection_select :deliveryday_id, Deliveryday.all, :id, :name
         .box__border
 
         .field
