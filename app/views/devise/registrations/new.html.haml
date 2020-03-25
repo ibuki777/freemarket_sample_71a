@@ -4,6 +4,7 @@
       =image_tag "logo.svg"
   .sign-main
     = form_with model: @user, url: user_registration_path, local: true do |f|
+      = render "devise/shared/error_messages", resource: @user
       .sign-main-box
         %h1.sign-main-box__title ユーザー新規登録
         .field
