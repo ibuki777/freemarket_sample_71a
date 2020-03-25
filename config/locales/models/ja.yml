@@ -3,7 +3,7 @@ ja:
     attributes:
       product:
         name: 商品名
-      #   explain: 商品の説明
+        explain: 商品の説明
       # brand:
       #   name: ブランド
 
