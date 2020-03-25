@@ -1,7 +1,8 @@
 -# CSSは合わしただけなので各々で変更あればしてください
 .exhibition
   .exhibition__header
-    = image_tag '/images/material/logo/logo.png', class: 'logo'
+    %a{href: root_path}
+      = image_tag '/images/material/logo/logo.png', class: 'logo'
   .exhibition__contents
     .exhibition__contents__box
       = form_with model: @product, local: true do |f|
@@ -80,15 +81,17 @@
             .period
               ー
           .box__border
-          .profit
-            .profit__title
+          .cost
+            .cost__fee
               販売利益
             .period
               ー
           .option
-            %button.execute 出品する
-            %button.save 下書きを保存
+            = f.submit "出品する", class: "execute"
+            = f.submit "下書きを保存", class: "save"
             = link_to 'もどる', "#", class: 'back' 
+          .report
+            禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .exhibition__footer
     .exhibition__footer-box
       .clearfix

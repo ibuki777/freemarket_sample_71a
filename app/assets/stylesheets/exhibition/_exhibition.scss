@@ -1,5 +1,4 @@
 .exhibition{
-  background-color: $subBackGround;
   width: 100vw;
   &__header{
     width: 100%;
@@ -10,6 +9,7 @@
     .logo{
       height: 53px;
       width: 177px;
+      margin-top: 50px;
     }
   }
   &__contents{
@@ -106,6 +106,8 @@
         .cost{
           display: flex;
           justify-content: space-between;
+          margin: 30px 0;
+
           &__fee{
 
           }
@@ -113,30 +115,47 @@
             
           }
         }
-        .profit{
-          display: flex;
-          justify-content: space-between;
-          &__title{
-          }
-          .period{
 
-          }
-        }
         .option{
-          background-color: cornflowerblue;
-          height: 200px;
+          width: 360px;
+          margin: 0 auto 30px;
+          text-align: center;
           .execute{
+            background-color: $mainThemeColor;
+            color: $mainWhite;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+
           }
           .save{
             display: block;
-          }
-          a{
+            background-color: $subBackGround;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
 
           }
+
+          a{
+            text-decoration: none;
+            color: $mainThemeColor;
+          }
+        }
+        .report{
+          font-size: 10px;
         }
       }
       .box__border{
-        border-top: solid 1px #ca1e1e;
+        border-top: solid 3px $subBackGround;
       }
     }
   }
