@@ -24,11 +24,11 @@
           = f.label :郵便番号, class: "field__text"
           %p.field__text-constraint 必須
           = f.text_field :zip_code, placeholder: "郵便番号", class: "field__input"
-        .field
-          -# 仮のフォームを作成しています
-          = f.label :都道府県, class: "field__text"
-          %p.field__text-constraint 必須
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "field__input"
+        -# .field
+        -#   -# 仮のフォームを作成しています
+        -#   = f.label :都道府県, class: "field__text"
+        -#   %p.field__text-constraint 必須
+        -#   = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: "field__input"
         .field
           = f.label :市区町村, class: "field__text"
           %p.field__text-constraint 必須
