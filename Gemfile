@@ -46,6 +46,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -79,3 +81,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'jquery-rails'
+gem 'rails-i18n'
+gem 'active_hash'

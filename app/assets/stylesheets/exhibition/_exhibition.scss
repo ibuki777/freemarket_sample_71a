@@ -1,5 +1,7 @@
+@import "mixin/hash";
+@import "mixin/must";
+@import "mixin/execute";
 .exhibition{
-  background-color: $subBackGround;
   width: 100vw;
   &__header{
     width: 100%;
@@ -10,6 +12,7 @@
     .logo{
       height: 53px;
       width: 177px;
+      margin-top: 50px;
     }
   }
   &__contents{
@@ -20,6 +23,7 @@
       .field{
         padding: 40px;
         font-size: 12px;
+        position: relative;
         &__title{
           color: rgb(136, 136, 136);
           font-weight: bold;
@@ -34,18 +38,21 @@
           }
           &__need{
             background-color: red;
-            display: inline;
-            color: #ffffff;
-            padding: 2px 4px;
-            margin-left: 8px;
-            border-radius: 2px;
+            @include must;
+            &-blue{
+              background-color: blue;
+              @include must;
+            }
           }
           .mark{
-            margin-left: 287px;
+            margin-left: 390px;
+            position: absolute;
+            bottom: 415px;
           }
           .price{
             height: 45px;
             border-radius: 4px;
+            float: right;
           }
         }
         &__sentence{
@@ -61,7 +68,10 @@
           border-color: rgb(204, 204, 204);
           border-image: initial;
           cursor: pointer;
-          
+          text-align: center;
+          padding: 35px 0;
+
+          // ここのコメントアウトはわざと残してあります
           // align-content: center;
           // -webkit-box-align: center;
           // align-items: center;
@@ -71,16 +81,21 @@
           // justify-content: center;
           // position: relative;
           // transition: all 0.5s ease-out 0s;
+          
           .image{
             display: none;
 
           }
           &__icon{
+            font-size: 25px;
 
           }
           &__text{
 
           }
+        }
+        textarea{
+          resize: vertical;
         }
         .discription{
           height: 150px;
@@ -88,24 +103,37 @@
           margin-bottom: 10px;
           padding: 20px;
           border-radius: 4px;
-
         }
         .text-count{
           padding-left: 530px;
           margin-bottom: 15px;
         }
         .input{
-          height: 45px;
-          width: 100%;
-          padding: 0 10px;
-          margin-bottom: 30px;
-          border-radius: 4px;
+          @include hash;
 
         }
+        #product_category_id{
+          @include hash;
 
+        }
+        #product_condition_id{
+          @include hash;
+
+        }
+        #product_burden_id{
+          @include hash;
+        }
+        #product_prefecture_id{
+          @include hash;
+        }
+        #product_deliveryday_id{
+          @include hash;
+        }
         .cost{
           display: flex;
           justify-content: space-between;
+          margin: 30px 0;
+
           &__fee{
 
           }
@@ -113,30 +141,35 @@
             
           }
         }
-        .profit{
-          display: flex;
-          justify-content: space-between;
-          &__title{
-          }
-          .period{
 
-          }
-        }
         .option{
-          background-color: cornflowerblue;
-          height: 200px;
+          width: 360px;
+          margin: 0 auto 30px;
+          text-align: center;
           .execute{
+            background-color: $mainThemeColor;
+            color: $mainWhite;
+            @include execute;
+
           }
           .save{
             display: block;
-          }
-          a{
+            background-color: $subBackGround;
+            @include execute;
 
           }
+
+          a{
+            text-decoration: none;
+            color: $mainThemeColor;
+          }
+        }
+        .report{
+          font-size: 10px;
         }
       }
       .box__border{
-        border-top: solid 1px #ca1e1e;
+        border-top: solid 3px $subBackGround;
       }
     }
   }
@@ -173,9 +206,4 @@
   }
 }
 
-// .field{
-//   height: 400px;
-// }
-// .box__border{
-//   border-top: solid 1px #ca1e1e;
-// }
+
