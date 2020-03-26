@@ -1,4 +1,6 @@
 @import "mixin/hash";
+@import "mixin/must";
+@import "mixin/execute";
 .exhibition{
   width: 100vw;
   &__header{
@@ -35,18 +37,10 @@
           }
           &__need{
             background-color: red;
-            display: inline;
-            color: #ffffff;
-            padding: 2px 4px;
-            margin-left: 8px;
-            border-radius: 2px;
+            @include must;
             &-blue{
               background-color: blue;
-              display: inline;
-              color: #ffffff;
-              padding: 2px 4px;
-              margin-left: 8px;
-              border-radius: 2px;
+              @include must;
             }
           }
           .mark{
@@ -151,25 +145,13 @@
           .execute{
             background-color: $mainThemeColor;
             color: $mainWhite;
-            width: 100%;
-            height: 50px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 20px;
-            cursor: pointer;
+            @include execute;
 
           }
           .save{
             display: block;
             background-color: $subBackGround;
-            width: 100%;
-            height: 50px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 20px;
-            cursor: pointer;
+            @include execute;
 
           }
 
