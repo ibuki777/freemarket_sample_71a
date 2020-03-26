@@ -1,6 +1,5 @@
 @import "mixin/hash";
 .exhibition{
-  background-color: $subBackGround;
   width: 100vw;
   &__header{
     width: 100%;
@@ -11,6 +10,7 @@
     .logo{
       height: 53px;
       width: 177px;
+      margin-top: 50px;
     }
   }
   &__contents{
@@ -40,6 +40,14 @@
             padding: 2px 4px;
             margin-left: 8px;
             border-radius: 2px;
+            &-blue{
+              background-color: blue;
+              display: inline;
+              color: #ffffff;
+              padding: 2px 4px;
+              margin-left: 8px;
+              border-radius: 2px;
+            }
           }
           .mark{
             margin-left: 287px;
@@ -62,7 +70,10 @@
           border-color: rgb(204, 204, 204);
           border-image: initial;
           cursor: pointer;
-          
+          text-align: center;
+          padding: 35px 0;
+
+          // ここのコメントアウトはわざと残してあります
           // align-content: center;
           // -webkit-box-align: center;
           // align-items: center;
@@ -72,11 +83,13 @@
           // justify-content: center;
           // position: relative;
           // transition: all 0.5s ease-out 0s;
+          
           .image{
             display: none;
 
           }
           &__icon{
+            font-size: 25px;
 
           }
           &__text{
@@ -111,7 +124,9 @@
         }
         #product_burden_id{
           @include hash;
-
+        }
+        #product_prefecture_id{
+          @include hash;
         }
         #product_deliveryday_id{
           @include hash;
@@ -119,6 +134,8 @@
         .cost{
           display: flex;
           justify-content: space-between;
+          margin: 30px 0;
+
           &__fee{
 
           }
@@ -126,30 +143,47 @@
             
           }
         }
-        .profit{
-          display: flex;
-          justify-content: space-between;
-          &__title{
-          }
-          .period{
 
-          }
-        }
         .option{
-          background-color: cornflowerblue;
-          height: 200px;
+          width: 360px;
+          margin: 0 auto 30px;
+          text-align: center;
           .execute{
+            background-color: $mainThemeColor;
+            color: $mainWhite;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+
           }
           .save{
             display: block;
-          }
-          a{
+            background-color: $subBackGround;
+            width: 100%;
+            height: 50px;
+            margin-bottom: 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
 
           }
+
+          a{
+            text-decoration: none;
+            color: $mainThemeColor;
+          }
+        }
+        .report{
+          font-size: 10px;
         }
       }
       .box__border{
-        border-top: solid 1px #ca1e1e;
+        border-top: solid 3px $subBackGround;
       }
     }
   }
@@ -186,9 +220,4 @@
   }
 }
 
-// .field{
-//   height: 400px;
-// }
-// .box__border{
-//   border-top: solid 1px #ca1e1e;
-// }
+
