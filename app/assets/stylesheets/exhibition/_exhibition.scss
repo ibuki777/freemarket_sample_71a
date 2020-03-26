@@ -23,6 +23,7 @@
       .field{
         padding: 40px;
         font-size: 12px;
+        position: relative;
         &__title{
           color: rgb(136, 136, 136);
           font-weight: bold;
@@ -49,6 +50,8 @@
           .price{
             height: 45px;
             border-radius: 4px;
+            position: absolute;
+            right: 0;
           }
         }
         &__sentence{
