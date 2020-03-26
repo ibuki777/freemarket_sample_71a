@@ -15,9 +15,11 @@
       カテゴリー
       .left-list__brand
       ブランド
-    .right-list
-      = link_to "ログイン", user_session_path
-      = link_to "新規会員登録", new_user_registration_path , class: "right-list__new"
-
-
-  
+    - if user_signed_in?
+      .right-list
+        -# マイページが無い為仮置きです
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      .right-list
+        = link_to "ログイン", user_session_path
+        = link_to "新規会員登録", new_user_registration_path , class: "right-list__new"

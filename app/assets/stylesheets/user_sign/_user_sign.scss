@@ -4,7 +4,7 @@
   font-size: 16px;
   width: $width;
   padding: 10px 16px;
-  margin: 8px 0 30px 0;
+  margin-top: 8px;
   border: 1px solid #a9a9a9;
   border-radius: 4px;
 }
@@ -17,6 +17,11 @@
   border-radius: 2px;
 }
 
+@mixin select(){
+  @include input(24%);
+  height: 46px;
+  background-color: $mainWhite;
+}
 
 .sign{
   &-header{
@@ -36,6 +41,7 @@
         margin-bottom: 20px;
       }
       .field{
+        margin-bottom: 30px;
         &__text{
           font-size: 18px;
           margin-bottom: 8px;
@@ -51,12 +57,28 @@
         &__input{
           @include input;
         }
+        &__birthday{
+          width: 100%;
+          select{
+            @include select;
+          }
+          div{
+            display: inline;
+          }
+        }
         &-box{
           display: flex;
           justify-content: space-between;
           &__input{
             @include input(194px);
           }
+        }
+        .error-message{
+          color: red;
+          margin-top: 8px;
+        }
+        select{
+          @include select;
         }
       }
     }
@@ -82,3 +104,5 @@
     }
   }
 }
+
+
