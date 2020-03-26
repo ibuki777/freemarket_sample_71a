@@ -1,0 +1,118 @@
+.wrapper
+  = render partial: 'header'
+  %nav.header-bottom
+    %ul.tag
+      %li
+        FURiMA>
+      %li
+        ヘビー・キッズ>
+      %li
+        ベビー服（男女兼用）〜９５cm>
+      %li
+        アウター>
+      %li
+        product3
+.show-main
+  .show-main__box
+    .product-content
+      .product-content__item-box
+        .product-content__item-box--name
+          product3
+        .product-content__item-box--image-body
+          .top-image
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: 'top-image' 
+          .sub-images
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: 'sub-image' 
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: "sub-image" 
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: "sub-image" 
+        .product-content__item-box--price
+          .product-cost
+            ¥30000
+            %ul.product-postage
+              %li
+                (税込み) 
+              %li
+                送料込み
+        .product-content__item-box--date
+          親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        %table
+          %tbody
+            %tr
+              %th
+                出品者
+              %td
+                hoge
+            %tr
+              %th
+                カテゴリー
+              %td
+                %ul
+                  %li
+                    = link_to "/", class: "table-btn" do
+                      ベビー・キッズ
+                  %li
+                    = link_to "/", class: "table-btn" do
+                      ベビーさん
+                  %li
+                    = link_to "/", class: "table-btn" do
+                      アウター
+            %tr
+              %th
+                ブランド
+              %td
+                
+            %tr
+              %th
+                商品のサイズ
+              %td
+                XL
+            %tr
+              %th
+                商品の状態
+              %td
+                未使用
+            %tr
+              %th
+                配送料の負担
+              %td
+                送料込み（出品者負担）
+            %tr
+              %th
+                発送元の地域
+              %td
+                = link_to "/", class: "table-btn" do
+                  兵庫県
+            %tr
+              %th
+                発送日の目安
+              %td
+                即日
+        .option
+          .like-btn
+            = icon('fa','star')
+            お気に入り 0
+          .report-btn
+            = icon('fa','flag')
+            不適切な商品の通報
+      .product-comment
+        .comment-box
+        .warning-comment
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .comment-btn
+          =icon('fa','comment')
+          コメントする
+      .links
+        %ul
+          %li
+            =link_to "#",class:"product__link" do
+              <前の商品
+          %li
+            =link_to "#",class:"product__link" do
+              後ろの商品>
+      .category-back
+        = link_to "#",class:"category-back__link" do
+          ベビー・キッズをもっと見る
+  = render '/products/contents/ad'
+  = render partial: 'footer'

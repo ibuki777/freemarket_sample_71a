@@ -1,0 +1,107 @@
+@import "sign_footer";
+
+@mixin input($width: 400px) {
+  font-size: 16px;
+  width: $width;
+  padding: 10px 16px;
+  margin-top: 8px;
+  border: 1px solid #a9a9a9;
+  border-radius: 4px;
+}
+
+@mixin text-constraint(){
+  display: inline;
+  color: $mainWhite;
+  padding: 2px 4px;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+
+.sign{
+  &-header{
+    text-align: center;
+    margin-top: 40px;
+  }
+  &-main{
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px 50px 30px;
+    &-box{
+      margin-bottom: 50px;
+      &__title{
+        font-size: 28px;
+        text-align: center;
+        border-bottom: 1px solid;
+        margin-bottom: 20px;
+      }
+      .field{
+        margin-bottom: 30px;
+        &__text{
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+        &__text-constraint{
+          background-color: red;
+          @include text-constraint;
+        }
+        &__text-constraint--blue{
+          background-color: blue;
+          @include text-constraint;
+        }
+        &__input{
+          @include input;
+        }
+        &__birthday{
+          width: 100%;
+          select{
+            @include input(24%);
+            height: 46px;
+            background-color: #fff;
+          }
+          div{
+            display: inline;
+          }
+        }
+        &-box{
+          display: flex;
+          justify-content: space-between;
+          &__input{
+            @include input(194px);
+          }
+        }
+        .error-message{
+          color: red;
+          margin-top: 8px;
+        }
+        select{
+          @include input(24%);
+          height: 46px;
+          background-color: #fff;
+        }
+      }
+    }
+    &-box-last{
+      margin-bottom: 0;
+    }
+    .actions{
+      background-color: $mainThemeColor;
+      font-size: 16px;
+      line-height: 48px;
+      width: 100%;
+      margin-top: 36px;
+      border: none;
+      cursor: pointer;
+    }
+    .shared-links{
+      margin-top: 20px;
+      .link{
+        font-size: 18px;
+        color: $mainThemeColor;
+      }
+      @include hover;
+    }
+  }
+}
+
+

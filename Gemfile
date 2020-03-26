@@ -74,5 +74,10 @@ end
 
 gem 'devise'
 gem 'haml-rails'
-gem 'font-awesome-sass', '~> 5.12.0'
+gem 'font-awesome-sass'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'pry-rails'
+gem 'active_hash'
+gem 'rails-i18n'
 gem "payjp"

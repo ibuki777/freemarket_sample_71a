@@ -1,12 +1,12 @@
 .header
   .main
-    %a
-      = image_tag src="material/logo/logo.png", width:"140px", class:"header_icon"
+    = link_to '#' do
+      = image_tag src="/images/material/logo/logo.png", width:"140px", class:"header_icon"
     .main-serchBox
       %input{type: "text",class: "text",placeholder: "キーワードから探す"}
       %button{type: "submit",class: "submit"}
         .serchbox__icon
-          = image_tag src="material/icon/icon-search 1.png", width:"20px", height:"20px"
+          = image_tag src="/images/material/icon/icon-search 1.png", width:"20px", height:"20px"
 
   .nav
     %ul
@@ -15,9 +15,10 @@
       カテゴリー
       .left-list__brand
       ブランド
-    .right-list
-      = link_to "ログイン", user_session_path
-      = link_to "新規会員登録", new_user_registration_path , class: "right-list__new"
-
-
-  
+    - if user_signed_in?
+      .right-list
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+    - else
+      .right-list
+        = link_to "ログイン", user_session_path
+        = link_to "新規会員登録", new_user_registration_path , class: "right-list__new"
