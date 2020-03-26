@@ -13,12 +13,11 @@
             %ul{class:"card__index-add--list"}
               //ここにカードの一覧が入るようにする
           .card__index-add--box
-            =link_to destroy_user_session_path, method: :delete, class:"card-reggister-link" do
+            =link_to new_card_path, class:"card-reggister-link" do
               %i{class:"far fa-credit-card"}
               ="クレジットカードを追加する"
         .card__info
           =link_to "#", class:"card__info--link" do
             支払い方法について
             %i{class:"fas fa-chevron-right"}
-          = form_with action: :pay, method: :post do
             
