@@ -1,5 +1,4 @@
 class Burden < ActiveHash::Base
-  validates :id, presence: true
   self.data = [
     {id: 1, name: '選択がありません'},{id: 2, name: '送料込み（出品者負担）'},{id: 3, name:'着払い（購入者負担）'}
   ]
