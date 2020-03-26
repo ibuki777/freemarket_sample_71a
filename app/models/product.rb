@@ -8,6 +8,7 @@ class Product < ApplicationRecord
     :less_than_or_equal_to => 1000000,
     :message => '300以上9999999以下で入力してください'
   }
+  validates :burden_id,:condition_id,:category_id,:deliveryday_id,:prefecture_id,{presence:{message: "を選択してください"}}
 
   belongs_to_active_hash :category
   belongs_to_active_hash :condition

@@ -1,6 +1,12 @@
 -if @product.errors.any?
   - unless @product.valid?
     - if errors = @product.errors.full_messages_for(column.to_sym)
-      %ul
+      %ul.error_message
         - errors.each do |error|
           %li=error
+-# -if @image.errors.any?
+-#   - unless @image.valid?
+-#     - if errors = @product.errors.full_messages_for(column.to_sym)
+-#       %ul.error_message
+-#         - errors.each do |error|
+-#           %li=error
