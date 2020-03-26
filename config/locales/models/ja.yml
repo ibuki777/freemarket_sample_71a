@@ -8,7 +8,5 @@ ja:
         category_id: カテゴリー
         condition_id: 商品の状態
         burden_id: 配送料の負担
-        
-
-      
-    
+        prefecture_id: 発送元の地域
+        deliveryday_id: 発送までの日数
