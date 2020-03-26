@@ -23,6 +23,7 @@
       .field{
         padding: 40px;
         font-size: 12px;
+        position: relative;
         &__title{
           color: rgb(136, 136, 136);
           font-weight: bold;
@@ -44,11 +45,14 @@
             }
           }
           .mark{
-            margin-left: 287px;
+            margin-left: 390px;
+            position: absolute;
+            bottom: 415px;
           }
           .price{
             height: 45px;
             border-radius: 4px;
+            float: right;
           }
         }
         &__sentence{
