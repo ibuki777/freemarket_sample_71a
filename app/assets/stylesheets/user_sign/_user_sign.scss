@@ -57,7 +57,7 @@
           select{
             @include input(24%);
             height: 46px;
-            background-color: #fff;
+            background-color: $mainWhite;
           }
           div{
             display: inline;
@@ -77,7 +77,7 @@
         select{
           @include input(24%);
           height: 46px;
-          background-color: #fff;
+          background-color: $mainWhite;
         }
       }
     }
