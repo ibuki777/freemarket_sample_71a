@@ -50,8 +50,7 @@
           .price{
             height: 45px;
             border-radius: 4px;
-            position: absolute;
-            right: 0;
+            float: right;
           }
         }
         &__sentence{
