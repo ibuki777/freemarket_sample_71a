@@ -14,5 +14,5 @@ Rails.application.routes.draw do
       get'logout'
     end
   end
-  resources :cards, only: [:index, :new]    
+  resources :cards, only: [:index, :new, :create]
 end
