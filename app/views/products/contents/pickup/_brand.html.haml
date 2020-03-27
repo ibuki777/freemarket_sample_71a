@@ -10,7 +10,7 @@
         .product-list
           = link_to "#", class:"product-link" do
             .product-image-box
-              = image_tag product.images[0].image.url,size: "220×150"
+              = image_tag product.images[0].image.url,class:"image-size"
             .product-link__description
               .product-name
                 = product.name

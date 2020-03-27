@@ -39,6 +39,11 @@
          overflow: hidden;
          margin: 0;
          z-index: auto;
+         .image-size{
+          width: 220px;
+          height: 150px;
+          object-fit: cover;
+         }
         }
         &__description{
           background-color:$mainWhite;
