@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root 'products#index'
-  resources :products, only: [:index,:show]
+  resources :products, only: [:index, :show, :new, :create]
   resource :user, only: [:show, :edit, :update] do
     collection do
       get'logout'

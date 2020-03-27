@@ -10,6 +10,11 @@
 }
 
 
+@mixin select(){
+  @include input(24%);
+  height: 46px;
+  background-color: $mainWhite;
+}
 
 .sign{
   &-header{
@@ -48,9 +53,7 @@
         &__birthday{
           width: 100%;
           select{
-            @include input(24%);
-            height: 46px;
-            background-color: #fff;
+            @include select;
           }
           div{
             display: inline;
@@ -68,9 +71,7 @@
           margin-top: 8px;
         }
         select{
-          @include input(24%);
-          height: 46px;
-          background-color: #fff;
+          @include select;
         }
       }
     }

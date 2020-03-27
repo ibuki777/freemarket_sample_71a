@@ -1,9 +1,7 @@
 .sign
   .sign-header
-    %a{href: root_path}
-      =image_tag "logo.svg"
+    = link_to image_tag("logo.svg"), root_path
   .sign-main
-    -# 以下保存先モデル名、カラム名は仮置きです。
     = form_with model: @address, local: true do |f|
       .sign-main-box.sign-main-box-last
         %h1.sign-main-box__title 商品送信機能
