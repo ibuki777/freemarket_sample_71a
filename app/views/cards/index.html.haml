@@ -9,35 +9,22 @@
           支払い方法
         .card__index-add
           .card__index-add--head
-            クレジットカード一覧
-            .mypage-main.col-9
-              %h2.header_title
-                支払い方法
-
-              .single-container
-                %section.creditcard_section
-                  %h3 クレジットカード一覧
-                  - if @card.present?
-                    .container
-                      .creditcard-info
-                        -# = image_tag "creditcards/#{@card_image}",width:'34',height:'20', alt:'master-card'
-                        %p.creditcard-info__number
-                          = "**** **** **** " + @card_info.last4 #クレジットカードの下４桁を表示
-                        %p.creditcard-info__period 
-                        = @exp_month + " / " + @exp_year
-                        -# = button_to "削除する", creditcard_path(@card), method: :delete, class:"creditcard-info__delete"
-                  - else
-                    .new-card
-                      = link_to new_creditcard_path, class:"new-card-btn" do
-                        %i.far.fa-credit-card 
-                        クレジットカードを追加する
+            %h3 クレジットカード一覧
             %ul{class:"card__index-add--list"}
-              //ここにカードの一覧が入るようにする
-          
-          .card__index-add--box
-            =link_to new_card_path, class:"card-reggister-link" do
-              %i{class:"far fa-credit-card"}
-              ="クレジットカードを追加する"
+              - if @card.present?
+                .container
+                  .creditcard-info
+                    -# = image_tag "creditcards/#{@card_image}",width:'34',height:'20', alt:'master-card'
+                    %p.creditcard-info__number
+                      = "**** **** **** " + @card_info.last4
+                    %p.creditcard-info__period 
+                    = @exp_month + " / " + @exp_year
+                  = button_to "削除する", card_path(@card), method: :delete, class:"creditcard-info__delete"
+              - else
+                .card__index-add--box
+                  =link_to new_card_path, class:"card-reggister-link" do
+                    %i{class:"far fa-credit-card"}
+                    ="クレジットカードを追加する"
         .card__info
           =link_to "#", class:"card__info--link" do
             支払い方法について
