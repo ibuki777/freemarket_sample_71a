@@ -5,11 +5,7 @@
       .field
         = f.label :カード番号, class: "field__text"
         %p.field__text-constraint 必須
-        = f.text_field :number, maxlength:"16", placeholder:"Card #", type:"text",id:"card_number"
-      .field
-        = f.label :CVC, class: "field__text"
-        %p.field__text-constraint 必須
-        = f.text_field :cvc, maxlength:"4", placeholder: "CVC", type:"text", id:"cvc"
+        = f.text_field :number, maxlength:"16", placeholder:"Card #", type:"text",id:"card_number", class: "field__input"
       .field
         = f.label :有効期限, class: "field__text"
         %p.field__text-constraint 必須
@@ -19,6 +15,11 @@
         .field-box
           = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , id:"exp_year"
           %p 年
+        .field
+          = f.label :CVC, class: "field__text"
+          %p.field__text-constraint 必須
+          = f.text_field :cvc, maxlength:"4", placeholder: "CVC", type:"text", id:"cvc", class: "field__input"
+
       %p#result
 
       #card_token
