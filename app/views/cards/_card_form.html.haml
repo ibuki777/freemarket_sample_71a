@@ -1,25 +1,24 @@
 =form_with url:cards_path, method: :post, class:"ui form",id:"charge-form" do |f|
-  %h4.ui.dividing.header 支払い
-  .field
-    %label カード番号
-    = f.text_field :number, maxlength:"16", placeholder:"Card #", type:"text",id:"card_number"
-  .fields
-    .six.wide.field
-      %label CVC
+  %h4.form-title 支払い
+  .card-form
+    .field
+      = f.label :カード番号, class: "field__text"
+      %p.field__text-constraint 必須
+      = f.text_field :number, maxlength:"16", placeholder:"Card #", type:"text",id:"card_number"
+    .field
+      = f.label :CVC, class: "field__text"
+      %p.field__text-constraint 必須
       = f.text_field :cvc, maxlength:"4", placeholder: "CVC", type:"text", id:"cvc"
-    .ten.wide.field
-      %label 有効期限
-      .two.fields
-        .field
-          = f.select :exp_month,[["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06",6],["07",7],["08",8],["09",9],["10",10],["11", 11],["12", 12]], prompt:"", id:"exp_month"
-        .field
-          = f.text_field :exp_year, maxlength:"4", placeholder: "2020", type:"text", id:"exp_year"
-  %button.ui.button.fill{:tabindex => "0"}
-    サンプルのカード番号を使う
-  %button.ui.primary.button.submit
-    送信
-  %p#result
+    .field
+      = f.label :有効期限, class: "field__text"
+      %p.field__text-constraint 必須
+      .field-box
+        = f.select :exp_month,[["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06",6],["07",7],["08",8],["09",9],["10",10],["11", 11],["12", 12]], prompt:"", id:"exp_month"
+        %p 月
+      .field-box
+        = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , id:"exp_year"
+        %p 年
+    %p#result
 
-  #card_token
-  = f.submit "追加する", id: "token_submit",class:"submit"
-  .payment-errors
+    #card_token
+    = f.submit "追加する", id: "token_submit",class:"submit"
