@@ -3,7 +3,7 @@ $(function(){
   let choice = $("option");
   
   choiceAry = Array.prototype.slice.call(choice)
-  console.log("array");
+
 
   function addSelect1(){
     var html1 = `<select name="product[condition_id]" id="product_condition_id"><option value="">選択がありません</option>
@@ -29,7 +29,7 @@ $(function(){
   category.change(function(){
     var html1 = addSelect1
 
-    if ( category != "option" ) {
+    if ( category = "選択がありません" ) {
       $("#product_condition_id").remove();
       $("#product_burden_id").remove();
       console.log("減った")
