@@ -3,7 +3,7 @@ $(document).on('turbolinks:load',function(){
 
   var form = $("#charge-form");
 
-  $("#charge-form").click(function() {
+  $("#token_submit").click(function(e) {
     form.find("input[type=submit]").prop("disabled", true);
 
     var card = {

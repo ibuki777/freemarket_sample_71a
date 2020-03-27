@@ -21,7 +21,7 @@
         = f.text_field :cvc, maxlength:"4", placeholder: "カード背面4桁もしくは3桁の番号", type:"text", id:"cvc", class: "field__input"
       
       %p#result
+      .payment-errors
       #card_token
       = f.submit "追加する", id: "token_submit",class:"submit"
-      .payment-errors
     

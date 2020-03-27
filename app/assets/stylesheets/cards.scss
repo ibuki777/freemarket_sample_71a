@@ -3,123 +3,40 @@
   .mypage_contents{
     .right_box{
       .right_content{
-        .card__head{
-          font-size: 24px;
-          font-weight: bold;
-          height: 40px;
-          line-height: 40px;
-          border-bottom: $subBackGround 2px solid;
-          text-align: center;
+        @import "modules/cards_reggister";
+        @import "modules/cards_form";
+      }
+      .card__index-add{
+        .card__index-add--head{
+          align-items: center;
+          padding-bottom: 15px;
         }
-        .card__index-add{
-          margin: 80px 10% 0px;
-          padding: 0 25% 30px;
-          border-bottom: $subBackGround 2px solid;
-
-          &--head{
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            
-          }
-          &--box{
-            background-color: #ea352d;
-            height: 50px;
-            width: 260px;
-            line-height: 50px;
-            text-align: center;
-            &:hover{
-              background-color: #ea352d90;
-              transition: 1s;            
-            }
-            .card-reggister-link{
-              text-decoration: none;
-              color: #fff;
-              font-size: 14px;
-              display: block;
-              i{
-                margin-right: 10px;
+        &--list{
+          .container{
+            position: relative;
+            .creditcard-info{
+              &__number{
+                font-size: medium;             
+              }
+              &__period{
+                font-size: 5px;
               }
             }
           }
-        }
-        .card__info{
-          text-align: right;
-          font-size: 14px;
-          height: 100px;
-          line-height: 100px;
-          margin: 0 80px;
-          &--link{
-            text-decoration: none;
-            color: #0099e8;
+            .delete{
+              background-color: $mainRed;
+              color: $mainWhite;
+              font-size: 12px;
+              border-radius: 10px;
+              width: 80px;
+              position: absolute;
+              top: 10px;
+              right: -100px;
+              cursor: pointer;
 
-          }
-        }
-      }
-    }
-  }
-}
-
-@mixin input($width: 400px) {
-  font-size: 16px;
-  width: $width;
-  padding: 10px 16px;
-  margin-top: 8px;
-  border: 1px solid #a9a9a9;
-  border-radius: 4px;
-}
-
-
-
-.cards{
-  width: 100%;
-  .form-title{
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    padding: 6px 0;
-    border-bottom: $subBackGround 2px solid;
-    margin-bottom: 20px;
-  }
-  .card-form{
-    width: 500px;
-    margin: 0 auto;
-    padding: 20px 50px 30px;
-    .field{
-      margin-bottom: 30px;
-      &__text{
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 8px;
-      }
-      &__text-constraint{
-        background-color: red;
-        @include text-constraint;
-      }
-      &__input{
-        @include input;
-      }
-      &-box{
-        select{
-          @include input(30%);
-          height: 46px;
-          background-color: #fff;
-        }
-        &__text{
-          display: inline;
-          margin-left: 10px;
-          font-size: 18px;
+            }
         }
       }
-    }
-    .submit{
-      background-color: $mainThemeColor;
-      font-size: 16px;
-      line-height: 48px;
-      width: 100%;
-      margin-top: 36px;
-      border: none;
-      cursor: pointer;
     }
   }
 }

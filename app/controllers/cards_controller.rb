@@ -1,16 +1,12 @@
 class CardsController < ApplicationController
-  require "payjp"
-  Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
   before_action :set_card
 
   def index
     if @card.present?
       customer = Payjp::Customer.retrieve(@card.payjp_id)
       @card_info = customer.cards.retrieve(customer.default_card)
-      @card_brand = @card_info.brand
       @exp_month = @card_info.exp_month.to_s
       @exp_year = @card_info.exp_year.to_s.slice(2,3) 
-
     end
   end
 
@@ -29,8 +25,6 @@ class CardsController < ApplicationController
         metadata: {user_id: current_user.id}
       )
 
-
-      # PAY.JPのユーザーが作成できたので、creditcardモデルを登録します。
       @card = Card.new(user_id: current_user.id, payjp_id: customer.id)
       if @card.save
         redirect_to action: "index", notice:"支払い情報の登録が完了しました"
