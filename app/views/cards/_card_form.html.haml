@@ -1,20 +1,27 @@
-=form_with url:cards_path, method: :post, class:"ui form",id:"charge-form" do |f|
-  %h4.ui.dividing.header 支払い
-  .field
-    %label カード番号
-    = f.text_field :number, maxlength:"16", placeholder:"Card #", type:"text",id:"card_number"
-  .fields
-    .six.wide.field
-      %label CVC
-      = f.text_field :cvc, maxlength:"4", placeholder: "CVC", type:"text", id:"cvc"
-    .ten.wide.field
-      %label 有効期限
-      .two.fields
-        .field
-          = f.select :exp_month,[["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06",6],["07",7],["08",8],["09",9],["10",10],["11", 11],["12", 12]], prompt:"", id:"exp_month"
-        .field
-          = f.text_field :exp_year, maxlength:"4", placeholder: "2020", type:"text", id:"exp_year"
-
-  #card_token
-  = f.submit "追加する", id: "token_submit",class:"submit"
-  .payment-errors
+.cards
+  =form_with url:cards_path, method: :post, class:"ui form",id:"charge-form" do |f|
+    %h4.form-title クレジットカード情報入力
+    .card-form
+      .field
+        = f.label :カード番号, class: "field__text"
+        %p.field__text-constraint 必須
+        = f.text_field :number, maxlength:"16", placeholder:"半角英数のみ", type:"text",id:"card_number", class: "field__input"
+      .field
+        = f.label :有効期限, class: "field__text"
+        %p.field__text-constraint 必須
+        .field-box
+          = f.select :exp_month,[["01", 1],["02", 2],["03", 3],["04", 4],["05", 5],["06",6],["07",7],["08",8],["09",9],["10",10],["11", 11],["12", 12]], prompt:"--", id:"exp_month"
+          %p.field-box__text 月
+        .field-box
+          = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029],["30",2030]], prompt:"--", id:"exp_year"
+          %p.field-box__text 年
+      .field
+        = f.label :セキュリティーコード, class: "field__text"
+        %p.field__text-constraint 必須
+        = f.text_field :cvc, maxlength:"4", placeholder: "カード背面4桁もしくは3桁の番号", type:"text", id:"cvc", class: "field__input"
+      
+      %p#result
+      #card_token
+      = f.submit "追加する", id: "token_submit",class:"submit"
+      .payment-errors
+    
