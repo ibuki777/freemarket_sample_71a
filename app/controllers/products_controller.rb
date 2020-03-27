@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-    redirect_to root_path
+      redirect_to root_path
     else
     render :new
     end
@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
+    render partial:"form" ,locals: {product:new}
   end
 
   def update
@@ -46,7 +47,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, images_attributes: [:image, :_destroy, :id])
+    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, images_attributes:[:image]).merge(user_id: current_user.id)
   end
 
   def set_product

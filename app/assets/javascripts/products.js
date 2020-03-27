@@ -10,8 +10,8 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
   // プレビュー用のimgタグを生成する関数
-  const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" image="${url}" width="100px" height="100px">`;
+  const buildImg = (index, img)=> {
+    const html = `<img data-index="${index}" image="${img}" width="100px" height="100px">`;
     return html;
   }
 
