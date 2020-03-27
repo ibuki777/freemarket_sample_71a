@@ -16,7 +16,7 @@
           = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , id:"exp_year"
           %p 年
         .field
-          = f.label :CVC, class: "field__text"
+          = f.label :セキュリティーコード, class: "field__text"
           %p.field__text-constraint 必須
           = f.text_field :cvc, maxlength:"4", placeholder: "CVC", type:"text", id:"cvc", class: "field__input"
 
@@ -24,3 +24,5 @@
 
       #card_token
       = f.submit "追加する", id: "token_submit",class:"submit"
+      .payment-errors
+    
