@@ -1,38 +1,37 @@
 $(function(){
   var category = $("#product_category_id");
 
-  function addSelect(){
-    var html = `<select name="product[category_id]" id="product_category_id"><option value="">選択がありません</option>
-                  <option value="1">レディース</option>
-                  <option value="2">メンズ</option>
-                  <option value="3">ベビー・キッズ</option>
-                  <option value="4">インテリア・住まい・小物</option>
-                  <option value="5">本・音楽・ゲーム</option>
-                  <option value="6">おもちゃ・ホビー・グッズ</option>
-                  <option value="7">コスメ・香水・美容</option>
-                  <option value="8">家電・スマホ・カメラ</option>
-                  <option value="9">スポーツ・レジャー</option>
-                  <option value="10">ハンドメイド</option>
-                  <option value="11">チケット</option>
-                  <option value="12">自転車・オートバイ</option>
-                  <option value="13">その他</option></select>`
-    return html
+  function addSelect1(){
+    var html1 = `<select name="product[condition_id]" id="product_condition_id"><option value="">選択がありません</option>
+                  <option value="1">新品、未使用</option>
+                  <option value="2">未使用に近い</option>
+                  <option value="3">目立った傷や汚れなし</option>
+                  <option value="4">やや傷や汚れあり</option>
+                  <option value="5">傷や汚れあり</option>
+                  <option value="6">全体的に状態が悪い</option></select>`
+    return html1
   };
 
+  function addSelect2(){
+    var html2 = `<select name="product[burden_id]" id="product_burden_id"><option value="">選択がありません</option>
+                  <option value="1">送料込み（出品者負担）</option>
+                  <option value="2">着払い（購入者負担）</option></select>`
+    return html2
+  }
 
 
 
-
-
+// カテゴリの選択を変える
   category.change(function(){
-  console.log("change");
-
-  var html = addSelect
-
+// 選択肢を増やす
+    var html1 = addSelect1
+    $(".try").append(html1);
   
-  $(".try").append(html);
-  console.log("append");
-  
+      $("#product_condition_id").change(function(){
+
+        var html2 = addSelect2
+        $(".try").append(html2);
+      });
   });
 
   
@@ -41,3 +40,9 @@ $(function(){
 
 
 });
+
+
+
+// console.log("change");
+
+// console.log("append");
