@@ -27,14 +27,22 @@ $(function(){
 
   // カテゴリ１の選択を変える
   category.change(function(){
-    var html1 = addSelect1
-    // html1を消す
-    $("#product_condition_id").remove();
-    $("#product_burden_id").remove();
-    
-    // html1を増やす
-    $(".try").append(html1);
-    
+    // if ("#product_category_id" == choiceAry[0]) {
+
+    //   $("#product_condition_id").remove();
+    //   $("#product_burden_id").remove();
+
+    // } else {
+      
+      var html1 = addSelect1
+      // html1を消す
+      $("#product_condition_id").remove();
+      $("#product_burden_id").remove();
+      
+      // html1を増やす
+      $(".try").append(html1);
+      
+    // }
 
 
       // カテゴリ２の選択肢を変える
