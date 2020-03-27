@@ -7,7 +7,7 @@
         @import "modules/cards_form";
       }
       .card__index-add{
-        .card__index-add--head{
+        &--head{
           align-items: center;
           padding-bottom: 15px;
         }
