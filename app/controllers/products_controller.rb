@@ -29,7 +29,6 @@ class ProductsController < ApplicationController
     else
       render :edit
     end
-    render partial:"form" ,locals: {product:new}
   end
 
   def update
