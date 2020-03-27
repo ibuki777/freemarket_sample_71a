@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  validates :name, {presence:{message: "を４０字以内で入力してください"},length: {maximum:40}}
+  validates_associated :images
+  validates :images, presence: true
+  validates :name, presence:true
   validates :explain, {presence:{message: "を入力、または1000字以内で入力してください"},length: {maximum:1000}}
   validates :price, 
   :numericality => { 
@@ -14,5 +16,6 @@ class Product < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :burden
   belongs_to_active_hash :deliveryday
-  has_many :images, dependent: :destroy
+  has_many :images
+  accepts_nested_attributes_for :images, allow_destroy: true
 end
