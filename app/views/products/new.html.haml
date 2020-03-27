@@ -10,7 +10,6 @@
           .label
             = f.label :image, "出品画像", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @image, column: "image"}
           .field__sentence
             最大10枚までアップロードできます
           .cage
@@ -55,8 +54,8 @@
           .label
             = f.label :genre, "カテゴリ", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @product, column: "category_id"}
-          = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択がありません"
+          %ul.try
+            = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択がありません"
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
@@ -64,7 +63,6 @@
           .label
             = f.label :image, "商品の状態", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @product, column: "condition_id"}
           = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択がありません"
         .box__border
 
@@ -75,17 +73,14 @@
           .label
             = f.label :image, "配送料の負担", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @product, column: "burden_id"}
           = f.collection_select :burden_id, Burden.all, :id, :name, prompt: "選択がありません"
           .label
             = f.label :image, "発送元の地域", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @product, column: "prefecture_id"}
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択がありません"
           .label
             = f.label :image, "発送までの日数", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @product, column: "deliveryday_id"}
           = f.collection_select :deliveryday_id, Deliveryday.all, :id, :name, prompt: "選択がありません"
         .box__border
 
