@@ -1,0 +1,209 @@
+@import "mixin/hash";
+@import "mixin/must";
+@import "mixin/execute";
+.exhibition{
+  width: 100vw;
+  &__header{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo{
+      height: 53px;
+      width: 177px;
+      margin-top: 50px;
+    }
+  }
+  &__contents{
+    &__box{
+      background-color: $mainWhite;
+      width: 630px;
+      margin: 0 auto;
+      .field{
+        padding: 40px;
+        font-size: 12px;
+        position: relative;
+        &__title{
+          color: rgb(136, 136, 136);
+          font-weight: bold;
+          margin-bottom: 20px;
+          display: flex;
+        }
+        .label{
+          font-weight: bold;
+          margin-bottom: 15px;
+
+          &__name{
+          }
+          &__need{
+            background-color: red;
+            @include must;
+            &-blue{
+              background-color: blue;
+              @include must;
+            }
+          }
+          .mark{
+            margin-left: 390px;
+            position: absolute;
+            bottom: 415px;
+          }
+          .price{
+            height: 45px;
+            border-radius: 4px;
+            float: right;
+          }
+        }
+        &__sentence{
+          font-size: 10px;
+          margin-bottom: 10px;
+        }
+        .cage{
+          height: 140px;
+          margin-bottom: 10px;
+          background-color: rgb(245, 245, 245);
+          border-width: 1px;
+          border-style: dashed;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          cursor: pointer;
+          text-align: center;
+          padding: 35px 0;
+
+          // ここのコメントアウトはわざと残してあります
+          // align-content: center;
+          // -webkit-box-align: center;
+          // align-items: center;
+          // display: flex;
+          // flex-wrap: wrap;
+          // -webkit-box-pack: center;
+          // justify-content: center;
+          // position: relative;
+          // transition: all 0.5s ease-out 0s;
+          
+          .image{
+            display: none;
+
+          }
+          &__icon{
+            font-size: 25px;
+
+          }
+          &__text{
+
+          }
+        }
+        textarea{
+          resize: vertical;
+        }
+        .discription{
+          height: 150px;
+          width: 100%;
+          margin-bottom: 10px;
+          padding: 20px;
+          border-radius: 4px;
+        }
+        .text-count{
+          padding-left: 530px;
+          margin-bottom: 15px;
+        }
+        .input{
+          @include hash;
+
+        }
+        #product_category_id{
+          @include hash;
+
+        }
+        #product_condition_id{
+          @include hash;
+
+        }
+        #product_burden_id{
+          @include hash;
+        }
+        #product_prefecture_id{
+          @include hash;
+        }
+        #product_deliveryday_id{
+          @include hash;
+        }
+        .cost{
+          display: flex;
+          justify-content: space-between;
+          margin: 30px 0;
+
+          &__fee{
+
+          }
+          .period{
+            
+          }
+        }
+
+        .option{
+          width: 360px;
+          margin: 0 auto 30px;
+          text-align: center;
+          .execute{
+            background-color: $mainThemeColor;
+            color: $mainWhite;
+            @include execute;
+
+          }
+          .save{
+            display: block;
+            background-color: $subBackGround;
+            @include execute;
+
+          }
+
+          a{
+            text-decoration: none;
+            color: $mainThemeColor;
+          }
+        }
+        .report{
+          font-size: 10px;
+        }
+      }
+      .box__border{
+        border-top: solid 3px $subBackGround;
+      }
+    }
+  }
+  // ログイン・新規登録と同じフッター
+  &__footer{
+    width: 100vw;
+    background-color: $footerColor;
+    &-box{
+      width: 400px;
+      margin: 0 auto;
+      padding: 40px 0px;
+      .clearfix{
+        display: flex;
+        justify-content: space-between;
+        a{
+          display: block;
+          font-size: 12px;
+          color: $mainWhite;
+        }
+        @include hover;
+      }
+      .footer-image{
+        height: 62px;
+        width: 214px;
+        color:#333;
+        display: block;
+        margin: 40px auto 0;
+      }
+      .footer-text{
+        color:$mainWhite;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
