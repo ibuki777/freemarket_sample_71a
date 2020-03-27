@@ -10,7 +10,7 @@
         .product-list
           = link_to "#", class:"product-link" do
             .product-image-box
-              = image_tag product.images[0].image#.urlをあとで書きこむ、イメージアップローダーで大きめの画像を保存し、CSSでサイズを調節する
+              = image_tag product.images[0].image.url#イメージアップローダーで大きめの画像を保存し、CSSでサイズを調節する
             .product-link__description
               .product-name
                 = product.name
