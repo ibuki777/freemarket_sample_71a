@@ -1,5 +1,9 @@
 $(function(){
   var category = $("#product_category_id");
+  let choice = $("option");
+  
+  choiceAry = Array.prototype.slice.call(choice)
+  console.log("array");
 
   function addSelect1(){
     var html1 = `<select name="product[condition_id]" id="product_condition_id"><option value="">選択がありません</option>
@@ -19,30 +23,29 @@ $(function(){
     return html2
   }
 
+  
 
-
-// カテゴリの選択を変える
+  // カテゴリ１の選択を変える
   category.change(function(){
-// 選択肢を増やす
     var html1 = addSelect1
+    // html1を消す
+    $("#product_condition_id").remove();
+    $("#product_burden_id").remove();
+    
+    // html1を増やす
     $(".try").append(html1);
-  
-      $("#product_condition_id").change(function(){
+    
 
-        var html2 = addSelect2
-        $(".try").append(html2);
-      });
+
+      // カテゴリ２の選択肢を変える
+        $("#product_condition_id").change(function(){
+          var html2 = addSelect2
+
+          $("#product_burden_id").remove();
+          // html2を増やす
+          $(".try").append(html2);
+        });
   });
-
-  
-  
-  
 
 
 });
-
-
-
-// console.log("change");
-
-// console.log("append");
