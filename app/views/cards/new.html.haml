@@ -1,35 +1,8 @@
-%section
-  %form.ui.form
-    %h4.ui.dividing.header 支払い
-    .field
-      %label カード番号
-      %input{:maxlength => "16", :name => "number", :placeholder => "Card #", :type => "text"}/
-    .fields
-      .six.wide.field
-        %label CVC
-        %input{:maxlength => "4", :name => "cvc", :placeholder => "CVC", :type => "text"}/
-      .ten.wide.field
-        %label 有効期限
-        .two.fields
-          .field
-            %select.ui.fluid.search.dropdown{:name => "exp_month"}
-              %option{:value => ""} 月
-              %option{:value => "1"} 01
-              %option{:value => "2"} 02
-              %option{:value => "3"} 03
-              %option{:value => "4"} 04
-              %option{:value => "5"} 05
-              %option{:value => "6"} 06
-              %option{:value => "7"} 07
-              %option{:value => "8"} 08
-              %option{:value => "9"} 09
-              %option{:value => "10"} 10
-              %option{:value => "11"} 11
-              %option{:value => "12"} 12
-          .field
-            %input{:maxlength => "4", :name => "exp_year", :placeholder => "年", :type => "text"}/
-    %button.ui.button.fill{:tabindex => "0"}
-      サンプルのカード番号を使う
-    %button.ui.primary.button.submit
-      送信
-    %p#result
+.wrapper
+  = render partial: 'products/header'
+  .mypage_contents
+    .left_box
+      =render "users/modules/show_left_content"
+    .right_box
+      .right_content
+        =render "card_form"
