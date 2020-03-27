@@ -1,8 +1,9 @@
 .right_content
   .picture
     .picture_icon
-      = image_tag src="material/icon/member_photo_noimage_thumb", class:"picture_icon_img"
-      .user_name ユーザーネーム
+      = image_tag "/images/material/icon/member_photo_noimage_thumb.png", class:"picture_icon_img"
+      .user_name
+      = current_user.nickname
       .user_score 出品 評価
 
   .product_buy
@@ -17,7 +18,7 @@
         #panel1.tab_panel
           .first_product
             =link_to "#",class:"abc" do
-              = image_tag src="material/icon/icon-01", class:"produck_icon_img"
+              = image_tag "/images/material/icon/icon-01.png", class:"produck_icon_img"
               .product_text
                 .product_text_name 商品名
                 .product_text_price 金額

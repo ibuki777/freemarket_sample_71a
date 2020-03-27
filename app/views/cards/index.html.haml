@@ -8,15 +8,24 @@
         .card__head
           支払い方法
         .card__index-add
-          .card__index-add--head
-            クレジットカード一覧
-            %ul{class:"card__index-add--list"}
-              //ここにカードの一覧が入るようにする
-          .card__index-add--box
-            =link_to destroy_user_session_path, method: :delete, class:"card-reggister-link" do
-              %i{class:"far fa-credit-card"}
-              ="クレジットカードを追加する"
+          - if @card.present?
+            .card__index-add--head
+              登録クレジットカード
+            .card__index-add--list
+              .container
+                .creditcard-info
+                  %p.creditcard-info__number
+                    = "**** **** **** " + @card_info.last4
+                  %p.creditcard-info__period 
+                    = "有効期限  " + @exp_month + " / " + @exp_year
+                = button_to "削除する", card_path(@card), method: :delete, class:"delete"
+          - else
+            .card__index-add--box
+              =link_to new_card_path, class:"card-reggister-link" do
+                %i{class:"far fa-credit-card"}
+                ="クレジットカードを追加する"
         .card__info
           =link_to "#", class:"card__info--link" do
             支払い方法について
             %i{class:"fas fa-chevron-right"}
+  = render partial: 'products/footer'

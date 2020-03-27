@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      address:
+        last_name: 姓
+        first_name: 名
+        last_name_kana: 姓かな
+        first_name_kana: 名かな
+        zip_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        address: 番地
