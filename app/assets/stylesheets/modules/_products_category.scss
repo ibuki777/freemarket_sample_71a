@@ -39,17 +39,6 @@
          overflow: hidden;
          margin: 0;
          z-index: auto;
-         .product-image{
-           position: absolute;
-           top: 0;
-           left: 0;
-           right: 0;
-           bottom: 0;
-           width: 100%;
-           z-index: auto;
-           height: 150px;
-           object-fit: cover;
-         }
         }
         &__description{
           background-color:$mainWhite;
