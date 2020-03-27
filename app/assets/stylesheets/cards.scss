@@ -64,7 +64,12 @@
 .cards{
   width: 100%;
   .form-title{
+    font-size: 28px;
+    font-weight: bold;
     text-align: center;
+    padding: 6px 0;
+    border-bottom: $subBackGround 2px solid;
+    margin-bottom: 20px;
   }
   .card-form{
     width: 500px;
