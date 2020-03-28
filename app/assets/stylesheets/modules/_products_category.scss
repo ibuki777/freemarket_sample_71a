@@ -43,6 +43,17 @@
           width: 220px;
           height: 150px;
           object-fit: cover;
+          .soldout-label{
+            height: 50%;
+            width: 20%;
+            background-color: red;
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+          }
+  
          }
         }
         &__description{
