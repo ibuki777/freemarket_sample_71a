@@ -38,23 +38,26 @@
          position: relative;
          overflow: hidden;
          margin: 0;
-         z-index: auto;
-         .image-size{
-          width: 220px;
-          height: 150px;
-          object-fit: cover;
-          .soldout-label{
-            height: 50%;
-            width: 20%;
-            background-color: red;
-            color: white;
+         position: relative;
+          .image-size {
+           width: 100%;
+           height: 150px;
+           object-fit: cover;
+          }
+          span {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 1;
-          }
+            .soldout-label{
+              height: 224%;
+              width: 110%;
+              background-color: white;
+              color: red;
+              font-size: 20px;
   
-         }
+            }
+          } 
+          
         }
         &__description{
           background-color:$mainWhite;
