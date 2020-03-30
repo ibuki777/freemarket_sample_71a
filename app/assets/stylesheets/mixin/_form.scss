@@ -1,0 +1,8 @@
+@mixin input($width: 400px) {
+  font-size: 16px;
+  width: $width;
+  padding: 10px 16px;
+  margin-top: 8px;
+  border: 1px solid #a9a9a9;
+  border-radius: 4px;
+}
