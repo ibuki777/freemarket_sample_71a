@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-  root 'products#index'
+  # root 'products#index'
+  root "orders#new"
   resources :products, only: [:index, :show, :new, :create]
   resource :user, only: [:show, :edit, :update] do
     collection do
