@@ -18,5 +18,6 @@ class Product < ApplicationRecord
   belongs_to_active_hash :deliveryday
   has_one :order
   has_many :images
+  belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
 end
