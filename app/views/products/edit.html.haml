@@ -1,0 +1,125 @@
+-# CSSは合わしただけなので各々で変更あればしてください
+.exhibition
+  .exhibition__header
+    %a{href: root_path}
+      = image_tag '/images/material/logo/logo.png', class: 'logo'
+  .exhibition__contents
+    .exhibition__contents__box
+      = form_with model: @product, local: true do |f|
+        .field
+          .label
+            = f.label :image, "出品画像", class: "label__name"
+            %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @image, column: "image"}
+          .field__sentence
+            最大10枚までアップロードできます
+          .cage#image-box
+            #previews
+              - if @product.persisted?
+                - @product.images.each_with_index do |image, i|
+                  = image_tag image.image.url, data:{ index: i }, width: "100", height: '100'
+              =f.fields_for :images do |image|
+                = image.file_field :image, class: 'js-file'
+                %br/
+                .js-file_group{"date-index" =>"#{image.index}"}
+                  - if @product.persisted?
+                    = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                    %span.js-remave 削除
+                    - if @product.persisted?
+                      .js-file_group{"data-index" => "#{@product.images.count}"}
+                        = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
+                        .js-remove 削除
+        .box__border
+        .field
+          .label
+            = f.label :name, "商品名", class: "label__name"
+            %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "name"}
+          = f.text_field :name, class: "input", placeholder: "40文字まで"
+          .label
+            = f.label :explain, "商品の説明", class: "label__name"
+            %p.label__need 必須
+          = render partial: 'layouts/error_messages', locals: {product: @product, column: "explain"}
+          = f.text_area :explain, class: "discription", placeholder: "商品の説明（必須 1,000文字以内）                                                                                        （色、素材、色、素材、重さ、定価、注意点など）                                                                                                                例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
+          .text-count
+            0/1000
+        .box__border
+
+        .field
+          .field__title
+            商品の詳細
+          .label
+            = f.label :genre, "カテゴリ", class: "label__name"
+            %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "category_id"}
+          = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択がありません"
+          .label
+            = f.label :name, "ブランド", class: "label__name"
+            %p.label__need-blue 任意
+          = f.text_field :brand_id, class: "input"
+          .label
+            = f.label :image, "商品の状態", class: "label__name"
+            %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "condition_id"}
+          = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "選択がありません"
+        .box__border
+
+        .field
+          .field__title
+            配送について
+            .question ？
+          .label
+            = f.label :image, "配送料の負担", class: "label__name"
+            %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "burden_id"}
+          = f.collection_select :burden_id, Burden.all, :id, :name, prompt: "選択がありません"
+          .label
+            = f.label :image, "発送元の地域", class: "label__name"
+            %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "prefecture_id"}
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "選択がありません"
+          .label
+            = f.label :image, "発送までの日数", class: "label__name"
+            %p.label__need 必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "deliveryday_id"}
+          = f.collection_select :deliveryday_id, Deliveryday.all, :id, :name, prompt: "選択がありません"
+        .box__border
+
+        .field
+          .field__title
+            価格（¥300〜9,999,999）
+            .question ？
+          .label
+            = f.label :image, "販売価格", class: "label__name"
+            %p.label__need 必須
+            = f.label :price, "¥", class: "mark"
+            = f.number_field :price, class: "price"
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "price"}
+          .cost
+            .cost__fee
+              販売手数料（10%）
+            .period
+              ー
+          .box__border
+          .cost
+            .cost__fee
+              販売利益
+            .period
+              ー
+          .option
+            = f.submit "出品する", class: "execute"
+            = f.submit "下書きを保存", class: "save"
+            = link_to 'もどる', "#", class: 'back' 
+          .report
+            禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、
+            %br.repost
+              法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  .exhibition__footer
+    .exhibition__footer-box
+      .clearfix
+        = link_to "プライバシーポリシー", "#", class: "hover"
+        = link_to "FURIMA利用規約", "#", class: "hover"
+        = link_to "ポイントに関する特約", "#", class: "hover"
+      %a{href: root_path, class:"footer-image"}
+        =image_tag "logo-white.svg"
+      %p{class: "footer-text"}©︎FURAMA
