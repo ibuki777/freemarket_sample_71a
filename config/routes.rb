@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'orders/new'
-  get 'orders/create'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -15,6 +13,7 @@ Rails.application.routes.draw do
     collection do
       get'logout'
     end
+    resources :order, only: [:new, :create]
   end
   resources :cards, only: [:index, :new, :create, :destroy]
 end
