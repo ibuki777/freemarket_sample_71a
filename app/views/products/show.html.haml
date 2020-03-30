@@ -63,11 +63,12 @@
               %td
                 - if @product.brand.present?
                   = @product.brand
-            %tr
-              %th
-                商品のサイズ
-              %td
-                XL
+            -# 追加実装のために残してあります
+            -# %tr
+            -#   %th
+            -#     商品のサイズ
+            -#   %td
+            -#     XL
             %tr
               %th
                 商品の状態
@@ -89,6 +90,15 @@
                 発送日の目安
               %td
                 = @product.deliveryday.name
+        - if user_signed_in?
+          - if current_user == @product.user
+            .links
+              = link_to "削除", "#"
+            .links
+              = link_to "編集", "#"
+          - else
+            .links
+              = link_to "購入する", "#"
         .option
           .like-btn
             = icon('fa','star')
