@@ -8,17 +8,21 @@
 |category_id    |integer|null: false, foreign_key: true|
 |brand_id       |integer|foreign_key: true|
 |condition_id   |integer|null: false, foreign_key: true|
-|delivery_way_id|integer|null: false, foreign_key: true|
+|burden_id      |integer|null: false, foreign_key: true|
 |delivery_day_id|integer|null: false, foreign_key: true|
 |prefecture_id  |integer|null: false|
 |user_id        |integer|null: false, foreign_key: true|
+|exhibiting_id  |integer||
+|sold           |integer||
+
+
 ### Association
 has_many :images, dependent: :destroy
 belongs_to :category
 belongs_to :brand
-belongs_to :condition
-belongs_to :delivery_way
-belongs_to :delivery_day
+belongs_to_active_hash :condition
+belongs_to_active_hash :burden
+belongs_to_active_hash :delivery_day
 belongs_to :user
 has_one :order, dependent: :destroy
 
@@ -36,28 +40,6 @@ has_many :products
 ### Association
 has_many :products
 
-## conditionテーブル
-|Column         |Type   |Options|
-|---------------|-------|-------|
-|status         |string |null: false|
-### Association
-has_many :products
-
-## delivery_wayテーブル
-|Column         |Type   |Options|
-|---------------|-------|-------|
-|postage        |string |null: false|
-### Association
-has_many :products
-
-## delivery_dayテーブル
-|Column         |Type   |Options|
-|---------------|-------|-------|
-|turm           |string |null: false|
-### Association
-has_many :products
-
-
 ## imageテーブル
 |Column         |Type   |Options|
 |---------------|-------|-------|
@@ -65,8 +47,6 @@ has_many :products
 |product_id     |integer|null: false, foreign_key: true|
 ### Association
 belongs_to :product
-
-
 
 ## userテーブル
 |Column         |Type   |Options|
@@ -78,7 +58,6 @@ belongs_to :product
 |first_name     |string |null: false|
 |last_name_kana |string |null: false|
 |first_name_kana|string |null: false|
-|phone_number   |integer|null: false, uniqe: true|
 |birthday       |integer|null: false|
 |image          |string ||
 ### Association
@@ -90,11 +69,16 @@ has_many :orders, dependent: :destroy
 ## addressテーブル
 |Column         |Type   |Options|
 |---------------|-------|-------|
-|zip_code       |integer|null: false|
+|last_name      |string |null: false|
+|first_name     |string |null: false|
+|last_name_kana |string |null: false|
+|first_name_kana|string |null: false|
+|zip_code       |string |null: false|
 |city           |string |null: false|
-|address        |text   |null: false|
-|building       |text   ||
+|address        |string |null: false|
+|building       |string ||
 |prefecture_id  |integer|null: false|
+|phone_number   |string |null: false, uniqe: true|
 |user_id        |integer|null: false, foreign_key: true|
 ### Association
 belongs_to :user
@@ -102,13 +86,8 @@ belongs_to :user
 ## cardテーブル
 |Column         |Type   |Options|
 |---------------|-------|-------|
-|card_company   |integer|null: false|
-|card_user      |string |null: false|
-|card_number    |integer|null: false|
-|card_key       |integer|null: false|
-|effective_date_yy|integer|null: false,limit: 2|
-|effective_date_mm|integer|null: false,limit: 2|
-|user_id        |integer|null: false, foreign_key: true|
+|payjp_id      |string |null: false|
+|user_id       |integer|null: false, foreign_key: true|
 ### Association
 belongs_to :user
 
@@ -116,8 +95,6 @@ belongs_to :user
 ## orderテーブル
 |Column         |Type   |Options|
 |---------------|-------|-------|
-|order_day      |string |null: false|
-|order_price    |integer|null: false|
 |shipping_address|string|null: false|
 |product_id     |integer|null: false, foreign_key: true|
 |user_id        |integer|null: false, foreign_key: true|
