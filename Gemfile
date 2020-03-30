@@ -79,7 +79,8 @@ gem 'haml-rails'
 gem 'font-awesome-sass'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'active_hash'
+gem 'pry-rails'
+gem 'jquery-rails'
 gem 'rails-i18n'
+gem 'active_hash'
 gem "payjp"
-gem "jquery-rails"
