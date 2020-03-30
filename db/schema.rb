@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 2020_03_30_065022) do
     t.string "genre", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -60,20 +62,16 @@ ActiveRecord::Schema.define(version: 2020_03_30_065022) do
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.text "explain", null: false
+    t.text "explain"
     t.integer "price", null: false
-    t.integer "category_id", null: false
-    t.integer "brand_id"
-    t.integer "condition_id", null: false
-    t.integer "deliveryday_id", null: false
-    t.integer "prefecture_id", null: false
-    t.integer "burden_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id", null: false
+    t.bigint "brand_id"
     t.integer "exhibiting"
     t.integer "sold"
-    t.index ["user_id"], name: "index_products_on_user_id"
+    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,5 +93,6 @@ ActiveRecord::Schema.define(version: 2020_03_30_065022) do
   end
 
   add_foreign_key "images", "products"
-  add_foreign_key "products", "users"
+  add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
 end
