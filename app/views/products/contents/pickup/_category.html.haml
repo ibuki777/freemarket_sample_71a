@@ -10,10 +10,11 @@
         .product-list
           = link_to product_path(product), class:"product-link" do
             .product-image-box
-              = image_tag product.images[0].image.url,class:"image-size" 
-              %span
-                .soldout-label
-                  soldout
+              = image_tag product.images[0].image.url,class:"image-size"
+              -if  
+                %span
+                  .soldout-label
+                    soldout
             .product-link__description
               .product-name
                 = product.name
