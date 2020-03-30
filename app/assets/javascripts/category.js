@@ -1,8 +1,8 @@
 $(function(){
   var category = $(".left-list__category");
 
-  category.mouseenter();
-  console.log("成功")
+  category.hover();
+  console.log("成功");
 });
 
 
