@@ -106,6 +106,33 @@
           height: 48px;
           width: 360px;
           margin: 40px auto;
+          display: flex;
+          &-edit{
+            display: block;
+            height: 48px;
+            width: 50%;
+            background-color: #3ccace;
+            border-radius: 100px;
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 48px;
+
+          }
+          &-delete{
+            display: block;
+            height: 48px;
+            width: 50%;
+            background-color: red;
+            border-radius: 100px;
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 48px;
+            margin-left: 20px;
+          }
           &-purchase{
             display: block;
             height: 48px;

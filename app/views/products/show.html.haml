@@ -62,7 +62,7 @@
                 ブランド
               %td
                 - if @product.brand.present?
-                  = @product.brand
+                  = @product.brand.name
             -# 追加実装のために残してあります
             -# %tr
             -#   %th
@@ -93,8 +93,8 @@
         - if user_signed_in?
           - if current_user == @product.user
             .submit
-              = link_to "削除", "#", class: "submit-btn"
-              = link_to "編集", "#", class: "submit-btn"
+              = link_to "編集", "#", class: "submit-edit"
+              = link_to "削除", "#", class: "submit-delete"
           - else
             .submit
               = link_to "購入する", "#", class: "submit-purchase"
