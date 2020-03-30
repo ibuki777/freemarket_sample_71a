@@ -2,8 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create]
   
   def index
-    @products = Product.includes(:images).order(created_at: :desc).limit(1)
+    products = Product.includes(:images).limit(3)
+    @category =products.order(created_at: :desc)
+    @brand =products.order(brand_id: :desc)
     @images = Image.all.includes(:product)
+    
   end
 
   def show
