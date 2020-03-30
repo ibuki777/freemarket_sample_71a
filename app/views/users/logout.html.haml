@@ -1,0 +1,12 @@
+.wrapper
+  = render partial: 'products/header'
+  .mypage_contents
+    .left_box
+      =render "users/modules/show_left_content"
+    .right_box
+      .right_content
+        .logout-button
+          =link_to destroy_user_session_path, method: :delete, class:"logout-link" do
+            .logout-button-red
+              ログアウト
+  = render partial: 'products/footer'
