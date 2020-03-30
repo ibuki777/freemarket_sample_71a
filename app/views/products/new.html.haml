@@ -89,7 +89,8 @@
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
-          = f.text_field :brand_id, class: "input"
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "brand_id"}
+          = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択がありません"
           .label
             = f.label :image, "商品の状態", class: "label__name"
             %p.label__need 必須

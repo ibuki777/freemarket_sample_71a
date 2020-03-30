@@ -13,16 +13,21 @@ class ProductsController < ApplicationController
   end
 
   def new
+    # params.require(:order).permit(:exhibiting).merge(exhibiting_id:1)
     @product = Product.new
     @product.images.new
   end
 
   def create
     @product = Product.new(product_params)
+    # @product.insert(exhibiting_id:1)
     if @product.save
+        # def done 
+        # @product= Product.find(params[:id])
+        # end
       redirect_to root_path
     else
-      redirect_to action: :new
+      render action: :new
     end
   end
 
@@ -45,6 +50,7 @@ class ProductsController < ApplicationController
   def destroy
     
   end
+
 
   private
 
