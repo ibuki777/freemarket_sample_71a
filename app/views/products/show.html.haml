@@ -92,13 +92,12 @@
                 = @product.deliveryday.name
         - if user_signed_in?
           - if current_user == @product.user
-            .links
-              = link_to "削除", "#"
-            .links
-              = link_to "編集", "#"
+            .submit
+              = link_to "削除", "#", class: "submit-btn"
+              = link_to "編集", "#", class: "submit-btn"
           - else
-            .links
-              = link_to "購入する", "#"
+            .submit
+              = link_to "購入する", "#", class: "submit-purchase"
         .option
           .like-btn
             = icon('fa','star')

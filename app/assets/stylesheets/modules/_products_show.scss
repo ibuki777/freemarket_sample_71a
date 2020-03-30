@@ -102,6 +102,23 @@
             color: #3ccace;
           }
         }
+        .submit{
+          height: 48px;
+          width: 360px;
+          margin: 40px auto;
+          &-purchase{
+            display: block;
+            height: 48px;
+            width: 100%;
+            background-color: #3ccace;
+            border-radius: 100px;
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            line-height: 48px;
+          }
+        }
         .option{
           display: flex;
           justify-content: space-between;
