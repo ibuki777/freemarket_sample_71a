@@ -1,28 +1,8 @@
-$(function(){
-  var category = $(".left-list__category");
 
-  category.hover();
-  console.log("成功");
-});
+// 今は必須ではないためコメントアウトしてます
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 今は必須機能ではないのでコメントアウトしてます
-
-
+// $(function(){
 //   var category = $("#product_category_id");
 //   let choice = $("option");
   
@@ -81,3 +61,4 @@ $(function(){
 //   });
 
 
+// });
