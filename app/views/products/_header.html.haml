@@ -16,7 +16,9 @@
       .left-list__brand
       ブランド
     - if user_signed_in?
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      .right-list
+        -# マイページが無い為仮置きです
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
     - else
       .right-list
         = link_to "ログイン", user_session_path

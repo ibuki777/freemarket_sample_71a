@@ -1,0 +1,56 @@
+.cards{
+  width: 100%;
+  .form-title{
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 0;
+    border-bottom: $subBackGround 2px solid;
+    margin-bottom: 20px;
+  }
+  .card-form{
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px 50px 30px;
+    .field{
+      margin-bottom: 30px;
+      &__text{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      &__text-constraint{
+        background-color: red;
+        @include text-constraint;
+      }
+      &__input{
+        @include input;
+      }
+      &-box{
+        select{
+          @include input(30%);
+          height: 46px;
+          background-color: $mainWhite;
+        }
+        &__text{
+          display: inline;
+          margin-left: 10px;
+          font-size: 18px;
+        }
+      }
+    }
+    .submit{
+      background-color: $mainThemeColor;
+      font-size: 16px;
+      line-height: 48px;
+      width: 100%;
+      margin-top: 36px;
+      border: none;
+      cursor: pointer;
+    }
+    .payment-errors{
+      color: $mainRed;
+      font-size: small;
+    }
+  }
+}
