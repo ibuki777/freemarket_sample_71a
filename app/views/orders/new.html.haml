@@ -33,9 +33,10 @@
           .adress-box
             =@address.city
             =@address.address 
-          
-    %button.buy-item-btn
-      =link_to "購入する", product_orders_path(@product), method: :POST,class:"buy-item-btn__link"
+         
+    .order-main__box--bottom
+      %button.buy-item-btn
+        =link_to "購入する", product_orders_path(@product), method: :POST,class:"buy-item-btn__link"
   .caution-lists
     %ul.caution-list
       %li

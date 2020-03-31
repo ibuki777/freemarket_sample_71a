@@ -1,5 +1,4 @@
 .order-main{
-  height: 100vh;
   background-color: $subBackGround;
   .shop-logo{
     text-align: center;
@@ -77,15 +76,21 @@
         } 
       }
     }
-    .buy-item-btn{
-      width: 30%;
-      font-size: 20px;
-      background-color:$mainThemeColor;
-      display: block;
-      margin: 30px auto;
-      &__link{
-        text-decoration: none;
-        color: black;
+    &--bottom{
+      height: 90px;
+      margin-top: 50px;
+      .buy-item-btn{
+        background-color:$mainThemeColor;
+        width: 30%;
+        font-size: 20px;
+        display: block;
+        margin: 0px auto;
+        height: 40px;
+        border-radius: 5px;
+        &__link{
+          text-decoration: none;
+          color: black;
+        }
       }
     }
   }
