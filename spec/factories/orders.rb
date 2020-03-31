@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :order do
-    shipping_address { "MyString" }
-    product { nil }
-    user { nil }
+    address { 1 }
+    product { 1 }
+    user { 1 }
   end
 end
