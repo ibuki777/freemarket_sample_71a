@@ -1,3 +1,79 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.order-main{
+  height: 100vh;
+  background-color: $subBackGround;
+  .shop-logo{
+    text-align: center;
+    .shop-icon{
+      margin: 30px 0;
+    }
+  }
+  &__box{
+    margin: 0 auto;
+    background-color: $mainWhite;
+    width: 30%;
+    &--confirm{
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 32px;
+      border-bottom:  3px solid $subBackGround;
+    }
+    &--explanation{
+      text-align: center;
+      padding: 32px 16px;
+      border-bottom: 3px solid $subBackGround;
+      .buy-item-content{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        &__image-box{
+          &--buy-image{
+            height: 100px;
+            background-image: cover;
+          }
+        }
+        &__name-box{
+          margin-left: 10px;
+          .buy-item-box{
+            display: flex;
+            justify-content: space-evenly;      
+          }
+        }
+      }
+      .item-pay-box{
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        .item-pay{
+          margin-right: 100px;
+        }
+      }
+      .pay-box{
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        &__way{
+        font-size: 18px;
+        font-weight: bold;
+        } 
+      }
+    }
+    .buy-item-btn{
+      width: 30%;
+      font-size: 20px;
+      background-color:$mainThemeColor;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .caution-list{
+    list-style: none;
+    text-align: center;
+    font-size: 12px;
+    margin: 30px 0;
+  }
+  .copyright{
+    font-size: 10px;
+  }
+}
