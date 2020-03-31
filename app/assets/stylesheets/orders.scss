@@ -35,8 +35,10 @@
         &__name-box{
           margin-left: 10px;
           .buy-item-name{
-            width: 100px;            
-            padding-bottom: 30px;      
+            width: 100px;
+            padding-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
           }
           .buy-item-box{
             display: flex;
