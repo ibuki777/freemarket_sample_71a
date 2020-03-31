@@ -1,12 +1,16 @@
 .order-main{
-  width: 100vw;
+  height: 100vh;
   background-color: $subBackGround;
   .shop-logo{
     text-align: center;
+    .shop-icon{
+      margin: 30px 0;
+    }
   }
   &__box{
-    margin: 50px 20px;
+    margin: 0 auto;
     background-color: $mainWhite;
+    width: 30%;
     &--confirm{
       text-align: center;
       font-size: 30px;
@@ -55,9 +59,6 @@
         font-size: 18px;
         font-weight: bold;
         }
-        &__icon{
-          color: $mainThemeColor;
-        }
       }
       .buy-item-btn{
         width: 50%;
@@ -70,6 +71,7 @@
     list-style: none;
     text-align: center;
     font-size: 12px;
+    margin: 30px 0;
   }
   .copyright{
     font-size: 10px;
