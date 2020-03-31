@@ -11,32 +11,33 @@ class OrdersController < ApplicationController
 
   def create
     @address = current_user.addresses.first
-    # すでに購入されていないか？→＠productのsoldカラムが売り切れを示している
-    # if @product.buyer.present? 
-    #   redirect_back(fallback_location: root_path) 
-    # elsif @card.blank?
-    #   # カード情報がなければ、クレジットカードの登録に飛ばす
-    #   redirect_to new_card_path
-    #   flash[:alert] = '購入にはクレジットカード登録が必要です。登録後、再度購入してください'
-    # else
-      # 購入者もいないし、クレジットカードもあるし、決済処理に移行
-    require "payjp"
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY) 
-    # 請求を発行
-    Payjp::Charge.create(
-    amount: @product.price,
-    customer: @card.payjp_id,
-    currency: 'jpy',
-    )
-    # 売り切れなので、productの情報をアップデートして売り切れにし、出品状態を取り下げる（exhibiting:1が出品中、0が出品停止中）
-    @product.update(exhibiting: 0)
-    @order = Order.new(user_id: current_user.id, product_id: @product.id, address_id: @address.id)
-    if @order.save
-      flash[:notice] = '購入しました。'
-      redirect_to controller: 'products', action: 'show', id: @product.id
+    
+    if @product.order.present? 
+      redirect_back(fallback_location: root_path) 
+      flash[:notice] = '申し訳ございませんが売り切れです。'
+    elsif @card.blank?
+      # カード情報がなければ、クレジットカードの登録に飛ばす
+      redirect_to new_card_path
+      flash[:alert] = '購入にはクレジットカード登録が必要です。登録後、再度購入してください'
     else
-      flash[:alert] = '購入に失敗しました。'
-      redirect_to controller: 'products', action: 'show', id: @product.id
+      require "payjp"
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY) 
+      Payjp::Charge.create(
+      amount: @product.price,
+      customer: @card.payjp_id,
+      currency: 'jpy',
+      )
+      # 売り切れなので、productの情報をアップデートして売り切れにし、出品状態を取り下げる（exhibiting:1が出品中、0が出品停止中）
+      @product.update_attribute(:exhibiting, 0)
+      @product.update_attribute(:sold, 0)
+      @order = Order.new(user_id: current_user.id, product_id: @product.id, address_id: @address.id)
+        if @order.save
+          flash[:notice] = '購入しました。'
+          redirect_to controller: 'products', action: 'show', id: @product.id
+        else
+          flash[:alert] = '購入に失敗しました。'
+          redirect_to controller: 'products', action: 'show', id: @product.id
+        end
     end
   end
 
