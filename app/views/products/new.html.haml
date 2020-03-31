@@ -143,7 +143,8 @@
           .option
             = f.submit "出品する", class: "execute"
             = f.submit "下書きを保存", class: "save"
-            = link_to 'もどる', "#", class: 'back' 
+            = link_to 'もどる', "#", class: 'back'
+            = f.hidden_field :exhibiting, :value => 1
           .report
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、
             %br.repost
