@@ -29,39 +29,9 @@
                       .js-file_group{"data-index" => "#{@product.images.count}"}
                         = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
                         .js-remove 削除
-                -# = image.file_field :image, class: 'js-file'
-                -# %br/
-                -# .js-file_group{"date-index" =>"#{image.index}"}
-                -#   - if @product.persisted?
-                -#     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                -#     %span.js-remave 削除
-                -#   - if @product.persisted?
-                -#     .js-file_group{"data-index" => "#{@product.images.count}"}
-                -#       = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
-                -#       .js-remove 削除
-                -# = image.file_field :image, class: 'js-file'
-                -# %br/
-                -# .js-file_group{"date-index" =>"#{image.index}"}
-                -#   - if @product.persisted?
-                -#     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                -#     %span.js-remave 削除
-                -#   - if @product.persisted?
-                -#     .js-file_group{"data-index" => "#{@product.images.count}"}
-                -#       = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
-                -#       .js-remove 削除
-                -# = image.file_field :image, class: 'js-file'
-                -# %br/
-                -# .js-file_group{"date-index" =>"#{image.index}"}
-                -#   - if @product.persisted?
-                -#     = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                -#     %span.js-remave 削除
-                -#   - if @product.persisted?
-                -#     .js-file_group{"data-index" => "#{@product.images.count}"}
-                -#       = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
-                -#       .js-remove 削除
-            -# %i.fas.fa-camera-retro.cage__icon
-            -# %p.cage__text ドラッグ&ドロップ
-            -# %p.cage__text またはクリックしてクリックしてファイルをアップロード
+            %i.fas.fa-camera-retro.cage__icon
+            %p.cage__text ドラッグ&ドロップ
+            %p.cage__text またはクリックしてクリックしてファイルをアップロード
         .box__border
         .field
           .label
@@ -89,7 +59,8 @@
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
-          = f.text_field :brand_id, class: "input"
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "brand_id"}
+          = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択がありません"
           .label
             = f.label :image, "商品の状態", class: "label__name"
             %p.label__need 必須
@@ -142,7 +113,8 @@
           .option
             = f.submit "出品する", class: "execute"
             = f.submit "下書きを保存", class: "save"
-            = link_to 'もどる', "#", class: 'back' 
+            = link_to 'もどる', "#", class: 'back'
+            = f.hidden_field :exhibiting, value: "1"
           .report
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、
             %br.repost
