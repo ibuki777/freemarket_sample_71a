@@ -116,6 +116,10 @@
           @include hash;
 
         }
+        #product_brand_id{
+          @include hash;
+
+        }
         #product_condition_id{
           @include hash;
 
