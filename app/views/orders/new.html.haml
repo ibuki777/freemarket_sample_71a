@@ -7,7 +7,7 @@
     .order-main__box--explanation
       .buy-item-content
         .buy-item-content__image-box
-          = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: 'buy-item-content__image-box--buy-image'
+          = image_tag @product.images[0].image.url, class: 'buy-item-content__image-box--buy-image'
         .buy-item-content__name-box
           .buy-item-name
             =@product.name
