@@ -33,7 +33,6 @@
         .label{
           font-weight: bold;
           margin-bottom: 15px;
-
           &__name{
           }
           &__need{
@@ -45,9 +44,8 @@
             }
           }
           .mark{
-            margin-left: 390px;
-            position: absolute;
-            bottom: 415px;
+            float: right;
+            line-height: 590%;
           }
           .price{
             height: 45px;
