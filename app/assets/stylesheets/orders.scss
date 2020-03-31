@@ -10,7 +10,7 @@
   &__box{
     margin: 0 auto;
     background-color: $mainWhite;
-    width: 30%;
+    width: 60%;
     &--confirm{
       text-align: center;
       font-size: 30px;
@@ -20,7 +20,7 @@
     }
     &--explanation{
       text-align: center;
-      padding: 32px 16px;
+      padding: 32px;
       border-bottom: 3px solid $subBackGround;
       .buy-item-content{
         margin: 0 auto;
@@ -34,9 +34,23 @@
         }
         &__name-box{
           margin-left: 10px;
+          .buy-item-name{
+            width: 100px;
+            padding-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+          }
           .buy-item-box{
             display: flex;
-            justify-content: space-evenly;      
+            &__price{
+              margin: 0 10px;
+            }
+            &__tax{
+              margin: 0 10px;
+            }
+            &__postage{
+              margin: 0 10px;
+            }
           }
         }
       }
@@ -54,8 +68,12 @@
         margin: 0 auto;
         text-align: center;
         &__way{
-        font-size: 18px;
-        font-weight: bold;
+          font-size: 18px;
+          font-weight: bold;
+          .adress-box{
+            font-size: 15px;
+            font-weight: normal;
+          }
         } 
       }
     }
@@ -64,7 +82,11 @@
       font-size: 20px;
       background-color:$mainThemeColor;
       display: block;
-      margin: 0 auto;
+      margin: 30px auto;
+      &__link{
+        text-decoration: none;
+        color: black;
+      }
     }
   }
   .caution-list{

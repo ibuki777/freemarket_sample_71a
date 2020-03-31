@@ -30,11 +30,12 @@
       .pay-box
         .pay-box__way
           配送先住所(登録住所)
-          =@address.city
-          =@address.address 
+          .adress-box
+            =@address.city
+            =@address.address 
           
     %button.buy-item-btn
-      =link_to "購入する", product_orders_path(@product), method: :POST
+      =link_to "購入する", product_orders_path(@product), method: :POST,class:"buy-item-btn__link"
   .caution-lists
     %ul.caution-list
       %li
