@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
-  root "products#show"
+  root "products#index"
   
   resources :products, only: [:index, :show, :new, :create] do
     resources :orders, only: [:new, :create]
