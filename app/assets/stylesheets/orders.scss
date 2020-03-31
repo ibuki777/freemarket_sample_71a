@@ -1,10 +1,10 @@
-.buy-item-explanation{
+.order-main{
   width: 100vw;
   background-color: #f8f8f8;
   .shop-logo{
     text-align: center;
   }
-  .buy-item-content__box{
+  &__box{
     margin: 50px 20px;
     background-color: white;
     &--confirm{
@@ -23,11 +23,13 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        .buy-image{
-          height: 100px;
-          background-image: cover;
+        &__image-box{
+          &--buy-image{
+            height: 100px;
+            background-image: cover;
+          }
         }
-        .buy-item-content-box{
+        &__name-box{
           margin-left: 10px;
           .buy-item-box{
             display: flex;
