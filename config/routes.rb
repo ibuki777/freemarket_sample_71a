@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'orders/new'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -8,7 +9,9 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root 'products#index'
-  resources :products, only: [:index, :show, :new, :create]
+  resources :products, only: [:index, :show, :new, :create] do
+    resources :orders ,only: [:new]
+  end
   resource :user, only: [:show, :edit, :update] do
     collection do
       get'logout'
