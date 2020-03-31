@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     
     if @product.order.present? 
       redirect_back(fallback_location: root_path) 
-      flash[:notice] = '申し訳ございませんが売り切れです。'
+      flash[:alert] = '申し訳ございませんが売り切れです。'
     elsif @card.blank?
       # カード情報がなければ、クレジットカードの登録に飛ばす
       redirect_to new_card_path
