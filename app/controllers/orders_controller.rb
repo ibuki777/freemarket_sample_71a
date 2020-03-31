@@ -9,7 +9,16 @@ class OrdersController < ApplicationController
   end
 
   def create
-
+    # すでに購入されていないか？→＠productのsoldカラムが売り切れを示している
+    # if @product.buyer.present? 
+    #   redirect_back(fallback_location: root_path) 
+    # elsif @card.blank?
+    #   # カード情報がなければ、クレジットカードの登録に飛ばす
+    #   redirect_to new_card_path
+    #   flash[:alert] = '購入にはクレジットカード登録が必要です。登録後、再度購入してください'
+    # else
+      # 購入者もいないし、クレジットカードもあるし、決済処理に移行
+      require "payjp"
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY) 
       # 請求を発行
       Payjp::Charge.create(
