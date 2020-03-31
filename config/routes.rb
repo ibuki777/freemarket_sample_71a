@@ -9,12 +9,15 @@ Rails.application.routes.draw do
   end
   # root 'products#index'
   root "orders#new"
-  resources :products, only: [:index, :show, :new, :create]
+  
+  resources :products, only: [:index, :show, :new, :create] do
+    resources :orders, only: [:new, :create]
+  end
+
   resource :user, only: [:show, :edit, :update] do
     collection do
       get'logout'
     end
-    resources :order, only: [:new, :create]
   end
   resources :cards, only: [:index, :new, :create, :destroy]
 end

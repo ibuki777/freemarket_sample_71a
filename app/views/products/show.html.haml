@@ -97,7 +97,7 @@
               = link_to "削除", "#", class: "submit-delete"
           - else
             .submit
-              = link_to "購入する", "#", class: "submit-purchase"
+              = link_to "購入する" , new_product_order_path(@product), class: "submit-purchase"
         .option
           .like-btn
             = icon('fa','star')
