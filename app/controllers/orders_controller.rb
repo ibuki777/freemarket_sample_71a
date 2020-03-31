@@ -28,7 +28,8 @@ class OrdersController < ApplicationController
     customer: @card.payjp_id,
     currency: 'jpy',
     )
-    # 売り切れなので、productの情報をアップデートして売り切れにします。
+    # 売り切れなので、productの情報をアップデートして売り切れにし、出品状態を取り下げる（exhibiting:1が出品中、0が出品停止中）
+    @product.update(exhibiting: 0)
     @order = Order.new(user_id: current_user.id, product_id: @product.id, address_id: @address.id)
     if @order.save
       flash[:notice] = '購入しました。'
