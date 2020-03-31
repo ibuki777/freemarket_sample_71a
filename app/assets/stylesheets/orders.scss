@@ -50,19 +50,21 @@
         }
       }
       .pay-box{
-      width: 30%;
-      margin: 0 auto;
-      text-align: center;
-      &__way{
-      font-size: 18px;
-      font-weight: bold;
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        &__way{
+        font-size: 18px;
+        font-weight: bold;
+        } 
       }
     }
     .buy-item-btn{
-      width: 50%;
+      width: 30%;
       font-size: 20px;
       background-color:$mainThemeColor;
-    }
+      display: block;
+      margin: 0 auto;
     }
   }
   .caution-list{
