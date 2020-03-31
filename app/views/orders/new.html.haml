@@ -1,0 +1,62 @@
+.buy-item-explanation
+  .shop-logo
+    = image_tag src="/images/material/logo/logo.png", width:"140px", class:"shop-icon"
+  .buy-item-content__box
+    .buy-item-content__box--confirm
+      購入内容の確認
+    .buy-item-content__box--explanation
+      .buy-item-content
+        .buy-item-content__image
+          = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: 'buy-image'
+        .buy-item-content-box
+          .buy-item-content__name
+            ローリーズファーム シャギーニット
+          .buy-item-box
+            .buy-item-box__price
+              ¥900
+            .buy-item-box__tax
+              (税込み)
+            .buy-item-box__postage
+              送料込み
+    .buy-item-content__box--explanation
+      .item-pay-box
+        .item-pay
+          支払い金額
+        .item-price
+          ¥900
+    .buy-item-content__box--explanation
+      .pay-box
+        .pay-box__way
+          支払い方法
+        .pay-box__icon
+          = icon('fa','plus-square')
+          登録してください
+      .pay-box
+        .pay-box__way
+          発送先
+        .pay-box__icon
+          = icon('fa','plus-square')
+          登録してください
+      .caution-wording
+        郵便局/コンビニ受取をご希望の方は、購入後、
+        %br
+        取引画面から受取場所変更をすることが可能です。
+        %br
+        出品者が発送作業を開始した後には受取場所変更ができませんので、
+        %br
+        早めに受取場所の変更を行ってください。
+      %button.buy-item-btn
+        購入する
+  .caution-lists
+    %ul.caution-list
+      %li
+        プライバシーポリシー
+      %li
+        FURIMA利用規約
+      %li
+        特定取引に関する表記
+  .shop-logo
+    = image_tag src="/images/material/logo/logo.png", width:"140px", class:"shop-icon"
+    .copyright
+      © FURIMA,Inc
+

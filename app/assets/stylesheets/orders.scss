@@ -1,0 +1,80 @@
+.buy-item-explanation{
+  width: 100vw;
+  background-color: #f8f8f8;
+  .shop-logo{
+    text-align: center;
+  }
+  .buy-item-content__box{
+    margin: 50px 20px;
+    background-color: white;
+    &--confirm{
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 32px;
+      border-bottom: 10px red;
+      border-bottom:  3px solid #f8f8f8;
+    }
+    &--explanation{
+      text-align: center;
+      padding: 32px 16px;
+      border-bottom: 3px solid #f8f8f8;
+      .buy-item-content{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        .buy-image{
+          height: 100px;
+          background-image: cover;
+        }
+        .buy-item-content-box{
+          margin-left: 10px;
+          .buy-item-box{
+            display: flex;
+            justify-content: space-evenly;      
+          }
+        }
+      }
+      .item-pay-box{
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        .item-pay{
+          margin-right: 100px;
+        }
+      }
+      .pay-box{
+        border-bottom: 3px solid #f8f8f8;
+        width: 30%;
+        margin: 0 auto;
+        text-align: left;
+        padding: 30px 0;
+        &__way{
+        font-size: 18px;
+        font-weight: bold;
+        }
+        &__icon{
+          color: #38AEF0;
+        }
+      }
+      .caution-wording{
+        font-size: 10px;
+        padding: 30px 0;
+      }
+      .buy-item-btn{
+        width: 50%;
+        font-size: 20px;
+        background-color:#38AEF0;
+      }
+    }
+  }
+  .caution-list{
+    list-style: none;
+    text-align: center;
+    font-size: 12px;
+  }
+  .copyright{
+    font-size: 10px;
+  }
+}
