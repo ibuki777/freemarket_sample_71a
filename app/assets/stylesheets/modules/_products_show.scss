@@ -1,3 +1,13 @@
+@mixin submit(){
+  height: 48px;
+  border-radius: 100px;
+  font-size: 18px;
+  color: $mainWhite;
+  text-decoration: none;
+  text-align: center;
+  line-height: 48px;
+}
+
 
 .header-bottom{
   width: 100%;
@@ -28,7 +38,7 @@
       width: 700px;
       margin: 0 auto;
       &__item-box{
-        background-color: white;
+        background-color: $mainWhite;
         padding: 24px 40px 40px;
         &--name{
           text-align: center;
@@ -99,7 +109,32 @@
           }
            .table-btn{
             text-decoration: none;
-            color: #3ccace;
+            color: $mainThemeColor;
+          }
+        }
+        .submit{
+          height: 48px;
+          width: 360px;
+          margin: 40px auto;
+          display: flex;
+          &-edit{
+            display: block;
+            background-color: $mainThemeColor;
+            width: 50%;
+            @include submit;
+          }
+          &-delete{
+            display: block;
+            background-color: red;
+            width: 50%;
+            margin-left: 20px;
+            @include submit;
+          }
+          &-purchase{
+            display: block;
+            background-color: $mainThemeColor;
+            width: 100%;
+            @include submit;
           }
         }
         .option{
@@ -108,13 +143,13 @@
           .like-btn{
             padding: 6px 10px;
             border-radius: 40px;
-            color: #3ccace;
+            color: $mainThemeColor;
             border: 1px solid #ffb340;
             margin-top: 10px;
             &:hover{
               opacity: 0.5;
             }
-            
+
           }
           .report-btn{
             margin-top: 10px;
@@ -132,7 +167,7 @@
       }
       .product-comment{
         padding: 24px;
-        background-color: white;
+        background-color: $mainWhite;
         margin: 10px 0;
         text-align: center;
         .comment-box{
@@ -146,13 +181,13 @@
           margin: 30px 0;
         }
         .comment-btn{
-          background-color: #3ccace;
           width: 50%;
-          margin: 0 auto;
           font-size: 18px;
           border-radius: 100px;
           line-height: 48px;
-          color: white;
+          color: $mainWhite;
+          background-color: $mainThemeColor;
+          margin: 0 auto;
         }
       }
       .links{
@@ -160,14 +195,14 @@
           display: flex;
           justify-content: space-between;
           .product__link{
-            color: #3ccace;
+            color: $mainThemeColor;
             text-decoration: none;
           }
         }
       }
       .category-back{
         &__link{
-          color: #3ccace;
+          color: $mainThemeColor;
           text-decoration: none;
           font-weight: bold;
           display: block;

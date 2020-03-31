@@ -16,7 +16,11 @@ class Product < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :burden
   belongs_to_active_hash :deliveryday
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :brand
+  has_one :order
   has_many :images, dependent: :destroy
   has_many :products
+  belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
 end
