@@ -48,8 +48,7 @@
               %td
                 %ul
                   %li
-                    = link_to "/", class: "table-btn" do
-                      = @product.category.name
+                    = @product.category.name
                   -# 追加実装のために残してあります
                   -# %li
                   -#   = link_to "/", class: "table-btn" do
@@ -83,8 +82,7 @@
               %th
                 発送元の地域
               %td
-                = link_to "/", class: "table-btn" do
-                  = @product.prefecture.name
+                = @product.prefecture.name
             %tr
               %th
                 発送日の目安
@@ -98,6 +96,10 @@
           - else
             .submit
               = link_to "購入する", "#", class: "submit-purchase"
+        .links
+          =link_to root_path,class:"product__link" do
+            <ホームへ
+
         .option
           .like-btn
             = icon('fa','star')
@@ -114,16 +116,5 @@
         .comment-btn
           =icon('fa','comment')
           コメントする
-      .links
-        %ul
-          %li
-            =link_to "#",class:"product__link" do
-              <前の商品
-          %li
-            =link_to "#",class:"product__link" do
-              後ろの商品>
-      .category-back
-        = link_to "#",class:"category-back__link" do
-          ベビー・キッズをもっと見る
   = render '/products/contents/ad'
   = render partial: 'footer'
