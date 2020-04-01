@@ -15,6 +15,14 @@
       margin-top: 50px;
     }
   }
+  &__title{
+    width: 630px;
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $subBackGround;
+    margin: 16px auto 0;
+  }
   &__contents{
     &__box{
       background-color: $mainWhite;

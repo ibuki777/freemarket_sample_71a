@@ -2,6 +2,8 @@
   .exhibition__header
     = link_to root_path do
       = image_tag '/images/material/logo/logo.png', class: 'logo'
+  .exhibition__title
+    = @page_title
   .exhibition__contents
     .exhibition__contents__box
       = form_with model: @product, local: true do |f|
