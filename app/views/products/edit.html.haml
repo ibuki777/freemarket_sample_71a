@@ -1,7 +1,7 @@
 -# CSSは合わしただけなので各々で変更あればしてください
 .exhibition
   .exhibition__header
-    %a{href: root_path}
+    = link_to root_path do
       = image_tag '/images/material/logo/logo.png', class: 'logo'
   .exhibition__contents
     .exhibition__contents__box
@@ -112,9 +112,8 @@
             .period
               ー
           .option
-            = f.submit "出品する", class: "execute"
-            = f.submit "下書きを保存", class: "save"
-            = link_to 'もどる', "#", class: 'back'
+            = f.submit "変更を保存", class: "execute"
+            = link_to '<<商品詳細へ戻る', product_path(@product), class: 'back'
           .report
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、
             %br.repost
@@ -125,6 +124,6 @@
         = link_to "プライバシーポリシー", "#", class: "hover"
         = link_to "FURIMA利用規約", "#", class: "hover"
         = link_to "ポイントに関する特約", "#", class: "hover"
-      %a{href: root_path, class:"footer-image"}
-        =image_tag "logo-white.svg"
+      = link_to root_path do
+        =image_tag "logo-white.svg", class:"footer-image"
       %p{class: "footer-text"}©︎FURAMA
