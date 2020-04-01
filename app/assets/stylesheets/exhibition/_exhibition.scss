@@ -33,6 +33,7 @@
         .label{
           font-weight: bold;
           margin-bottom: 15px;
+          position: relative;
 
           &__name{
           }
@@ -45,14 +46,15 @@
             }
           }
           .mark{
-            margin-left: 390px;
             position: absolute;
-            bottom: 415px;
+            top: 15px;
+            right: 160px;
           }
           .price{
             height: 45px;
             border-radius: 4px;
             float: right;
+            text-align: right;
           }
         }
         &__sentence{
@@ -69,6 +71,7 @@
           border-image: initial;
           cursor: pointer;
           text-align: center;
+
           .number{
             display: inline;
             padding:5px;
