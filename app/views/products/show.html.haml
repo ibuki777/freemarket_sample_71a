@@ -48,7 +48,7 @@
               %td
                 %ul
                   %li
-                    = link_to "/", class: "table-btn" do
+                    .table-btn
                       = @product.category.name
                   -# 追加実装のために残してあります
                   -# %li
@@ -83,7 +83,7 @@
               %th
                 発送元の地域
               %td
-                = link_to "/", class: "table-btn" do
+                .table-btn
                   = @product.prefecture.name
             %tr
               %th
