@@ -2,6 +2,7 @@ $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
     const html = `<div data-index="${num}" class="js-file_group">
+                    <div class="number">new.</div>
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][image]"
                     id="product_images_attributes_${num}_image">
