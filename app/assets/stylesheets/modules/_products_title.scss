@@ -35,25 +35,25 @@
   }
   a.exhibition__btn{
     background-color: $mainThemeColor;
-    height: 130px;
-    width: 130px;
-    border-radius: 70px;
+    height: 170px;
+    width: 170px;
+    border-radius: 100px;
     text-align: center;
     position: fixed;
-    right: 15px;
-    top: 430px;
+    right: 35px;
+    top: 521px;
     z-index: 3;
     text-decoration: none;
     .exhibition__letter{
       color: $mainWhite;
-      padding-top: 13px;
-      font-size: 27px;
+      padding-top: 20px;
+      font-size: 35px;
     }
     .exhibition__icon{
       background-image: url(/images/material/icon/icon_camera.png);
       background-size: cover;
-      height: 50px;
-      width: 50px;
+      height: 60px;
+      width: 60px;
       display: inline-block;
 
     }
