@@ -27,9 +27,15 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
+    if @product.update(product_params)
+      redirect_to product_path(@product)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -37,7 +43,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product

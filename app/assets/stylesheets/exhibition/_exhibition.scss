@@ -71,6 +71,29 @@
           border-image: initial;
           cursor: pointer;
           text-align: center;
+
+          .number{
+            display: inline;
+            padding:5px;
+          }
+          .js-file_group{
+            display: flex;
+            width: 300px;
+            margin: 0 auto;
+          }
+          // padding: 35px 0;
+
+          // ここのコメントアウトはわざと残してあります
+          // align-content: center;
+          // -webkit-box-align: center;
+          // align-items: center;
+          // display: flex;
+          // flex-wrap: wrap;
+          // -webkit-box-pack: center;
+          // justify-content: center;
+          // position: relative;
+          // transition: all 0.5s ease-out 0s;
+          
           .image{
             display: none;
 
@@ -83,6 +106,21 @@
 
           }
         }
+        .js-file_group{
+          display: flex;
+          width: 350px;
+          margin: 0 auto;
+          .number{
+            width: 25px;
+            text-align: center;
+            margin-right: 5px;
+          }
+          .js-remove{
+            color: red;
+            cursor: pointer;
+          }
+        }
+
         textarea{
           resize: vertical;
         }
@@ -143,15 +181,10 @@
             background-color: $mainThemeColor;
             color: $mainWhite;
             @include execute;
-
           }
-          .save{
-            display: block;
-            background-color: $subBackGround;
-            @include execute;
-
+          .back{
+            font-size: 16px;
           }
-
           a{
             text-decoration: none;
             color: $mainThemeColor;
