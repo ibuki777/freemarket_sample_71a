@@ -1,7 +1,7 @@
 -# CSSは合わしただけなので各々で変更あればしてください
 .exhibition
   .exhibition__header
-    %a{href: root_path}
+    = link_to root_path do
       = image_tag '/images/material/logo/logo.png', class: 'logo'
   .exhibition__contents
     .exhibition__contents__box
@@ -13,25 +13,27 @@
             = render partial: 'layouts/error_messages', locals: {product: @image, column: "image"}
           .field__sentence
             最大10枚までアップロードできます
-          .cage#image-box
+          .cage
             #previews
               - if @product.persisted?
                 - @product.images.each_with_index do |image, i|
+                  %p.number #{i+1}.
                   = image_tag image.image.url, data:{ index: i }, width: "100", height: '100'
-              =f.fields_for :images do |image|
+          #image-box
+            =f.fields_for :images do |image|
+              .js-file_group{"data-index" => "#{image.index}"}
+                .number
+                  #{image.index+1}.
                 = image.file_field :image, class: 'js-file'
-                %br/
-                .js-file_group{"date-index" =>"#{image.index}"}
-                  - if @product.persisted?
-                    = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                    %span.js-remave 削除
-                    - if @product.persisted?
-                      .js-file_group{"data-index" => "#{@product.images.count}"}
-                        = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
-                        .js-remove 削除
-            %i.fas.fa-camera-retro.cage__icon
-            %p.cage__text ドラッグ&ドロップ
-            %p.cage__text またはクリックしてクリックしてファイルをアップロード
+                %span.js-remove 削除
+              - if @product.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+            - if @product.persisted?
+              .js-file_group{"data-index" => "#{@product.images.count}"}
+                .number
+                  new.
+                = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: 'js-file'
+                .js-remove 削除
         .box__border
         .field
           .label
@@ -59,7 +61,6 @@
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
-            = render partial: 'layouts/error_messages', locals: {product: @product, column: "brand_id"}
           = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "選択がありません"
           .label
             = f.label :image, "商品の状態", class: "label__name"
@@ -111,10 +112,8 @@
             .period
               ー
           .option
-            = f.submit "出品する", class: "execute"
-            = f.submit "下書きを保存", class: "save"
-            = link_to 'もどる', "#", class: 'back'
-            = f.hidden_field :exhibiting, value: "1"
+            = f.submit "変更を保存", class: "execute"
+            = link_to '<<商品詳細へ戻る', root_path, class: 'back'
           .report
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、
             %br.repost
@@ -125,6 +124,6 @@
         = link_to "プライバシーポリシー", "#", class: "hover"
         = link_to "FURIMA利用規約", "#", class: "hover"
         = link_to "ポイントに関する特約", "#", class: "hover"
-      %a{href: root_path, class:"footer-image"}
-        =image_tag "logo-white.svg"
+      = link_to root_path do
+        =image_tag "logo-white.svg", class:"footer-image"
       %p{class: "footer-text"}©︎FURAMA
