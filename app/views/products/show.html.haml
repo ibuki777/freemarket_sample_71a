@@ -44,25 +44,12 @@
                   %li
                     .table-btn
                       = @product.category.name
-                  -# 追加実装のために残してあります
-                  -# %li
-                  -#   = link_to "/", class: "table-btn" do
-                  -#     ベビーさん
-                  -# %li
-                  -#   = link_to "/", class: "table-btn" do
-                  -#     アウター
             %tr
               %th
                 ブランド
               %td
                 - if @product.brand.present?
                   = @product.brand.name
-            -# 追加実装のために残してあります
-            -# %tr
-            -#   %th
-            -#     商品のサイズ
-            -#   %td
-            -#     XL
             %tr
               %th
                 商品の状態
