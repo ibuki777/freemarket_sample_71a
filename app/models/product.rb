@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates :price, 
   :numericality => { 
     :greater_than_or_equal_to => 300,
-    :less_than_or_equal_to => 999999,
+    :less_than_or_equal_to => 1000000,
     :message => '300以上999999以下で入力してください'
   }
   validates :burden_id,:condition_id,:category_id,:deliveryday_id,:prefecture_id,{presence:{message: "を選択してください"}}
