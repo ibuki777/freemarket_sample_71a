@@ -1,3 +1,5 @@
+
+
 .wrapper
   = render partial: 'header'
   %nav.header-bottom
@@ -103,8 +105,10 @@
 
         .option
           .like-btn
-            = icon('fa','star')
-            お気に入り 0
+            = render 'likes/like', product: @product
+
+
+
           .report-btn
             = icon('fa','flag')
             不適切な商品の通報

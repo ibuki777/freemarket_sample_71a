@@ -17,7 +17,7 @@ $(document).on('turbolinks:load',function(){
       if (response.error){
         form.find('.payment-errors').text(response.error.message);
         form.find('.submit').prop('disabled', false);
-      }   
+      }
       else {
         $("#card_number").removeAttr("name");
         $("#cvc").removeAttr("name");

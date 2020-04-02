@@ -4,8 +4,8 @@ class Product < ApplicationRecord
   validates :images, presence: true
   validates :name, presence:true
   validates :explain, {presence:{message: "を入力、または1000字以内で入力してください"},length: {maximum:1000}}
-  validates :price, 
-  :numericality => { 
+  validates :price,
+  :numericality => {
     :greater_than_or_equal_to => 299,
     :less_than_or_equal_to => 1000000,
     :message => '300以上9999999以下で入力してください'
@@ -22,6 +22,7 @@ class Product < ApplicationRecord
   has_many :images
   has_many :products
   belongs_to :user
-
   accepts_nested_attributes_for :images, allow_destroy: true
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 end
