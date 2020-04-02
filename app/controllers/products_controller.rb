@@ -27,7 +27,6 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
@@ -39,6 +38,8 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product.destroy
+    redirect_to root_path
   end
 
   private

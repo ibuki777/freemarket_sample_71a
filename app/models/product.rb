@@ -19,7 +19,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :brand
   has_one :order
-  has_many :images
+  has_many :images, dependent: :destroy
   has_many :products
   belongs_to :user
 
