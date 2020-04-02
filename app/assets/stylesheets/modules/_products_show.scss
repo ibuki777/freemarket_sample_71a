@@ -133,6 +133,15 @@
             @include submit;
           }
         }
+        .links{
+          margin-bottom: 16px;
+          .product__link{
+            font-size: 20px;
+            color: $mainThemeColor;
+            text-decoration: none;
+          }
+        }
+
         .option{
           display: flex;
           justify-content: space-between;
@@ -184,16 +193,6 @@
           color: $mainWhite;
           background-color: $mainThemeColor;
           margin: 0 auto;
-        }
-      }
-      .links{
-        ul{
-          display: flex;
-          justify-content: space-between;
-          .product__link{
-            color: $mainThemeColor;
-            text-decoration: none;
-          }
         }
       }
       .category-back{
