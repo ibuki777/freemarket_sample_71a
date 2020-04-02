@@ -21,6 +21,7 @@
       color:#333;
       display: block;
       margin: 40px auto 0;
+      @include hover_opacity;
     }
     .footer-text{
       color:$mainWhite;

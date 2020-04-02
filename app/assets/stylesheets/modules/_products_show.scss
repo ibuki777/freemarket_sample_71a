@@ -6,8 +6,14 @@
   text-decoration: none;
   text-align: center;
   line-height: 48px;
+  @include hover_opacity;
 }
 
+@mixin link_btn(){
+  color: $mainThemeColor;
+  text-decoration: none;
+  @include hover_opacity;
+}
 
 .header-bottom{
   width: 100%;
@@ -107,10 +113,6 @@
             border: 1px solid #dedede;
             font-size: 14px;
           }
-           .table-btn{
-            text-decoration: none;
-            color: $mainThemeColor;
-          }
         }
         .submit{
           height: 48px;
@@ -137,6 +139,32 @@
             @include submit;
           }
         }
+        .sign-message{
+          font-size: 18px;
+          color: gray;
+          text-align: center;
+        }
+        .user-path{
+          text-align: right;
+          margin-top: 10px;
+          &-signin{
+            @include link_btn;
+            font-size: 18px;
+          }
+          &-signup{
+            @include link_btn;
+            font-size: 18px;
+            margin-left: 10px;
+          }
+        }
+        .links{
+          margin-bottom: 16px;
+          .product__link{
+            @include link_btn;
+            font-size: 20px;
+          }
+        }
+
         .option{
           display: flex;
           justify-content: space-between;
@@ -188,16 +216,6 @@
           color: $mainWhite;
           background-color: $mainThemeColor;
           margin: 0 auto;
-        }
-      }
-      .links{
-        ul{
-          display: flex;
-          justify-content: space-between;
-          .product__link{
-            color: $mainThemeColor;
-            text-decoration: none;
-          }
         }
       }
       .category-back{

@@ -13,7 +13,17 @@
       height: 53px;
       width: 177px;
       margin-top: 50px;
+      @include hover_opacity;
     }
+  }
+  &__title{
+    width: 630px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $subBackGround;
+    margin: 16px auto 0;
   }
   &__contents{
     &__box{
@@ -25,24 +35,25 @@
         font-size: 12px;
         position: relative;
         &__title{
+          font-size: 14px;
           color: rgb(136, 136, 136);
           font-weight: bold;
           margin-bottom: 20px;
-          display: flex;
         }
         .label{
           font-weight: bold;
           margin-bottom: 15px;
           position: relative;
-
           &__name{
+            font-size: 16px;
           }
+
           &__need{
             background-color: red;
-            @include must;
+            @include text-constraint;
             &-blue{
               background-color: blue;
-              @include must;
+              @include text-constraint;
             }
           }
           .mark{
@@ -62,15 +73,23 @@
           margin-bottom: 10px;
         }
         .cage{
-          // height: 140px;
           margin-bottom: 10px;
           background-color: rgb(245, 245, 245);
           border-width: 1px;
           border-style: dashed;
           border-color: rgb(204, 204, 204);
           border-image: initial;
-          cursor: pointer;
           text-align: center;
+
+          .number{
+            display: inline;
+            padding:5px;
+          }
+          .js-file_group{
+            display: flex;
+            width: 300px;
+            margin: 0 auto;
+          }
           .image{
             display: none;
 
@@ -83,15 +102,32 @@
 
           }
         }
+        .js-file_group{
+          display: flex;
+          width: 350px;
+          margin: 0 auto;
+          .number{
+            width: 25px;
+            text-align: center;
+            margin-right: 5px;
+          }
+          .js-remove{
+            color: red;
+            cursor: pointer;
+            @include hover_opacity;
+          }
+        }
+
         textarea{
           resize: vertical;
         }
         .discription{
           height: 150px;
           width: 100%;
-          margin-bottom: 10px;
           padding: 20px;
+          border: 1px solid #a9a9a9;
           border-radius: 4px;
+          margin-bottom: 10px;
         }
         .text-count{
           padding-left: 530px;
@@ -122,18 +158,6 @@
         #product_deliveryday_id{
           @include hash;
         }
-        .cost{
-          display: flex;
-          justify-content: space-between;
-          margin: 30px 0;
-
-          &__fee{
-
-          }
-          .period{
-            
-          }
-        }
 
         .option{
           width: 360px;
@@ -142,16 +166,14 @@
           .execute{
             background-color: $mainThemeColor;
             color: $mainWhite;
+            margin-top: 30px;
             @include execute;
-
+            @include hover_opacity;
           }
-          .save{
-            display: block;
-            background-color: $subBackGround;
-            @include execute;
-
+          .back{
+            font-size: 16px;
+            @include hover_opacity;
           }
-
           a{
             text-decoration: none;
             color: $mainThemeColor;
@@ -190,6 +212,7 @@
         color:#333;
         display: block;
         margin: 40px auto 0;
+        @include hover_opacity;
       }
       .footer-text{
         color:$mainWhite;
