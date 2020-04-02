@@ -39,9 +39,13 @@ describe Product do
     it "1000字以内なら登録" do
       product = build(:product, explain: "a"*1000)
       product.valid?
-      expect(product).to be_valid
+      expect(product.errors[:explain]).to include("は1000文字以内で入力してください")
     end
 
+    it "1000文字以上なら登録" do
+      product = build(:product, explain: "a"*10001)
+      product.valid?
+      expect(product.errors[:expect])
     it "商品値段なしでは無効" do
       product = build(:product, price: nil)
       product.valid?
