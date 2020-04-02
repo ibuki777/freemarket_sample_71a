@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     @category =products.order(created_at: :desc)
     @brand =products.order(brand_id: :desc)
     @images = Image.all.includes(:product)
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def show
