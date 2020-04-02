@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  validates_associated :images, {presence:{message: "を選択してください"}}
-  validates :images, presence: true
+  # validates_associated :images, {presence:{message: "を選択してください"}}
+  # validates :images, presence: true
   validates :name, presence:true
   validates :explain, {presence:{message: "を入力、または1000字以内で入力してください"},length: {maximum:1000}}
   validates :price, 
@@ -23,3 +23,4 @@ class Product < ApplicationRecord
   belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
 end
+
