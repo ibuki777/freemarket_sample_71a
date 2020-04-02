@@ -6,14 +6,13 @@
   text-decoration: none;
   text-align: center;
   line-height: 48px;
+  @include hover_opacity;
 }
 
 @mixin link_btn(){
   color: $mainThemeColor;
   text-decoration: none;
-  &:hover{
-    opacity: 0.5;
-  }
+  @include hover_opacity;
 }
 
 .header-bottom{

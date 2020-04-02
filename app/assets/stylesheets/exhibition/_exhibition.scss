@@ -13,6 +13,7 @@
       height: 53px;
       width: 177px;
       margin-top: 50px;
+      @include hover_opacity;
     }
   }
   &__title{
@@ -187,9 +188,11 @@
             background-color: $mainThemeColor;
             color: $mainWhite;
             @include execute;
+            @include hover_opacity;
           }
           .back{
             font-size: 16px;
+            @include hover_opacity;
           }
           a{
             text-decoration: none;
@@ -229,6 +232,7 @@
         color:#333;
         display: block;
         margin: 40px auto 0;
+        @include hover_opacity;
       }
       .footer-text{
         color:$mainWhite;

@@ -20,6 +20,7 @@
   &-header{
     text-align: center;
     margin-top: 40px;
+    @include hover_opacity;
   }
   &-main{
     width: 500px;
@@ -86,14 +87,16 @@
       margin-top: 36px;
       border: none;
       cursor: pointer;
+      @include hover_opacity;
     }
     .shared-links{
       margin-top: 20px;
       .link{
         font-size: 18px;
         color: $mainThemeColor;
+        text-decoration: none;
+        @include hover_opacity;
       }
-      @include hover;
     }
   }
 }

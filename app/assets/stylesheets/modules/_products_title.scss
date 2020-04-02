@@ -44,6 +44,7 @@
     top: 521px;
     z-index: 3;
     text-decoration: none;
+    @include hover_opacity;
     .exhibition__letter{
       color: $mainWhite;
       padding-top: 20px;
