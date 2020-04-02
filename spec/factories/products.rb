@@ -15,7 +15,7 @@ FactoryBot.define do
     end
 
     trait :with_image do
-      after(:build) {|product| product.images << build(:image, product: product)}
+      after(:build) {|product| product.images << build(:image,nil, product: product)}
     end
 
   end

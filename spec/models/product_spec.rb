@@ -6,10 +6,9 @@ describe Product do
     #   product.valid?
     # end
     it "画像なしは無効" do
-      product = build(:product, :no_image)
-      binding.pry
+      product = build(:product, :with_image)
       product.valid?
-      expect(product.errors[:images]).to include("を選択してください")
+      expect(images.errors[:image]).to include("を選択してください")
     end
     it "画像選択は登録" do
       product = build(:product)
