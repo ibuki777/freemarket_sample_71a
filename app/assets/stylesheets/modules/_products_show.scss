@@ -6,8 +6,14 @@
   text-decoration: none;
   text-align: center;
   line-height: 48px;
+  @include hover_opacity;
 }
 
+@mixin link_btn(){
+  color: $mainThemeColor;
+  text-decoration: none;
+  @include hover_opacity;
+}
 
 .header-bottom{
   width: 100%;
@@ -133,12 +139,29 @@
             @include submit;
           }
         }
+        .sign-message{
+          font-size: 18px;
+          color: gray;
+          text-align: center;
+        }
+        .user-path{
+          text-align: right;
+          margin-top: 10px;
+          &-signin{
+            @include link_btn;
+            font-size: 18px;
+          }
+          &-signup{
+            @include link_btn;
+            font-size: 18px;
+            margin-left: 10px;
+          }
+        }
         .links{
           margin-bottom: 16px;
           .product__link{
+            @include link_btn;
             font-size: 20px;
-            color: $mainThemeColor;
-            text-decoration: none;
           }
         }
 

@@ -1,4 +1,5 @@
 .pickup-product{
+  width: 100vw;
   padding-top: 80px;
   background-color: $subBackGround;
   &__head{
@@ -33,16 +34,16 @@
         display: inline-block;
         text-decoration: none;
         .product-image-box{
-         width: 220px;
-         height: 150px;
-         position: relative;
-         overflow: hidden;
-         margin: 0;
-         position: relative;
+          width: 220px;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          position: relative;
           .image-size {
-           width: 100%;
-           height: 150px;
-           object-fit: cover;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
           }
           span {
             position: absolute;
@@ -54,10 +55,8 @@
               background-color: white;
               color: red;
               font-size: 20px;
-  
             }
-          } 
-          
+          }
         }
         &__description{
           background-color:$mainWhite;
