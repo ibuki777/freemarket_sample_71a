@@ -1,7 +1,8 @@
 FactoryBot.define do
   
   factory :image do
-    images   {File.open("#{Rails.root}/public/images/material/icon/icon_category.png")}
+    image  {File.open("#{Rails.root}/spec/fixtures/test_image.png")}
+    product
   end
 
 end

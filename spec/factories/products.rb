@@ -1,7 +1,6 @@
 FactoryBot.define do
   
   factory :product do
-    {after(:build){ |image| images (image)}}
     name           {"Tシャツ"}
     explain        {"良い状態"}
     price          {"2000"}
@@ -11,6 +10,13 @@ FactoryBot.define do
     prefecture_id  {"1"}
     deliveryday_id {"1"}
     user
-    
+    after(:build) do |product|
+      product.images << build(:image, product: product)
+    end
+
+    trait :with_image do
+      after(:build) {|product| product.images << build(:image, product: product)}
+    end
+
   end
 end
