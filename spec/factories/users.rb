@@ -1,6 +1,7 @@
 FactoryBot.define do
   require "faker"
   factory :user do
+    id                    {"1"}
     password = Faker::Internet.password(min_length: 8)
     nickname              {Faker::Creature::Animal.name}
     email                 {Faker::Internet.email(domain: 'example')}
