@@ -99,10 +99,10 @@
             .submit
               = link_to "購入する", "#", class: "submit-purchase"
         - else
-          ※購入するにはログインまたは新規会員登録をしてください※
+          %p{class: "sign-message"}※購入するにはログインまたは新規会員登録をしてください※
           .user-path
-            = link_to "ログイン", user_session_path
-            = link_to "新規会員登録", new_user_registration_path
+            = link_to "ログイン>>", user_session_path, class: "user-path-signin"
+            = link_to "新規会員登録>>", new_user_registration_path, class: "user-path-signup"
         .links
           =link_to "<<ホームへ", root_path,class:"product__link"
 
