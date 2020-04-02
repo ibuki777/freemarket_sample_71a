@@ -46,6 +46,7 @@ describe Product do
       product = build(:product, explain: "a"*10001)
       product.valid?
       expect(product.errors[:expect])
+    end
     it "商品値段なしでは無効" do
       product = build(:product, price: nil)
       product.valid?
