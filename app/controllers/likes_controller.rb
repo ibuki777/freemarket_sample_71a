@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-
   before_action :set_variables
 
   def like
@@ -15,8 +14,7 @@ class LikesController < ApplicationController
   private
 
   def set_variables
-    @product = product.find(params[:product_id])
+    @product = Product.find(params[:product_id])
     @id_name = "#like-link-#{@product.id}"
   end
-
 end
