@@ -33,13 +33,14 @@ describe Product do
     it "商品説明なしでは無効" do
       product = build(:product, explain: nil)
       product.valid?
-      expect(product.errors[:explain]).to include("を入力、または1000字以内で入力してください")
+      expect(product.errors[:explain]).to include("を入力してください")
     end
+    
 
     it "1000字以内なら登録" do
       product = build(:product, explain: "a"*1000)
       product.valid?
-      expect(product.errors[:explain]).to include("は1000文字以内で入力してください")
+      expect(product).to be_valid
     end
 
     it "1000文字以上なら無効" do
