@@ -2,15 +2,17 @@ crumb :root do
   link "Home", root_path
 end
 
-crumb :mypage do
-  link "マイページ", user_path
+crumb :mypage do |user|
+  link "#{current_user.nickname}のページ", user_path
   parent :root
 end
 
-# crumb :project do |project|
-#   link project.name, project_path(project)
-#   parent :projects
-# end
+crumb :logout do |user|
+  link "ログアウト", logout_user_path
+  parent :mypage
+end
+
+
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)
