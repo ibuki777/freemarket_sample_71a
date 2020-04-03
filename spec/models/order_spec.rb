@@ -15,6 +15,11 @@ RSpec.describe Order, type: :model do
         message.valid?
         expect(message.errors[:address]).to include("を入力してください")
       end
+      it 'is invalid without usr_id' do
+        message = build(:order, user: nil )
+        message.valid?
+        expect(message.errors[:user]).to include("を入力してください")
+      end
     end
   end
 end
