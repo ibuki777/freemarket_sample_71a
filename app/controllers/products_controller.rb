@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
       redirect_to root_path
     else
       render "new"
+      # redirect_to new_product_path
     end
   end
 

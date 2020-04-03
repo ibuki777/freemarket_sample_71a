@@ -4,8 +4,8 @@ class Product < ApplicationRecord
   validates :images, presence: true
   validates :name, {presence:{message: "を入力してください"},length:{maximum:40}}
   validates :explain, {presence:{message: "を入力してください"},length: {maximum:1000}}
-  validates :price, 
-  :numericality => { 
+  validates :price,
+  :numericality => {
     :greater_than_or_equal_to => 300,
     :less_than_or_equal_to => 999999,
     :message => '300以上999999以下で入力してください'
