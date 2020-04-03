@@ -1,10 +1,7 @@
 require 'rails_helper'
 describe Product do
   describe '#create' do
-    # it "saves data of activehash" do
-    #   product = build(:product)
-    #   product.valid?
-    # end
+
     it "全て揃っているなら登録" do
       product = build(:product)
       product.valid?
