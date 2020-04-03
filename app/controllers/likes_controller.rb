@@ -2,13 +2,21 @@ class LikesController < ApplicationController
   before_action :set_variables
 
   def like
-    like = current_user.likes.new(product_id: @product.id)
-    like.save
+    if current_user
+      like = current_user.likes.new(product_id: @product.id)
+      like.save
+    else
+      redirect_to root_path
+    end
   end
 
   def unlike
-    like = current_user.likes.find_by(product_id: @product.id)
-    like.destroy
+    if current_user
+      like = current_user.likes.find_by(product_id: @product.id)
+      like.destroy
+    else
+      redirect_to root_path
+    end
   end
 
   private
