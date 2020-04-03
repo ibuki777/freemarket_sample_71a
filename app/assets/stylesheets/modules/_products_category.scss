@@ -47,14 +47,15 @@
           }
           span {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 15px;
+            left: -5px;
             .soldout-label{
               height: 224%;
               width: 110%;
-              background-color: white;
               color: red;
               font-size: 20px;
+              font-weight: bold;
+              transform:rotate(-45deg);
             }
           }
         }
