@@ -1,0 +1,21 @@
+.search-box{
+  width: 100vw;
+  background-color:$mainWhite;
+  &__main{
+    text-align: center;
+    height:670px;
+    width: 70%;
+    margin: 0 auto;
+    background-color:$subBackGround;
+    padding: 20px 0;
+    overflow: auto;
+  }
+  .product-lists{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+}
+.search-header{
+  margin-top: 50px;
+}
