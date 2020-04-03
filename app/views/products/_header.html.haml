@@ -9,15 +9,9 @@
           = image_tag src="/images/material/icon/icon-search 1.png", width:"20px", height:"20px"
 
   .nav
-    %ul
-    .left-list
-      .left-list__category
-      カテゴリー
-      .left-list__brand
-      ブランド
     - if user_signed_in?
       .right-list
-        -# マイページが無い為仮置きです
+        = link_to "マイページ", user_path, class: "right-list__mine"
         = link_to "ログアウト", destroy_user_session_path, method: :delete
     - else
       .right-list

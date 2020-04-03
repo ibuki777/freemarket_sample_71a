@@ -1,0 +1,106 @@
+.order-main{
+  background-color: $subBackGround;
+  .shop-logo{
+    text-align: center;
+    .shop-icon{
+      margin: 30px 0;
+    }
+  }
+  &__box{
+    margin: 0 auto;
+    background-color: $mainWhite;
+    width: 60%;
+    &--confirm{
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 32px;
+      border-bottom:  3px solid $subBackGround;
+    }
+    &--explanation{
+      text-align: center;
+      padding: 32px;
+      border-bottom: 3px solid $subBackGround;
+      .buy-item-content{
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        &__image-box{
+          &--buy-image{
+            height: 100px;
+            background-image: cover;
+          }
+        }
+        &__name-box{
+          margin-left: 10px;
+          .buy-item-name{
+            width: 100px;
+            padding-bottom: 20px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+          .buy-item-box{
+            display: flex;
+            &__price{
+              margin: 0 10px;
+            }
+            &__tax{
+              margin: 0 10px;
+            }
+            &__postage{
+              margin: 0 10px;
+            }
+          }
+        }
+      }
+      .item-pay-box{
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        .item-pay{
+          margin-right: 100px;
+        }
+      }
+      .pay-box{
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        &__way{
+          font-size: 18px;
+          font-weight: bold;
+          .adress-box{
+            font-size: 15px;
+            font-weight: normal;
+          }
+        } 
+      }
+    }
+    &--bottom{
+      height: 90px;
+      margin-top: 50px;
+      .buy-item-btn{
+        background-color:$mainThemeColor;
+        width: 30%;
+        font-size: 20px;
+        display: block;
+        margin: 0px auto;
+        height: 40px;
+        border-radius: 5px;
+        &__link{
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+  .caution-list{
+    list-style: none;
+    text-align: center;
+    font-size: 12px;
+    margin: 30px 0;
+  }
+  .copyright{
+    font-size: 10px;
+  }
+}
