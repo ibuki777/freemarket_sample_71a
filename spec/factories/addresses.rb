@@ -2,6 +2,7 @@ FactoryBot.define do
 require "faker"
 
   factory :address do
+    id                    {1}
     last_name             {"あべ"}
     first_name            {"ひろし"}
     last_name_kana        {"あべ"}

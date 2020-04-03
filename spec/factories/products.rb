@@ -2,6 +2,7 @@ FactoryBot.define do
   require "faker"
   
   factory :product do
+    id             {1} 
     name           {Faker::Creature::Animal.name}
     explain        {Faker::Movies::HarryPotter.quote}
     price          {rand(300..1000000)}
