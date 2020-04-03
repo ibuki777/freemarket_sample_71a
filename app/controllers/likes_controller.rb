@@ -4,7 +4,7 @@ class LikesController < ApplicationController
   def like
     like = current_user.likes.new(product_id: @product.id)
     if like.save
-      flash[:alert] = 'お気に入りに登録しました'
+      flash[:notice] = 'お気に入りに登録しました'
     else
       flash[:alert] = 'システムエラー   もう一度お試しください'
     end
