@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children]
   def index
     products = Product.includes(:images).limit(3)
     @category =products.order(created_at: :desc)
@@ -16,6 +16,10 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
   end
 
   def create
@@ -42,6 +46,15 @@ class ProductsController < ApplicationController
   def destroy
   end
 
+  def get_category_children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+
   private
   def product_params
     params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
@@ -50,4 +63,6 @@ class ProductsController < ApplicationController
   def set_product
     @product = Product.find(params[:id])
   end
+
+
 end

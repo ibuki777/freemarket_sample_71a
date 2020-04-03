@@ -57,8 +57,7 @@
           .label
             = f.label :genre, "カテゴリ", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @product, column: "category_id"}
-          = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択がありません"
+          = f.select :category, @category_parent_array, {}, {id: 'parent_category'}
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
