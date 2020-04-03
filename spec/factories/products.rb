@@ -1,14 +1,16 @@
 FactoryBot.define do
+  require "faker"
   
   factory :product do
-    name           {"Tシャツ"}
-    explain        {"良い状態"}
-    price          {"2000"}
-    category_id    {"2"}
-    condition_id   {"1"}
-    burden_id      {"1"}
-    prefecture_id  {"1"}
-    deliveryday_id {"1"}
+    id             {1} 
+    name           {Faker::Creature::Animal.name}
+    explain        {Faker::Movies::HarryPotter.quote}
+    price          {rand(300..1000000)}
+    category_id    {rand(1..13)}
+    condition_id   {rand(1..6)}
+    burden_id      {rand(1..2)}
+    prefecture_id  {rand(1..47)}
+    deliveryday_id {rand(1..3)}
   end
 
 end

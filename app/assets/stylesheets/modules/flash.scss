@@ -1,0 +1,17 @@
+.notification {
+  .notice {
+    padding: 20px;
+    font-size: 20px;
+    background-color: $mainThemeColor;
+    color:$mainWhite;
+    text-align: center;
+  }
+
+  .alert {
+    padding: 20px;
+    font-size: 20px;
+    background-color: $mainRed;
+    color:$mainWhite;
+    text-align: center;
+  }
+}

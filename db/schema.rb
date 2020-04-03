@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_03_30_100454) do
   end
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "payjp_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -59,27 +59,32 @@ ActiveRecord::Schema.define(version: 2020_03_30_100454) do
   end
 
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "shipping_address", null: false
+    t.bigint "address_id", null: false
     t.bigint "product_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_orders_on_address_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.text "explain"
+    t.text "explain", null: false
     t.integer "price", null: false
+    t.integer "category_id", null: false
+    t.integer "brand_id"
+    t.integer "condition_id", null: false
+    t.integer "deliveryday_id", null: false
+    t.integer "prefecture_id", null: false
+    t.integer "burden_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id", null: false
-    t.bigint "brand_id"
     t.integer "exhibiting"
     t.integer "sold"
-    t.index ["brand_id"], name: "index_products_on_brand_id"
-    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -102,8 +107,8 @@ ActiveRecord::Schema.define(version: 2020_03_30_100454) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "images", "products"
+  add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
-  add_foreign_key "products", "brands"
-  add_foreign_key "products", "categories"
+  add_foreign_key "products", "users"
 end
