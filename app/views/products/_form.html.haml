@@ -57,8 +57,9 @@
           .label
             = f.label :genre, "カテゴリ", class: "label__name"
             %p.label__need 必須
-          .category-box
-            = f.select :category, @category_parent_array, {}, {id: 'parent_category'}
+          .field-box
+            .category-box
+              = f.select :category_id, @category_parent_array, {}, {id: 'parent_category'}
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意

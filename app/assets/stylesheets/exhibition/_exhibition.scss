@@ -135,31 +135,17 @@
         }
         .input{
           @include hash;
-
         }
+
         .category-box{
           #parent_category{
             @include hash;
           }
         }
-        #product_brand_id{
+        select{
           @include hash;
-
+          margin-bottom: 30px;
         }
-        #product_condition_id{
-          @include hash;
-
-        }
-        #product_burden_id{
-          @include hash;
-        }
-        #product_prefecture_id{
-          @include hash;
-        }
-        #product_deliveryday_id{
-          @include hash;
-        }
-
         .option{
           width: 360px;
           margin: 0 auto 30px;

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :get_category_children]
+  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
   def index
     products = Product.includes(:images).limit(3)
     @category =products.order(created_at: :desc)
@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    category_id_params
     if @product.save
       redirect_to root_path
     else
@@ -57,12 +58,16 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :explain, :price, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product
     @product = Product.find(params[:id])
   end
 
+  def category_id_params
+    category = params.permit(:category_id)
+    @product[:category_id] = category[:category_id]
+  end
 
 end
