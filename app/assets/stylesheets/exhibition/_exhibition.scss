@@ -137,9 +137,10 @@
           @include hash;
 
         }
-        #parent_category{
-          @include hash;
-
+        .category-box{
+          #parent_category{
+            @include hash;
+          }
         }
         #product_brand_id{
           @include hash;
