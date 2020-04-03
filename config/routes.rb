@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  
   get 'searches/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -24,4 +23,7 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create, :destroy]
+
+  post   '/like/:product_id' => 'likes#like',   as: 'like'
+  delete '/like/:product_id' => 'likes#unlike', as: 'unlike'
 end

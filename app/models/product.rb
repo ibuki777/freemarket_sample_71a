@@ -21,6 +21,9 @@ class Product < ApplicationRecord
   has_one :order
   has_many :images, dependent: :destroy
   has_many :products
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
+
   belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
 
@@ -28,6 +31,6 @@ class Product < ApplicationRecord
     return Product.all unless search
     Product.where(['name LIKE ?', "%#{search}%"])
   end
-  
+
 end
 
