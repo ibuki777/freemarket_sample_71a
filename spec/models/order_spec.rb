@@ -20,6 +20,11 @@ RSpec.describe Order, type: :model do
         message.valid?
         expect(message.errors[:user]).to include("を入力してください")
       end
+      it 'is invalid without product_id' do
+        message = build(:order, product: nil )
+        message.valid?
+        expect(message.errors[:product]).to include("を入力してください")
+      end
     end
   end
 end
