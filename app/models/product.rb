@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   validates_associated :images, {presence:{message: "を選択してください"}}
-  validates :images, presence: true
+  validates :images, {presence:{message: "を選択してください"}}
+  # validates :images, presence: true
   validates :name, presence:true
   validates :explain, {presence:{message: "を入力、または1000字以内で入力してください"},length: {maximum:1000}}
   validates :price, 
@@ -11,6 +12,7 @@ class Product < ApplicationRecord
     :message => '300以上9999999以下で入力してください'
   }
   validates :burden_id,:condition_id,:category_id,:deliveryday_id,:prefecture_id,{presence:{message: "を選択してください"}}
+
 
   belongs_to_active_hash :category
   belongs_to_active_hash :condition
