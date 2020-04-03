@@ -40,10 +40,11 @@
     border-radius: 100px;
     text-align: center;
     position: fixed;
-    right: 35px;
-    top: 521px;
+    right: 5%;
+    bottom: 5%;
     z-index: 3;
     text-decoration: none;
+    @include hover_opacity;
     .exhibition__letter{
       color: $mainWhite;
       padding-top: 20px;

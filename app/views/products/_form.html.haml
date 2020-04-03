@@ -73,7 +73,6 @@
         .field
           .field__title
             配送について
-            .question ？
           .label
             = f.label :image, "配送料の負担", class: "label__name"
             %p.label__need 必須
@@ -94,24 +93,23 @@
         .field
           .field__title
             価格（¥300〜9,999,999）
-            .question ？
           .label
             = f.label :image, "販売価格", class: "label__name"
             %p.label__need 必須
             = f.label :price, "¥", class: "mark"
             = f.number_field :price, class: "price"
             = render partial: 'layouts/error_messages', locals: {product: @product, column: "price"}
-          .cost
-            .cost__fee
-              販売手数料（10%）
-            .period
-              ー
-          .box__border
-          .cost
-            .cost__fee
-              販売利益
-            .period
-              ー
+          -# .cost
+          -#   -# .cost__fee
+          -#   -#   販売手数料（10%）
+          -#   -# .period
+          -#   -#   ー
+          -# .box__border
+          -# .cost
+          -#   -# .cost__fee
+          -#   -#   販売利益
+          -#   -# .period
+          -#   -#   ー
           .option
             = f.submit @submit, class: "execute"
             = link_to @link_title, @link, class: 'back'
@@ -120,11 +118,4 @@
             %br.repost
               法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
   .exhibition__footer
-    .exhibition__footer-box
-      .clearfix
-        = link_to "プライバシーポリシー", "#", class: "hover"
-        = link_to "FURIMA利用規約", "#", class: "hover"
-        = link_to "ポイントに関する特約", "#", class: "hover"
-      = link_to root_path do
-        =image_tag "logo-white.svg", class:"footer-image"
-      %p{class: "footer-text"}©︎FURAMA
+    = render "devise/shared/footer"

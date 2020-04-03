@@ -7,13 +7,7 @@
       %li
         FURiMA>
       %li
-        ヘビー・キッズ>
-      %li
-        ベビー服（男女兼用）〜９５cm>
-      %li
-        アウター>
-      %li
-        product3
+        = @product.category.name
 .show-main
   .show-main__box
     .product-content
@@ -52,25 +46,12 @@
                   %li
                     .table-btn
                       = @product.category.name
-                  -# 追加実装のために残してあります
-                  -# %li
-                  -#   = link_to "/", class: "table-btn" do
-                  -#     ベビーさん
-                  -# %li
-                  -#   = link_to "/", class: "table-btn" do
-                  -#     アウター
             %tr
               %th
                 ブランド
               %td
                 - if @product.brand.present?
                   = @product.brand.name
-            -# 追加実装のために残してあります
-            -# %tr
-            -#   %th
-            -#     商品のサイズ
-            -#   %td
-            -#     XL
             %tr
               %th
                 商品の状態
@@ -96,10 +77,15 @@
           - if current_user == @product.user
             .submit
               = link_to "編集", edit_product_path(@product.id), class: "submit-edit"
-              = link_to "削除", "#", class: "submit-delete"
+              = link_to "削除", product_path(@product), method: :delete, class: "submit-delete"
           - else
             .submit
               = link_to "購入する", "#", class: "submit-purchase"
+        - else
+          %p{class: "sign-message"}※購入するにはログインまたは新規会員登録をしてください※
+          .user-path
+            = link_to "ログイン>>", user_session_path, class: "user-path-signin"
+            = link_to "新規会員登録>>", new_user_registration_path, class: "user-path-signup"
         .links
           =link_to "<<ホームへ", root_path,class:"product__link"
 
@@ -122,4 +108,4 @@
           =icon('fa','comment')
           コメントする
   = render '/products/contents/ad'
-  = render partial: 'footer'
+  = render '/devise/shared/footer'
