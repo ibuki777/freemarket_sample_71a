@@ -2,20 +2,20 @@ class LikesController < ApplicationController
   before_action :set_variables
 
   def like
-    if current_user
-      like = current_user.likes.new(product_id: @product.id)
-      like.save
+    like = current_user.likes.new(product_id: @product.id)
+    if like.save
+      flash.now[:alert] = 'お気に入りに登録しました'
     else
-      redirect_to root_path
+      flash.now[:alert] = 'システムエラー   もう一度お試しください'
     end
   end
 
   def unlike
-    if current_user
-      like = current_user.likes.find_by(product_id: @product.id)
-      like.destroy
+    like = current_user.likes.find_by(product_id: @product.id)
+    if like.destroy
+      flash.now[:alert] = 'お気に入りから解除しました'
     else
-      redirect_to root_path
+      flash.now[:alert] = 'システムエラー   もう一度お試しください'
     end
   end
 
