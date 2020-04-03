@@ -5,9 +5,8 @@
     .main-searchBox
       = form_with(url: searches_index_path,local: true,method: :get,class:"search-form") do |f|
         = f.text_field :keyword,placeholder:"何かお探しですか？",class:"search-input"
-        = f.submit '検索',class: "search-btn"
-        .serchbox__icon
-          = image_tag src="/images/material/icon/icon-search 1.png", width:"20px", height:"20px"
+        = f.submit '検索',class: " search-btn"
+        
 
   .nav
     - if user_signed_in?
