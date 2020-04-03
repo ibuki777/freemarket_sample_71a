@@ -1,0 +1,15 @@
+.search-box
+  %section.items-box-container
+    -if @search.present?
+      %h2.search-result-head
+        =@search
+        %span.search-result-head-text
+          の検索結果
+      .search-result-number
+        ="1-#{@products.count}件表示"
+    -else
+      %h2.search-result-nil
+        新着商品
+    .items-box-content
+      -@products.each do |product|
+        = product.name
