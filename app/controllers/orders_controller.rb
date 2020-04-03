@@ -6,17 +6,16 @@ class OrdersController < ApplicationController
     @order = Order.new
     @amount = @product.price
     @address = current_user.addresses.first
-
+    if @product.order.present? 
+      redirect_back(fallback_location: root_path) 
+      flash[:alert] = '申し訳ございませんが売り切れです。'
+    end
   end
 
   def create
     @address = current_user.addresses.first
     
-    if @product.order.present? 
-      redirect_back(fallback_location: root_path) 
-      flash[:alert] = '申し訳ございませんが売り切れです。'
-    elsif @card.blank?
-      # カード情報がなければ、クレジットカードの登録に飛ばす
+    if @card.blank?
       redirect_to new_card_path
       flash[:alert] = '購入にはクレジットカード登録が必要です。登録後、再度購入してください'
     else
