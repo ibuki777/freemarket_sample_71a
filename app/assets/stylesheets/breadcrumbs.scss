@@ -4,9 +4,18 @@
   &-list{
     line-height: 50px;
     padding-left: 50px;
-    font-size: 15px;
+    font-size: 12px;
     text-decoration: none;
     border-top: solid $subBackGround 3px;
     border-bottom: solid rgba(0, 0, 0, 0.2) 2px;
+    a{
+      text-decoration: none;
+      color: $mainThemeColor;
+      @include hover_opacity;
+    }
+    .current{
+      font-size: 15px;
+    }
+
   }
 }
