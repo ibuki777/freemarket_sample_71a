@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   root "products#index"
   
-  resources :products, only: [:index, :show, :new, :create] do
+  resources :products do
     resources :orders, only: [:new, :create]
   end
 

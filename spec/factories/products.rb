@@ -11,6 +11,14 @@ FactoryBot.define do
     burden_id      {rand(1..2)}
     prefecture_id  {rand(1..47)}
     deliveryday_id {rand(1..3)}
-  end
+    user
+    after(:build) do |product|
+      product.images << build(:image, product: product)
+    end
+    #メンターさんへ追加実装として組み込むので必要なコメントアウトです。
+    # trait :with_image do
+    #   after(:build) {|product| product.images << build(:image, product: product)}
+    # end
 
+  end
 end

@@ -6,3 +6,9 @@
     text-decoration: underline;
   }
 }
+
+@mixin hover_opacity{
+  &:hover{
+    opacity: 0.6;
+  }
+}
