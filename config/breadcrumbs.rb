@@ -2,16 +2,20 @@ crumb :root do
   link "Home", root_path
 end
 
-crumb :mypage do |user|
+crumb :userShow do
   link "#{current_user.nickname}のページ", user_path
   parent :root
 end
 
-crumb :logout do |user|
+crumb :userLogout do
   link "ログアウト", logout_user_path
-  parent :mypage
+  parent :userShow
 end
 
+crumb :cardIndex do
+  link "登録カード一覧", cards_path
+  parent :userShow
+end
 
 
 # crumb :project_issues do |project|
