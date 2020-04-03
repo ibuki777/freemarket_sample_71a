@@ -14,4 +14,5 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_stories, through: :likes, source: :story
 
+
 end

@@ -80,7 +80,7 @@
               = link_to "削除", product_path(@product), method: :delete, class: "submit-delete"
           - else
             .submit
-              = link_to "購入する", "#", class: "submit-purchase"
+              = link_to "購入する", new_product_order_path(@product), class: "submit-purchase"
         - else
           %p{class: "sign-message"}※購入するにはログインまたは新規会員登録をしてください※
           .user-path
