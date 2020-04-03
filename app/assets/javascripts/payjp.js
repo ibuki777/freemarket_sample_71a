@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load',function(){
+$(function(){
   Payjp.setPublicKey('pk_test_a033fe0008575a0892e68fd8');
 
   var form = $("#charge-form");
