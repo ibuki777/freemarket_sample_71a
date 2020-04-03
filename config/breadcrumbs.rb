@@ -4,6 +4,7 @@ end
 
 crumb :mypage do
   link "マイページ", user_path
+  parent :root
 end
 
 # crumb :project do |project|
