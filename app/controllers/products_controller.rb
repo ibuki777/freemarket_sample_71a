@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render "new"
+      redirect_to new_product_path
     end
   end
 
@@ -63,6 +63,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    if current_user.id == @product.user.id && @product.destroy
+      redirect_to root_path
+    else
+      redirect_to product_path(@product)
+    end
   end
 
   def get_category_children
