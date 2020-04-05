@@ -27,8 +27,7 @@ class OrdersController < ApplicationController
       currency: 'jpy',
       )
       # 売り切れなので、productの情報をアップデートして売り切れにし、出品状態を取り下げる（exhibiting:1が出品中、0が出品停止中）
-      @product.update_attribute(:exhibiting, 0)
-      @product.update_attribute(:sold, 0)
+      @product.update_attribute(:exhibition_id, 1)
       @order = Order.new(user_id: current_user.id, product_id: @product.id, address_id: @address.id)
         if @order.save
           flash[:notice] = '購入しました。'
