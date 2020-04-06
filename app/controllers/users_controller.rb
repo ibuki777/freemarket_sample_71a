@@ -14,6 +14,15 @@ class UsersController < ApplicationController
   def logout
   end
 
+  def bought
+    @orders= Order.where(user: current_user)
+  end
+
+  def solded
+    @products =Product.where(user: current_user)
+  end
+
+
   private
 
   def only_signed_in_user

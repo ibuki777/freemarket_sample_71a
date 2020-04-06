@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
+
   end
 
   root "products#index"
@@ -19,6 +20,8 @@ Rails.application.routes.draw do
   resource :user, only: [:show, :edit, :update] do
     collection do
       get'logout'
+      get'bought'
+      get'solded'
     end
   end
   resources :cards, only: [:index, :new, :create, :destroy]
