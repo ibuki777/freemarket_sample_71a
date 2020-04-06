@@ -19,7 +19,7 @@
               = link_to product_path(product), class:"product-link" do
                 .product-image-box
                   = image_tag p.images[0].image.url,class:"image-size"
-                  -if p.exhibition == 0
+                  -if p.exhibition == 1
                     %span
                       .soldout-label
                         soldout
@@ -35,6 +35,6 @@
                   .product-tax
                     (税込み)
   .pagenate
-    =paginate @products  
+    =paginate @products
 .search-header
   = render partial: 'devise/shared/footer'
