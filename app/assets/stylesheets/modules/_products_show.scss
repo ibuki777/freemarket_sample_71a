@@ -60,6 +60,10 @@
             object-fit: cover;
             height: 346px;
             width: 560px;
+            position: relative;
+            span{
+              @include soldout-exhibition
+            }
           }
           .sub-images{
             display: flex;
