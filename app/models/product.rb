@@ -17,6 +17,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :deliveryday
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :brand
+  belongs_to_active_hash :exhibition
   has_one :order
   has_many :images, dependent: :destroy
   has_many :products

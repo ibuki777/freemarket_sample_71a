@@ -91,8 +91,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_100404) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "exhibiting"
-    t.integer "sold"
+    t.integer "exhibition_id", null: false
     t.integer "likes_count"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"

@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
   def index
-    products = Product.includes(:images).limit(3)
-    @category =products.order(created_at: :desc)
-    @brand =products.order(brand_id: :desc)
+    products = Product.includes(:images).where(exhibition_id: [1,2])
+    @category =products.order(created_at: :desc).limit(3)
+    @brand =products.order(brand_id: :desc).limit(3)
     @images = Image.all.includes(:product)
     @parents = Category.all.order("id ASC").limit(13)
   end
@@ -80,12 +80,13 @@ class ProductsController < ApplicationController
 
 
   private
+  
   def product_params
-    params.require(:product).permit(:name, :explain, :price, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :explain, :price, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id, exhibition_id: 2)
   end
 
   def product_params_update
-    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id, exhibition_id: 2)
   end
 
 

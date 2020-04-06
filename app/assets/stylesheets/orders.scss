@@ -4,6 +4,7 @@
     text-align: center;
     .shop-icon{
       margin: 30px 0;
+      @include hover_opacity;
     }
   }
   &__box{
