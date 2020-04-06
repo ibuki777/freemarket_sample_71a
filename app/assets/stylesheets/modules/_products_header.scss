@@ -16,7 +16,7 @@
       @include hover_opacity;
     }
     .main-searchBox{
-      width: 60%;
+      width: 82%;
       .search-form {
         margin-left: auto;
         width: 100%;
@@ -33,8 +33,6 @@
           border: 0;
           cursor: pointer;
           background-color: $mainThemeColor;
-          background-image: url(material/icon/icon-search1.png);
-          background-size: cover;
           position: relative;
           @include hover_opacity;
         }
