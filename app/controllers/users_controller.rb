@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :only_signed_in_user
 
   def show
-    @products=current_user.products.includes(:user)
+    @sold_products=current_user.products.includes(:user)
   end
 
   def edit

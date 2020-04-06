@@ -3,29 +3,46 @@
     .picture_icon
       = image_tag "/images/material/icon/member_photo_noimage_thumb.png", class:"picture_icon_img"
       .user_name
-      = current_user.nickname
+      = "#{current_user.nickname} さん"
       .user_score 
         %p
-          = "出品中：  #{@products.where(exhibition_id:2).count}  点"
+          = "出品中：  #{@sold_products.where(exhibition_id:2).count}  点"
+
   .product_buy
-    .text 購入した商品
+    .text 出品した商品
     .tab_wrap
       %input#tab1{checked: "checked",name: "tab_btn",type: "radio"}/
       %input#tab2{name: "tab_btn",type: "radio"}/
       .tab_area
-        %label.tab1_label{for: "tab1"} 取引中
-        %label.tab2_label{for: "tab2"} 過去の取引
+        %label.tab1_label{for: "tab1"} 出品中
+        %label.tab2_label{for: "tab2"} 出品停止中
       .panel_area
         #panel1.tab_panel
-          .first_product
-            =link_to "#",class:"abc" do
-              = image_tag "/images/material/icon/icon-01.png", class:"produck_icon_img"
-              .product_text
-                .product_text_name 商品名
-                .product_text_price 金額
-                .product_text_condition 
-                  %i.fas.fa-star 
-                  %i.far.fa-comment-alt
+          - @sold_products.where(exhibition_id:2).each do |product|
+            .mypage_product
+              =link_to product_path(product),class:"abc" do
+                = image_tag product.images.first.image.url, class:"produck_icon_img"
+                .product_text
+                  .product_text_name
+                    = "商品名：#{product.name}"
+                  .product_text_price
+                    = "#{product.price} 円"
+                  .product_text_condition 
+                    %i.fas.fa-star
+                    = product.likes.count
+                    -# %i.far.fa-comment-alt コメント機能実装後
         #panel2.tab_panel 
-
+          - @sold_products.where(exhibition_id:3).each do |product|
+            .mypage_product
+              =link_to product_path(product),class:"abc" do
+                = image_tag product.images.first.image.url, class:"produck_icon_img"
+                .product_text
+                  .product_text_name
+                    = "商品名：#{product.name}"
+                  .product_text_price
+                    = "#{product.price} 円"
+                  .product_text_condition 
+                    %i.fas.fa-star
+                    = product.likes.count
+                    -# %i.far.fa-comment-alt コメント機能実装後
 
