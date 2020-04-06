@@ -1,6 +1,7 @@
 .order-main
   .shop-logo
-    = image_tag src="/images/material/logo/logo.png", width:"140px", class:"shop-icon"
+    = link_to root_path do
+      = image_tag src="/images/material/logo/logo.png", width:"140px", class:"shop-icon"
   .order-main__box
     .order-main__box--confirm
       購入内容の確認
@@ -37,15 +38,4 @@
     .order-main__box--bottom
       %button.buy-item-btn
         =link_to "購入する", product_orders_path(@product), method: :POST,class:"buy-item-btn__link"
-  .caution-lists
-    %ul.caution-list
-      %li
-        プライバシーポリシー
-      %li
-        FURIMA利用規約
-      %li
-        特定取引に関する表記
-  .shop-logo
-    = image_tag src="/images/material/logo/logo.png", width:"140px", class:"shop-icon"
-    .copyright
-      © FURIMA,Inc
+  = render "devise/shared/footer"
