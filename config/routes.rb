@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   root 'products#index'
   resources :products do
+    resources :comments, only: [:create]
     resources :orders ,only: [:new]
   end
   resource :user, only: [:show, :edit, :update] do
