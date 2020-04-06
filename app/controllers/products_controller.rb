@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
 
   def update
     category_id_params
-    if @product.update(product_params)
+    if @product.update(product_params_update)
       redirect_to product_path(@product)
     else
       render :edit
@@ -83,6 +83,11 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :explain, :price, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
+
+  def product_params_update
+    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
+  end
+
 
   def set_product
     @product = Product.find(params[:id])
