@@ -32,8 +32,8 @@
           配送先住所(登録住所)
           .adress-box
             =@address.city
-            =@address.address 
-         
+            =@address.address
+
     .order-main__box--bottom
       %button.buy-item-btn
         =link_to "購入する", product_orders_path(@product), method: :POST,class:"buy-item-btn__link"
