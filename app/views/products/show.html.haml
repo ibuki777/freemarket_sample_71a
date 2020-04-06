@@ -92,9 +92,9 @@
             = link_to "新規会員登録>>", new_user_registration_path, class: "user-path-signup"
         .links
           =link_to "<<ホームへ", root_path,class:"product__link"
-
-        .option
-          = render 'likes/like', product: @product
+        -if user_signed_in?
+          .option
+            = render 'likes/like', product: @product
           .report-btn
             = icon('fa','flag')
             不適切な商品の通報
