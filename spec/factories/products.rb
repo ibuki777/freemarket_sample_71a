@@ -2,7 +2,7 @@ FactoryBot.define do
   require "faker"
   
   factory :product do
-    id             {1} 
+    # id             {rand(1..999)} 
     name           {Faker::Creature::Animal.name}
     explain        {Faker::Movies::HarryPotter.quote}
     price          {rand(300..1000000)}
@@ -11,6 +11,7 @@ FactoryBot.define do
     burden_id      {rand(1..2)}
     prefecture_id  {rand(1..47)}
     deliveryday_id {rand(1..3)}
+    created_at     { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
     user
     after(:build) do |product|
       product.images << build(:image, product: product)
