@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'searches/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -14,6 +13,8 @@ Rails.application.routes.draw do
  
   resources :products do
     resources :orders, only: [:new, :create]
+    resources :searches, only: [:index]
+
   end
 
 
