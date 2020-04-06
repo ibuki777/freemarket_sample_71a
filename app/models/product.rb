@@ -12,7 +12,6 @@ class Product < ApplicationRecord
   }
   validates :burden_id,:condition_id,:category_id,:deliveryday_id,:prefecture_id,{presence:{message: "を選択してください"}}
 
-  # belongs_to_active_hash :category
   belongs_to_active_hash :condition
   belongs_to_active_hash :burden
   belongs_to_active_hash :deliveryday
