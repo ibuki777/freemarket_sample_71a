@@ -3,7 +3,7 @@
     = link_to root_path do
       = image_tag src="/images/material/logo/logo.png", width:"140px", class:"header_icon"
     .main-searchBox
-      = form_with(url: searches_index_path,local: true,method: :get,class:"search-form") do |f|
+      = form_with(url: searches_path,local: true,method: :get,class:"search-form") do |f|
         = f.text_field :keyword,placeholder:"何かお探しですか？",class:"search-input"
         = f.submit '検索',class: " search-btn"
         
