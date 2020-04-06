@@ -1,0 +1,33 @@
+.wrapper
+  = render partial: 'products/header'
+  - breadcrumb :userLogout
+  = render "layouts/breadcrumbs"
+  .mypage_contents
+    .left_box
+      =render "users/modules/show_left_content"
+    .right_box
+      .right_content
+  
+        .product_buy
+          .text 販売した商品
+          .tab_wrap
+            %input#tab1{checked: "checked",name: "tab_btn",type: "radio"}/
+            %input#tab2{name: "tab_btn",type: "radio"}/
+            .tab_area
+              %label.tab1_label{for: "tab1"} 販売済み
+            .panel_area
+              #panel1.tab_panel
+                - @products.where(exhibition_id: 1).each do |product|
+                  .mypage_product
+                    =link_to product_path(product),class:"abc" do
+                      = image_tag product.images.first.image.url, class:"produck_icon_img"
+                      .product_text
+                        .product_text_name
+                          = "商品名：#{product.name}"
+                        .product_text_price
+                          = "#{product.price} 円"
+                        .product_text_condition 
+                          %i.fas.fa-star
+                          = product.likes.count
+
+  = render partial: 'devise/shared/footer'
