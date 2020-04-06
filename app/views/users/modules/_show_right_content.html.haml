@@ -4,8 +4,9 @@
       = image_tag "/images/material/icon/member_photo_noimage_thumb.png", class:"picture_icon_img"
       .user_name
       = current_user.nickname
-      .user_score 出品 評価
-
+      .user_score 
+        %p
+          = "出品中：  #{@products.where(exhibition_id:2).count}  点"
   .product_buy
     .text 購入した商品
     .tab_wrap
