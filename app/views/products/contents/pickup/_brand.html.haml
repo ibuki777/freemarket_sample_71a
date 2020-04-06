@@ -22,8 +22,9 @@
               .product-cost
                 %ul.product-cost__list
                   %li
-                    = product.price
+                    = "#{product.price} 円"
                   %li.like-btn
-                    ★0
+                    ★
+                    =product.likes.count
               .product-tax
                 (税込み)
