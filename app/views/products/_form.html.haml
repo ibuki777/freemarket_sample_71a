@@ -108,17 +108,6 @@
             = f.label :price, "¥", class: "mark"
             = f.number_field :price, class: "price"
             = render partial: 'layouts/error_messages', locals: {product: @product, column: "price"}
-          -# .cost
-          -#   -# .cost__fee
-          -#   -#   販売手数料（10%）
-          -#   -# .period
-          -#   -#   ー
-          -# .box__border
-          -# .cost
-          -#   -# .cost__fee
-          -#   -#   販売利益
-          -#   -# .period
-          -#   -#   ー
           .option
             = f.submit @submit, class: "execute"
             = link_to @link_title, @link, class: 'back'
