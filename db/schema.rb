@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_04_02_090015) do
 
+
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
     t.string "first_name", null: false
@@ -52,6 +53,14 @@ ActiveRecord::Schema.define(version: 2020_04_02_090015) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "product_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image", null: false
     t.bigint "product_id", null: false
@@ -82,7 +91,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_090015) do
     t.string "name", null: false
     t.text "explain", null: false
     t.integer "price", null: false
-    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.integer "brand_id"
     t.integer "condition_id", null: false
     t.integer "deliveryday_id", null: false
@@ -91,9 +100,8 @@ ActiveRecord::Schema.define(version: 2020_04_02_090015) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "exhibition_id", null: false
     t.integer "likes_count"
-    t.index ["category_id"], name: "index_products_on_category_id"
+    t.integer "exhibition_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 

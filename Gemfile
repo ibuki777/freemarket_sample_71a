@@ -48,6 +48,7 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -87,4 +88,5 @@ gem 'active_hash'
 gem "payjp"
 gem 'fog-aws'
 gem 'ancestry'
+gem 'kaminari'
 gem 'gretel'

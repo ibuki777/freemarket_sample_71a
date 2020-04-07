@@ -11,7 +11,8 @@
           .label
             = f.label :image, "出品画像", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @image, column: "image"}
+          = render partial: 'layouts/error_messages', locals: {product: @product, column: "images"}
+
           .field__sentence
             最大10枚までアップロードできます
           .cage
@@ -102,7 +103,7 @@
 
         .field
           .field__title
-            価格（¥300〜9,999,999）
+            価格（¥300〜999,999）
           .label
             = f.label :image, "販売価格", class: "label__name"
             %p.label__need 必須

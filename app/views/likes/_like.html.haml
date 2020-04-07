@@ -2,8 +2,8 @@
   - if current_user.likes.find_by(product_id: product.id)
     = link_to unlike_path(product.id), method: :delete, remote: true do
       .iine__button
-        ❤️#{product.likes.count}
+        ★ いいね #{product.likes.count}
   - else
     = link_to like_path(product.id), method: :post, remote: true do
       .iine__button
-        ♡️#{product.likes.count}
+        ☆ いいね #{product.likes.count}

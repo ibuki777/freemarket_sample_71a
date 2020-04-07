@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   validates_associated :images, {presence:{message: "を選択してください"}}
   validates :images, presence: true
   validates :name, {presence:{message: "を入力してください"},length:{maximum:40}}
-  validates :explain, {presence:{message: "を入力してください"},length: {maximum:1000}}
+  validates :explain, {presence:{message: "を入力、または1000字以内で入力してください"},length: {maximum:1000}}
   validates :price, 
   :numericality => { 
     :greater_than_or_equal_to => 300,
@@ -25,7 +25,18 @@ class Product < ApplicationRecord
   belongs_to :category
 
   accepts_nested_attributes_for :images, allow_destroy: true
+
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
+
+
+  belongs_to :user
+  accepts_nested_attributes_for :images, allow_destroy: true
+
+  def self.search(search)
+    return Product.all unless search
+    Product.where(['name LIKE ?', "%#{search}%"])
+  end
+
 end
 
