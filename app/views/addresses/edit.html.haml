@@ -4,7 +4,7 @@
   .sign-main
     = form_with model: @address, local: true do |f|
       .sign-main-box.sign-main-box-last
-        %h1.sign-main-box__title 発送先変更
+        %h1.sign-main-box__title お届け先変更
         .field
           = f.label :送付先氏名（全角）, class: "field__text"
           %p.field__text-constraint 必須
@@ -56,5 +56,5 @@
           = f.label :お届け先の電話番号, class: "field__text"
           %p.field__text-constraint--blue 任意
           = f.text_field :phone_number, placeholder: "電話番号", class: "field__input"
-      = f.submit "新規登録", class: "actions"
+      = f.submit "お届け先変更", class: "actions"
   = render "devise/shared/footer"
