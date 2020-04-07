@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   def only_signed_in_user
     unless user_signed_in?
-      redirect_to root_path
+      redirect_to new_user_registration_path
     end
   end
 
