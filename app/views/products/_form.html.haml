@@ -60,14 +60,14 @@
           .field-box
             -if @product.persisted?
               .category-box
-                = f.select :parent_name, @category_parent_array, {selected:@product.category.parent.parent.name}, { class: 'category-wrapper__category form-control', id: 'parent_category'}
+                = f.select :category, @category_parent_array, {selected:@product.category.parent.parent.name}, { class: 'category-wrapper__category form-control', id: 'parent_category'}
               .category-box#children_wrapper
                 = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'category-wrapper__category form-control', id: 'child_category'}
               .category-box#grandchildren_wrapper
                 = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'category-wrapper__category form-control', id: 'grandchild_category'}
             -else
               .category-box
-                = f.select :category_id, @category_parent_array, {}, {id: 'parent_category'}
+                = f.select :category, @category_parent_array, {}, {id: 'parent_category'}
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
