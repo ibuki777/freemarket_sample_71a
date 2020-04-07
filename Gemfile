@@ -89,4 +89,4 @@ gem "payjp"
 gem 'fog-aws'
 gem 'kaminari'
 gem 'gretel'
-
+gem 'ransack'
