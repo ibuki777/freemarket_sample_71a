@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
   def new
@@ -43,7 +45,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :explain, :price, :comment, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product

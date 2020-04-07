@@ -103,5 +103,14 @@
         .comment-btn
           =icon('fa','comment')
           コメントする
+          .container
+            - if current_user
+              = form_with(model: [@tweet, @comment], local: true) do |form|
+                = form.text_area :text, placeholder: "コメントする", rows: "2"
+                = form.submit "SEND"
+            - else
+              %strong
+                %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
   = render '/products/contents/ad'
   = render '/devise/shared/footer'

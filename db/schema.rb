@@ -66,20 +66,12 @@ ActiveRecord::Schema.define(version: 2020_04_06_085112) do
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
-  create_table "likes", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "address_id", null: false
+    t.string "shipping_address", null: false
     t.bigint "product_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_orders_on_address_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -97,8 +89,8 @@ ActiveRecord::Schema.define(version: 2020_04_06_085112) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "exhibition_id", null: false
-    t.integer "likes_count"
+    t.integer "exhibiting"
+    t.integer "sold"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -122,7 +114,6 @@ ActiveRecord::Schema.define(version: 2020_04_06_085112) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "images", "products"
-  add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "users"
