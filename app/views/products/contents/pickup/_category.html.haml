@@ -1,10 +1,10 @@
 .pickup-product
   .pickup-product__head
-    ピックアップカテゴリー
+    新規投稿商品
   .pickup-product__box
     .pickup-product__box--head
       = link_to "/", class: "link-btn" do
-        新規投稿商品
+        最新順
     .product-lists
       -@category.each do |product|
         .product-list

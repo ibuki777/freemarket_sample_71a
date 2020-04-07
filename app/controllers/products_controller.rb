@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   def index
     products = Product.includes(:images).where(exhibition_id: [1,2])
     @category =products.order(created_at: :desc).limit(3)
-    @brand =products.order(brand_id: :desc).limit(3)
+    @brand = Product.includes(params[:brand_id]).where(exhibition_id: [1,2],brand_id: [1,2]).order(created_at: :desc).limit(3)
     @images = Image.all.includes(:product)
   end
 
