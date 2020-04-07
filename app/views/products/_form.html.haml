@@ -57,6 +57,7 @@
           .label
             = f.label :genre, "カテゴリ", class: "label__name"
             %p.label__need 3つ必須
+            = render partial: 'layouts/error_messages', locals: {product: @product, column: "category_id"}
           .field-box
             -if @product.persisted?
               .category-box

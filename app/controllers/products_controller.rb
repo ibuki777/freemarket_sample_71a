@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
     products = Product.includes(:images).where(exhibition_id: [1,2])
     @category =products.order(created_at: :desc).limit(3)
@@ -15,10 +15,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-    @category_parent_array = ["---"]
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
+    set_array_new
   end
 
   def create
@@ -27,33 +24,13 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      @category_parent_array = ["---"]
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
+      set_array_new
       render :new
     end
   end
 
   def edit
-    grandchild_category = @product.category
-    child_category = grandchild_category.parent
-
-
-    @category_parent_array = []
-    Category.where(ancestry: nil).each do |parent|
-      @category_parent_array << parent.name
-    end
-
-    @category_children_array = []
-    Category.where(ancestry: child_category.ancestry).each do |children|
-      @category_children_array << children
-    end
-
-    @category_grandchildren_array = []
-    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
-      @category_grandchildren_array << grandchildren
-    end
+    set_array_edit
   end
 
   def update
@@ -61,25 +38,9 @@ class ProductsController < ApplicationController
     if @product.update(product_params_update)
       redirect_to product_path(@product)
     else
-      grandchild_category = @product.category
-      child_category = grandchild_category.parent
-  
-  
-      @category_parent_array = []
-      Category.where(ancestry: nil).each do |parent|
-        @category_parent_array << parent.name
-      end
-  
-      @category_children_array = []
-      Category.where(ancestry: child_category.ancestry).each do |children|
-        @category_children_array << children
-      end
-  
-      @category_grandchildren_array = []
-      Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
-        @category_grandchildren_array << grandchildren
-      end
-  
+      @product = Product.find(params[:id])
+      set_array_edit
+      flash.now[:alert] = "変更を保存できませんでした"
       render :edit
     end
   end
@@ -119,6 +80,34 @@ class ProductsController < ApplicationController
   def category_id_params
     category = params.permit(:category_id)
     @product[:category_id] = category[:category_id]
+  end
+
+  def set_array_new
+    @category_parent_array = ["---"]
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+  end
+
+  def set_array_edit
+    grandchild_category = @product.category
+    child_category = grandchild_category.parent
+
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
   end
 
 end
