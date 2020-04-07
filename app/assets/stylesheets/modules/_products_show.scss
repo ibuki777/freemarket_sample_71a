@@ -15,25 +15,7 @@
   @include hover_opacity;
 }
 
-.header-bottom{
-  width: 100%;
-  border-top: 1px solid #eee;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-  position: relative;
-  padding: 0 60px;
-  .tag{
-    padding: 17px 0 16px;
-    width: 100%;
-    height: 55px;
-    max-width: 1040px;
-    font-size: 14px;
-    margin: 0 auto;
-    li{
-      padding-left:0 10px 0 0;
-      float: left;
-    }
-  }
-}
+
 .show-main{
   height: 100vh;
   &__box{
