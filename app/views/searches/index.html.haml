@@ -16,7 +16,7 @@
         .product-lists
           -product.each do |p|
             .product-list
-              = link_to product_path(product), class:"product-link" do
+              = link_to product_path(p), class:"product-link" do
                 .product-image-box
                   = image_tag p.images[0].image.url,class:"image-size"
                   -if p.exhibition == 1
@@ -29,9 +29,10 @@
                   .product-cost
                     %ul.product-cost__list
                       %li
-                        = p.price
+                        = "#{p.price} 円"
                       %li.like-btn
-                        ★0
+                        ★
+                        = p.likes.count
                   .product-tax
                     (税込み)
   .pagenate
