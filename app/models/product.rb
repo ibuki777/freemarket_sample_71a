@@ -12,8 +12,6 @@ class Product < ApplicationRecord
   }
   validates :burden_id,:condition_id,:category_id,:deliveryday_id,:prefecture_id,{presence:{message: "を選択してください"}}
 
-
-  belongs_to_active_hash :category
   belongs_to_active_hash :condition
   belongs_to_active_hash :burden
   belongs_to_active_hash :deliveryday
@@ -23,6 +21,10 @@ class Product < ApplicationRecord
   has_one :order
   has_many :images, dependent: :destroy
   has_many :products
+  belongs_to :user
+  belongs_to :category
+
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
