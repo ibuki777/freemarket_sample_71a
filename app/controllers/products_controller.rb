@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @images = @product.images
     @comment = Comment.new
-    @comments = @product.comments.includes(:user)
+    # @comments = @product.comments.includes(:user)
   end
 
   def new
