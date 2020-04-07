@@ -56,6 +56,12 @@ $(function(){
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
+
+  // 商品の説明に文字を入力すると文字数をカウントする。
+  $("#product_explain").on("keyup",function(){
+    $(".text-count").text($(this).val().length + "/1000");
+  });
+  
 });
 
 
