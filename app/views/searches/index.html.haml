@@ -1,4 +1,7 @@
 = render partial: '/products/header'
+- breadcrumb :search
+= render "layouts/breadcrumbs"
+
 .search-box
   .search-box__main
     -if @search.present?

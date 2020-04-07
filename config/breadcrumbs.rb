@@ -31,3 +31,8 @@ crumb :productShow do
   link "#{Product.find(params[:id]).name}" , product_path(params[:id])
   parent :root
 end
+
+crumb :search do
+  link "【 #{params[:keyword]} 】 の検索結果", searches_path
+  parent :root
+end
