@@ -3,8 +3,8 @@
   .search-box__main
     -if @search.present?
       %h2.search-result-head
-        - @search.first(1).each do |a|
-          = a.name
+        - @search.first(1).each do |s|
+          = s.name
         %span.search-result-head-text
           の検索結果
       .search-result-number
@@ -36,6 +36,6 @@
                   .product-tax
                     (税込み)
   .pagenate
-    -# =paginate @products
+    =paginate @search
 .search-header
   = render partial: 'devise/shared/footer'
