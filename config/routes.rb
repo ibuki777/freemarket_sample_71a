@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   
  
   resources :products do
+    resources :comments, only: [:create]
     resources :orders, only: [:new, :create]
   end
   resources :searches, only: [:index]

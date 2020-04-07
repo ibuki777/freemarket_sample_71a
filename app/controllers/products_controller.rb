@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images
+    @comment = Comment.new
+    @comments = @product.comments.includes(:user)
   end
 
   def new
@@ -22,7 +24,8 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      redirect_to new_product_path
+      @product.images.new
+      render action: :new
     end
   end
 
@@ -47,6 +50,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
+
     params.require(:product).permit(
                             :name, :explain, :price, 
                             :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id,
@@ -54,6 +58,7 @@ class ProductsController < ApplicationController
                              ).merge(
                               user_id: current_user.id, exhibition_id: 2
                               )
+
   end
 
   def set_product
