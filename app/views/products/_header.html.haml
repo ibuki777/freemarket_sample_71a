@@ -2,11 +2,11 @@
   .main
     = link_to root_path do
       = image_tag src="/images/material/logo/logo.png", width:"140px", class:"header_icon"
-    .main-serchBox
-      %input{type: "text",class: "text",placeholder: "キーワードから探す"}
-      %button{type: "submit",class: "submit"}
-        .serchbox__icon
-          = image_tag src="/images/material/icon/icon-search 1.png", width:"20px", height:"20px"
+    .main-searchBox
+      = form_with(url: searches_path,local: true,method: :get,class:"search-form") do |f|
+        = f.text_field :keyword,placeholder:"何かお探しですか？",class:"search-input"
+        = f.submit '検索',class: " search-btn"
+
 
   .nav
     - if user_signed_in?

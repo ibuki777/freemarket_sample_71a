@@ -19,11 +19,22 @@ class Product < ApplicationRecord
   belongs_to_active_hash :deliveryday
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :brand
+  belongs_to_active_hash :exhibition
   has_one :order
   has_many :images, dependent: :destroy
   has_many :products
-  has_many :comments
+
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
+
+
   belongs_to :user
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  def self.search(search)
+    return Product.all unless search
+    Product.where(['name LIKE ?', "%#{search}%"])
+  end
+
 end
 

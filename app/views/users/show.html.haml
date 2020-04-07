@@ -1,5 +1,8 @@
+
 .wrapper
   = render partial: 'products/header'
+  - breadcrumb :userShow
+  = render "layouts/breadcrumbs"
   .mypage_contents
     .left_box
       =render "users/modules/show_left_content"

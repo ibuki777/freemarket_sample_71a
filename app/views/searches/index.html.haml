@@ -1,0 +1,43 @@
+= render partial: '/products/header'
+- breadcrumb :search
+= render "layouts/breadcrumbs"
+
+.search-box
+  .search-box__main
+    -if @search.present?
+      %h2.search-result-head
+        =@search
+        %span.search-result-head-text
+          の検索結果
+      .search-result-number
+        ="#{@products.count}件表示"
+    -else
+      %h2.search-result-nil
+        新着商品
+    .search-product-box
+      -@products.each_slice(3) do |product|
+        .product-lists
+          -product.each do |p|
+            .product-list
+              = link_to product_path(p), class:"product-link" do
+                .product-image-box
+                  = image_tag p.images[0].image.url,class:"image-size"
+                  -if p.exhibition == 1
+                    %span
+                      .soldout-label
+                        soldout
+                .product-link__description
+                  .product-name
+                    = p.name
+                  .product-cost
+                    %ul.product-cost__list
+                      %li
+                        = "#{p.price} 円"
+                      %li.like-btn
+                        ★
+                        = p.likes.count
+                  .product-tax
+                    (税込み)
+  .pagenate
+    =paginate @products
+= render partial: 'devise/shared/footer'

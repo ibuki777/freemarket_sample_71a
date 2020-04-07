@@ -45,17 +45,8 @@
             height: 150px;
             object-fit: cover;
           }
-          span {
-            position: absolute;
-            top: 0;
-            left: 0;
-            .soldout-label{
-              height: 224%;
-              width: 110%;
-              background-color: white;
-              color: red;
-              font-size: 20px;
-            }
+          span{
+            @include soldout-exhibition
           }
         }
         &__description{

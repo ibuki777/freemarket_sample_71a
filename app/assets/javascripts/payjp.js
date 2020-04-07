@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load',function(){
+$(function(){
   Payjp.setPublicKey('pk_test_a033fe0008575a0892e68fd8');
 
   var form = $("#charge-form");
@@ -17,7 +17,7 @@ $(document).on('turbolinks:load',function(){
       if (response.error){
         form.find('.payment-errors').text(response.error.message);
         form.find('.submit').prop('disabled', false);
-      }   
+      }
       else {
         $("#card_number").removeAttr("name");
         $("#cvc").removeAttr("name");

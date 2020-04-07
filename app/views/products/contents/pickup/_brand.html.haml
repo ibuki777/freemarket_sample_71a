@@ -1,20 +1,20 @@
 .pickup-product
   .pickup-product__head
-    ピックアップブランド
+    カテゴリーブランド
   .pickup-product__box
     .pickup-product__box--head
       = link_to "/", class: "link-btn" do
-        アーカイバ
+        新規投稿順
     .product-lists
       -@brand.each do |product|
         .product-list
           = link_to product_path(product), class:"product-link" do
             .product-image-box
               = image_tag product.images[0].image.url,class:"image-size"
-              -if  product.sold == 0
+              -if  product.exhibition_id == 1
                 %span
                   .soldout-label
-                    soldout
+                    =product.exhibition.name
 
             .product-link__description
               .product-name
@@ -22,8 +22,9 @@
               .product-cost
                 %ul.product-cost__list
                   %li
-                    = product.price
+                    = "#{product.price} 円"
                   %li.like-btn
-                    ★0
+                    ★
+                    =product.likes.count
               .product-tax
                 (税込み)

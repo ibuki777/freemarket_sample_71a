@@ -1,0 +1,90 @@
+.search-box{
+  width: 100vw;
+  background-color:$mainWhite;
+  &__main{
+    text-align: center;
+    min-height:600px;
+    width: 70%;
+    margin: 0 auto;
+    background-color:$subBackGround;
+    padding: 20px 0;
+    overflow: auto;
+    h2{
+      font-size: larger;
+    }
+  }
+  .product-lists{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    .product-list{
+      width: 220px;
+      display: inline-block;
+      .product-link{
+        background-color:$mainWhite;
+        display: inline-block;
+        text-decoration: none;
+        .product-image-box{
+          width: 220px;
+          height: 150px;
+          position: relative;
+          overflow: hidden;
+          margin: 0;
+          position: relative;
+          .image-size {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+          }
+          span {
+            position: absolute;
+            top: 15px;
+            left: -5px;
+            .soldout-label{
+              height: 224%;
+              width: 110%;
+              color: red;
+              font-size: 20px;
+              font-weight: bold;
+              transform:rotate(-45deg);
+            }
+          }
+        }
+        &__description{
+          background-color:$mainWhite;
+          padding: 16px;
+          color: black;
+          .product-name{
+            overflow: hidden;
+            line-height: 1.5;
+            font-size: 16px;
+            text-align: left;
+          }
+          .product-cost{
+            font-size: 16px;
+            &__list{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              .like-icon{
+                display: inline-block;
+                font-size: inherit;
+                text-rendering: auto;
+              }
+            }
+          }
+          .product-tax {
+            font-size: 10px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}
+.pagenate{
+ text-align: center;
+}
+.search-header{
+  margin-top: 50px;
+}

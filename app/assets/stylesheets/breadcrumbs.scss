@@ -1,0 +1,21 @@
+.breadcrumbs{
+  z-index: 1;
+  
+  &-list{
+    width: 100%;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    position: relative;
+    padding: 0 50px;
+    line-height: 50px;
+    a{
+      text-decoration: none;
+      color: $mainThemeColor;
+      @include hover_opacity;
+    }
+    .current{
+      font-size: 15px;
+    }
+
+  }
+}
