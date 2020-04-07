@@ -27,7 +27,11 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      redirect_to new_product_path
+      @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+      render :new
     end
   end
 
@@ -57,7 +61,26 @@ class ProductsController < ApplicationController
     if @product.update(product_params_update)
       redirect_to product_path(@product)
     else
-      redirect_to edit_product_path(@product.id)
+      grandchild_category = @product.category
+      child_category = grandchild_category.parent
+  
+  
+      @category_parent_array = []
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+  
+      @category_children_array = []
+      Category.where(ancestry: child_category.ancestry).each do |children|
+        @category_children_array << children
+      end
+  
+      @category_grandchildren_array = []
+      Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+        @category_grandchildren_array << grandchildren
+      end
+  
+      render :edit
     end
   end
 
@@ -81,7 +104,7 @@ class ProductsController < ApplicationController
   private
   
   def product_params
-    params.require(:product).permit(:name, :explain, :price, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id, exhibition_id: 2)
+    params.require(:product).permit(:name, :explain, :price, :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibiting, images_attributes:[:image, :_destroy, :id]).merge(user_id: current_user.id, exhibition_id: 2)
   end
 
   def product_params_update
