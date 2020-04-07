@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     end
   end
   resources :cards, only: [:index, :new, :create, :destroy]
+  resources :addresses, only: [:edit, :update]
 
   post   '/like/:product_id' => 'likes#like',   as: 'like'
   delete '/like/:product_id' => 'likes#unlike', as: 'unlike'

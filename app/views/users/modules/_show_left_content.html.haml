@@ -27,8 +27,9 @@
   %table      
     %tr
       %td{id:"mypage-td"}
-        発送元・お届け住所変更
-        %i{class:"fas fa-chevron-right",id:"mypage-arrow"}
+        = link_to edit_address_path(@addresses) do
+          発送元・お届け住所変更
+          %i{class:"fas fa-chevron-right",id:"mypage-arrow"}
     %tr  
       %td{id:"mypage-td"}
         =link_to cards_path ,class:"table-link" do
