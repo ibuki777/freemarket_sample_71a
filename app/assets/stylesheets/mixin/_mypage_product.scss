@@ -1,0 +1,33 @@
+@mixin mypage_product(){
+  .mypage_product {
+    padding-top: 10px;
+    .abc {
+      display: flex;
+      text-decoration: none;
+      .produck_icon_img {
+        height: 100px;
+        width: 100px;
+      }
+      .product_text {
+        padding-left: 10px;
+        &_name {
+          color: gray;
+          font-size: 24px;
+          text-decoration: none;
+        }
+        &_price {
+          color: black;
+          font-size: 20px;
+        }
+        &_condition {
+          line-height: 24px;
+          i {
+            width: 20px;
+            height: 20px;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+}
