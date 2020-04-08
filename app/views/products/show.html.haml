@@ -12,7 +12,7 @@
             .top-image
               - @images.first(1).each do |i|
                 = image_tag i.image.url, class: 'top-image'
-                -if  @product.exhibition_id == 1
+                -unless  @product.exhibition_id == 2
                   %span
                     .soldout-label
                       =@product.exhibition.name
@@ -77,12 +77,12 @@
                   = @product.deliveryday.name
           - if user_signed_in?
             .submit
-            - if current_user == @product.user
-              - unless @product.exhibition_id ==1
-                = link_to "編集", edit_product_path(@product.id), class: "submit-edit"
-                = link_to "削除", product_path(@product), method: :delete, class: "submit-delete"
-            - else
-              = link_to "購入する", new_product_order_path(@product), class: "submit-purchase"
+              - if current_user == @product.user
+                - unless @product.exhibition_id ==1
+                  = link_to "編集", edit_product_path(@product.id), class: "submit-edit"
+                  = link_to "削除", product_path(@product), method: :delete, class: "submit-delete"
+              - else
+                = link_to "購入する", new_product_order_path(@product), class: "submit-purchase"
           - else
             %p{class: "sign-message"}※購入するにはログインまたは新規会員登録をしてください※
             .user-path
