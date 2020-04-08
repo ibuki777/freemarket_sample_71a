@@ -20,31 +20,6 @@
               %p 〜
             .price-high
               = f.search_field :price_lteq, placeholder: "¥ ~999,999"
-          -# .detail-search__form--condition
-          -#   = icon('fa', 'search')
-          -#   商品の状態
-          -#   .condition-group
-          -#     .condition-group__checkbox
-          -#       %input{type: "checkbox"}
-          -#       ='すベて'          
-          -#     .condition-group__checkbox
-          -#       = f.check_box :condition_id
-          -#       = '新品、未使用'
-          -#     .condition-group__checkbox
-          -#       = f.check_box :condition_id
-          -#       = '未使用に近い'
-          -#     .condition-group__checkbox
-          -#       = f.check_box :condition_id
-          -#       = '目立った傷や汚れなし'
-          -#     .condition-group__checkbox
-          -#       = f.check_box :condition_id
-          -#       = 'やや傷や汚れあり'
-          -#     .condition-group__checkbox
-          -#       = f.check_box :condition_id
-          -#       = '傷や汚れあり'
-          -#     .condition-group__checkbox
-          -#       = f.check_box :condition_id
-          -#       = '全体的に状態が悪い'
         .detail-search__btn
           =f.submit "検索する",class:"detail-btn"
   .search-main__right
