@@ -35,7 +35,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-      set_array_edit
+    set_array_edit
   end
 
   def update
@@ -68,7 +68,7 @@ class ProductsController < ApplicationController
 
 
   private
-  
+
   def product_params
     params.require(:product).permit(
                                     :name, :explain, :price,
