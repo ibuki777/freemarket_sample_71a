@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :only_signed_in_user, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
     products = Product.includes(:images).where(exhibition_id: [1,2])
@@ -14,9 +15,9 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
-    @product.images.new
-    set_array_new
+      @product = Product.new
+      @product.images.new
+      set_array_new
   end
 
   def create
@@ -32,7 +33,11 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    set_array_edit
+    if current_user.id == @product.user.id
+      set_array_edit
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -121,6 +126,12 @@ class ProductsController < ApplicationController
     @category_grandchildren_array = []
     Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
       @category_grandchildren_array << grandchildren
+    end
+  end
+
+  def only_signed_in_user
+    unless user_signed_in?
+      redirect_to new_user_registration_path
     end
   end
 
