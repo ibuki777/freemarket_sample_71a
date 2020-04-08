@@ -3,18 +3,18 @@
   .search-main__left
     = search_form_for @products,url: searches_path,class:"search-form" do |f|
       .detail-search
-        .detail-search__sort
-          = f.select( :sorts,{'並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc' ,'出品の古い順': 'created_at asc', '出品の新しい順': 'created_at desc' } ,  {onchange: 'this.form.submit()'} )
         .detail-search__form
           .detail-search__form--title
-            %h1 詳細検索
+            詳細検索
+          .detail-search__form--sort
+            = f.select( :sorts,{'並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc' ,'出品の古い順': 'created_at asc', '出品の新しい順': 'created_at desc' } ,  {onchange: 'this.form.submit()'} )
           .detail-search__form--keyword
             = icon('fa', 'search')
-            キーワードを追加する
-          = f.search_field :name_cont, placeholder: "例）ユニクロ"
+            キーワードを追加
+            = f.search_field :name_cont, placeholder: "例）ユニクロ"
           .detail-search__form--price
             = icon('fa', 'search')
-            価格
+            価格設定
             .price-cheap
               = f.search_field :price_gteq, placeholder: "¥ 300~"
               %p 〜

@@ -4,8 +4,40 @@
    width: 30%;
    margin-left: 150px;
    background-color:$subBackGround;
-   text-align: center;
+   text-align:left;
    border-right:1px solid white ;
+   .detail-search{
+     padding: 20px 40px;
+     &__form{
+       &--title{
+         font-weight: 900;
+         font-size: 20px;
+         padding-bottom: 30px;
+         #q_sorts{
+           height: 30px;
+        }
+       }
+       &--keyword{
+        padding: 20px 0;
+        #q_name_cont{
+          width: 150px;
+        }
+       }
+       &--price{
+         .price-cheap{
+           #q_price_gteq{
+             width: 100px;
+           }
+         }
+         .price-high{
+           #q_price_lteq{
+             width: 100px;
+           }
+         }
+       }
+     }
+    
+   }
   }
   &__right{
     width: 100%;
