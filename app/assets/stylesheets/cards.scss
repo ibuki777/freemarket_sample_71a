@@ -1,41 +1,39 @@
 //index
-.wrapper{
-  .mypage_contents{
-    .right_box{
-      .right_content{
-        @import "modules/cards_reggister";
-        @import "modules/cards_form";
+.mypage_contents{
+  .right_box{
+    .right_content{
+      @import "modules/cards_reggister";
+      @import "modules/cards_form";
+    }
+    .card__index-add{
+      &--head{
+        align-items: center;
+        padding-bottom: 15px;
       }
-      .card__index-add{
-        &--head{
-          align-items: center;
-          padding-bottom: 15px;
-        }
-        &--list{
-          .container{
-            position: relative;
-            .creditcard-info{
-              &__number{
-                font-size: medium;             
-              }
-              &__period{
-                font-size: 5px;
-              }
+      &--list{
+        .container{
+          position: relative;
+          .creditcard-info{
+            &__number{
+              font-size: medium;             
+            }
+            &__period{
+              font-size: 5px;
             }
           }
-            .delete{
-              background-color: $mainRed;
-              color: $mainWhite;
-              font-size: 12px;
-              border-radius: 10px;
-              width: 80px;
-              position: absolute;
-              top: 10px;
-              right: -100px;
-              cursor: pointer;
-
-            }
         }
+          .delete{
+            background-color: $mainRed;
+            color: $mainWhite;
+            font-size: 12px;
+            border-radius: 10px;
+            width: 80px;
+            position: absolute;
+            top: 10px;
+            right: -100px;
+            cursor: pointer;
+
+          }
       }
     }
   }
