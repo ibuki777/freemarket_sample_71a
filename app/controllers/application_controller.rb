@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def search
     @products = Product.ransack(params[:q])
-    @search = @products.result(distinct: true).page(params[:page]).per(2).order("created_at DESC")
+    @search = @products.result(distinct: true).page(params[:page]).per(9).order("created_at DESC")
     
   end
   
