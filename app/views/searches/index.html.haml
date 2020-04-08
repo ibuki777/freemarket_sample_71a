@@ -1,43 +1,66 @@
 = render partial: '/products/header'
 - breadcrumb :search
 = render "layouts/breadcrumbs"
-
-.search-box
-  .search-box__main
-    -if @search.present?
-      %h2.search-result-head
-        =@search
-        %span.search-result-head-text
-          の検索結果
-      .search-result-number
-        ="#{@products.count}件表示"
-    -else
-      %h2.search-result-nil
-        新着商品
-    .search-product-box
-      -@products.each_slice(3) do |product|
-        .product-lists
-          -product.each do |p|
-            .product-list
-              = link_to product_path(p), class:"product-link" do
-                .product-image-box
-                  = image_tag p.images[0].image.url,class:"image-size"
-                  -if p.exhibition_id == 1
-                    %span
-                      .soldout-label
-                        =p.exhibition.name
-                .product-link__description
-                  .product-name
-                    = p.name
-                  .product-cost
-                    %ul.product-cost__list
-                      %li
-                        = "#{p.price} 円"
-                      %li.like-btn
-                        ★
-                        = p.likes.count
-                  .product-tax
-                    (税込み)
-  .pagenate
-    =paginate @products
-= render partial: 'devise/shared/footer'
+.search-main
+  .search-main__left
+    = search_form_for @products,url: searches_path,class:"search-form" do |f|
+      .detail-search
+        .detail-search__form
+          .detail-search__form--title
+            詳細検索
+          .detail-search__form--sort
+            = f.select( :sorts,{'並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc' ,'出品の古い順': 'created_at asc', '出品の新しい順': 'created_at desc' } ,  {onchange: 'this.form.submit()'} )
+          .detail-search__form--keyword
+            = icon('fa', 'search')
+            キーワードを追加
+            = f.search_field :name_cont, placeholder: "例）ユニクロ"
+          .detail-search__form--price
+            = icon('fa', 'search')
+            価格設定
+            .price-cheap
+              = f.search_field :price_gteq, placeholder: "¥ 300~"
+              %p 〜
+            .price-high
+              = f.search_field :price_lteq, placeholder: "¥ ~999,999"
+        .detail-search__btn
+          =f.submit "検索する",class:"detail-btn"
+  .search-main__right
+    .search-main__right--main
+      -if @search.present?
+        %h2.search-result-head
+          - @search.first(1).each do |s|
+            = s.name
+          %span.search-result-head-text
+            の検索結果
+        .search-result-number
+          ="1ページに#{@search.count}件ずつ表示"
+      -else
+        %h2.search-result-nil
+          検索結果はありません
+      .search-product-box
+        -@search.each_slice(3) do |product|
+          .product-lists
+            -product.each do |p|
+              .product-list
+                = link_to product_path(p), class:"product-link" do
+                  .product-image-box
+                    = image_tag p.images[0].image.url,class:"image-size"
+                    -if p.exhibition == 1
+                      %span
+                        .soldout-label
+                          =p.exhibition.name
+                  .product-link__description
+                    .product-name
+                      = p.name
+                    .product-cost
+                      %ul.product-cost__list
+                        %li
+                          = p.price
+                        %li.like-btn
+                          ★0
+                    .product-tax
+                      (税込み)
+    .pagenate
+      =paginate @search
+.search-header
+  = render partial: 'devise/shared/footer'

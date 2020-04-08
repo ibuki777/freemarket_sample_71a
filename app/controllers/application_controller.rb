@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :search
   private
 
   def basic_auth
@@ -19,5 +19,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday])
     devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday])
   end
+
+  def search
+    @products = Product.ransack(params[:q])
+    @search = @products.result(distinct: true).page(params[:page]).per(9).order("created_at DESC")
+    
+  end
+  
 
 end
