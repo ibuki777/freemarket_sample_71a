@@ -2,6 +2,9 @@ class AddressesController < ApplicationController
   before_action :set_address
 
   def edit
+    unless current_user.id == @address.user.id
+      redirect_to root_path
+    end
   end
 
   def update
