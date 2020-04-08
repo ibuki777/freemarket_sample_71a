@@ -1,16 +1,14 @@
 .search-main{
   display: flex;
   justify-content: space-evenly;
-  .search-leftbox{
-    &__detailed{
-      width: 50vw;
-
-    }
+  &__left{
+   width: 30%;
+   margin: 0 30px 0 50px;
   }
-  .search-box{
-    width: 50vw;
+  &__right{
+    width: 80%;
     background-color:$mainWhite;
-    &__main{
+    &--main{
       text-align: center;
       height:670px;
       width: 70%;

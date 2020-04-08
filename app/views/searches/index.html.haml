@@ -1,14 +1,37 @@
 = render partial: '/products/header'
 .search-main
-  .detailed-form
-    .detailed-form__title
-      %h3 詳細検索
-    .detailed-form__keyword
-      .detailed-form__keyword--icon
-        = icon('fa', 'search')
-        %p キーワードを追加する
-  .search-box
-    .search-box__main
+  .search-main__left
+    = search_form_for @products,url: searches_path,class:"search-form" do |f|
+      .detail-search
+        .detail-search__sort
+          = f.select( :sorts,{'並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc' ,'出品の古い順': 'created_at asc', '出品の新しい順': 'created_at desc' } ,  {onchange: 'this.form.submit()'} )
+        .detail-search__form
+          .detail-search__form--title
+            %h1 詳細検索
+          .detail-search__form--keyword
+            = icon('fa', 'search')
+            キーワードを追加する
+            = f.search_field :name_cont, placeholder: "例）ユニクロ"
+          .detail-search__form--price
+            = icon('fa', 'search')
+            価格
+            .price-cheap
+              = f.search_field :price_gteq, placeholder: "¥ 300~"
+              %p 〜
+            .price-high
+              = f.search_field :price_lteq, placeholder: "¥ ~999,999"
+          .detail-search__form--condition
+            = icon('fa', 'search')
+            商品の状態
+            .condition-checkbox
+              %input{type: "checkbox"}
+              ='すベて'          
+            .condition-checkbox
+              =f.check_box :condition, '1'
+              
+              = '新品、未使用'
+  .search-main__right
+    .search-main__right--main
       -if @search.present?
         %h2.search-result-head
           - @search.first(1).each do |s|
@@ -16,7 +39,7 @@
           %span.search-result-head-text
             の検索結果
         .search-result-number
-          ="#{@search.count}件表示"
+          ="1ページに#{@search.count}件ずつ表示"
       -else
         %h2.search-result-nil
           検索結果はありません
