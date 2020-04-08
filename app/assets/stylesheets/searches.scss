@@ -35,8 +35,16 @@
             }
           }
         }
-        &--condition{
-          padding: 20px 0;
+        // &--condition{
+        //   padding: 20px 0;
+        // }
+      }
+      &__btn{
+        .detail-btn{
+          margin-top: 40px;
+          width: 100px;
+          border-radius: 10px;
+          background-color: $mainThemeColor;
         }
       }
     }
