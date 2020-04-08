@@ -76,13 +76,13 @@
                 %td
                   = @product.deliveryday.name
           - if user_signed_in?
+            .submit
             - if current_user == @product.user
-              .submit
+              - unless @product.exhibition_id ==1
                 = link_to "編集", edit_product_path(@product.id), class: "submit-edit"
                 = link_to "削除", product_path(@product), method: :delete, class: "submit-delete"
             - else
-              .submit
-                = link_to "購入する", new_product_order_path(@product), class: "submit-purchase"
+              = link_to "購入する", new_product_order_path(@product), class: "submit-purchase"
           - else
             %p{class: "sign-message"}※購入するにはログインまたは新規会員登録をしてください※
             .user-path
