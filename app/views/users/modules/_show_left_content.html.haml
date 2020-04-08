@@ -25,6 +25,11 @@
   .table_title
     設定
   %table      
+    %tr  
+      %td{id:"mypage-td"}
+        =link_to cards_path ,class:"table-link" do
+          お支払い方法/クレジットカード登録
+          %i{class:"fas fa-chevron-right",id:"mypage-arrow"}
     %tr
       %td{id:"mypage-td"}
         = link_to edit_address_path(@addresses),class:"table-link" do
@@ -32,13 +37,8 @@
           %i{class:"fas fa-chevron-right",id:"mypage-arrow"}
     %tr  
       %td{id:"mypage-td"}
-        =link_to cards_path ,class:"table-link" do
-          お支払い方法
-          %i{class:"fas fa-chevron-right",id:"mypage-arrow"}
-    %tr  
-      %td{id:"mypage-td"}
         =link_to edit_user_registration_path ,class:"table-link" do
-          メール/パスワード
+          登録情報編集
           %i{class:"fas fa-chevron-right",id:"mypage-arrow"}
     %tr  
       %td{id:"mypage-td"}

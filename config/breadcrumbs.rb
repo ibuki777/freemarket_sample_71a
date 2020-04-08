@@ -27,6 +27,16 @@ crumb :userSolded do
   parent :userShow
 end
 
+crumb :userAddress do
+  link "発送元・お届け住所変更", edit_address_path
+  parent :userShow
+end
+
+crumb :userMailPassword do
+  link "登録情報編集", edit_user_registration_path
+  parent :userShow
+end
+
 crumb :productShow do
   link "#{Product.find(params[:id]).name}" , product_path(params[:id])
   parent :root
