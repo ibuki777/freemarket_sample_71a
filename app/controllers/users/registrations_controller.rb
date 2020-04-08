@@ -36,14 +36,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    unless @user.update(sign_up_params)
+      flash.now[:alert] = @user.errors.full_messages
+      render :edit and return
+    else
+      @user.save
+      sign_in(:user, @user)
+      redirect_to new_user_session_path, alert:"確認のためもう一度ログインしてください", style:"transition:2.0s"
+    end
+  end
 
   # DELETE /resource
   # def destroy
@@ -88,5 +94,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_params
     params.require(:address).permit(:last_name, :first_name, :last_name_kana, :first_name_kana, :zip_code, :city, :address, :building, :phone_number, :prefecture_id)
   end
+
+  # def update_resorce(resource, params)
+  #   resource.update_without_passwourd(params)
+  # end
 
 end
