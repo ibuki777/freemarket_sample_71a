@@ -27,9 +27,23 @@
               %input{type: "checkbox"}
               ='すベて'          
             .condition-checkbox
-              =f.check_box :condition, '1'
-              
+              = f.check_box :condition_id
               = '新品、未使用'
+            .condition-checkbox
+              = f.check_box :condition_id
+              = '未使用に近い'
+            .condition-checkbox
+              = f.check_box :condition_id
+              = '目立った傷や汚れなし'
+            .condition-checkbox
+              = f.check_box :condition_id
+              = 'やや傷や汚れあり'
+            .condition-checkbox
+              = f.check_box :condition_id
+              = '傷や汚れあり'
+            .condition-checkbox
+              = f.check_box :condition_id
+              = '全体的に状態が悪い'
   .search-main__right
     .search-main__right--main
       -if @search.present?
