@@ -22,10 +22,10 @@
               = link_to product_path(p), class:"product-link" do
                 .product-image-box
                   = image_tag p.images[0].image.url,class:"image-size"
-                  -if p.exhibition == 1
+                  -if p.exhibition_id == 1
                     %span
                       .soldout-label
-                        soldout
+                        =p.exhibition.name
                 .product-link__description
                   .product-name
                     = p.name
