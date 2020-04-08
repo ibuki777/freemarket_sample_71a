@@ -11,7 +11,8 @@
           .label
             = f.label :image, "出品画像", class: "label__name"
             %p.label__need 必須
-            = render partial: 'layouts/error_messages', locals: {product: @image, column: "image"}
+          = render partial: 'layouts/error_messages', locals: {product: @product, column: "images"}
+
           .field__sentence
             最大10枚までアップロードできます
           .cage
@@ -48,7 +49,10 @@
           = render partial: 'layouts/error_messages', locals: {product: @product, column: "explain"}
           = f.text_area :explain, class: "discription", placeholder: "商品の説明（必須 1,000文字以内）                                                                                        （色、素材、色、素材、重さ、定価、注意点など）                                                                                                                例）2010年頃に2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"
           .text-count
-            0/1000
+            - if @product.explain == nil
+              ="0/1000"
+            - else
+              ="#{@product.explain.length}/1000"
         .box__border
 
         .field
@@ -56,9 +60,19 @@
             商品の詳細
           .label
             = f.label :genre, "カテゴリ", class: "label__name"
-            %p.label__need 必須
+            %p.label__need 3つ必須
             = render partial: 'layouts/error_messages', locals: {product: @product, column: "category_id"}
-          = f.collection_select :category_id, Category.all, :id, :name, prompt: "選択がありません"
+          .field-box
+            -if @product.persisted?
+              .category-box
+                = f.select :category, @category_parent_array, {selected:@product.category.parent.parent.name}, { class: 'category-wrapper__category form-control', id: 'parent_category'}
+              .category-box#children_wrapper
+                = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.parent.id}),{}, {class: 'category-wrapper__category form-control', id: 'child_category'}
+              .category-box#grandchildren_wrapper
+                = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @product.category.id}),{}, {class: 'category-wrapper__category form-control', id: 'grandchild_category'}
+            -else
+              .category-box
+                = f.select :category, @category_parent_array, {}, {id: 'parent_category'}
           .label
             = f.label :name, "ブランド", class: "label__name"
             %p.label__need-blue 任意
@@ -99,17 +113,6 @@
             = f.label :price, "¥", class: "mark"
             = f.number_field :price, class: "price"
             = render partial: 'layouts/error_messages', locals: {product: @product, column: "price"}
-          -# .cost
-          -#   -# .cost__fee
-          -#   -#   販売手数料（10%）
-          -#   -# .period
-          -#   -#   ー
-          -# .box__border
-          -# .cost
-          -#   -# .cost__fee
-          -#   -#   販売利益
-          -#   -# .period
-          -#   -#   ー
           .option
             = f.submit @submit, class: "execute"
             = link_to @link_title, @link, class: 'back'

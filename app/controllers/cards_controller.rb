@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card
+  before_action :set_address_id
 
   def index
     if @card.present?
@@ -49,4 +50,9 @@ class CardsController < ApplicationController
   def set_card
     @card = Card.where(user_id: current_user.id).first if Card.where(user_id: current_user.id).present?
   end
+
+  def set_address_id
+    @addresses = current_user.addresses[0].id
+  end
+
 end

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :only_signed_in_user
+  before_action :set_address_id
 
   def show
     @sold_products=current_user.products.includes(:user)
@@ -27,8 +28,11 @@ class UsersController < ApplicationController
 
   def only_signed_in_user
     unless user_signed_in?
-      redirect_to root_path
+      redirect_to new_user_registration_path
     end
   end
 
+  def set_address_id
+    @addresses = current_user.addresses[0].id
+  end
 end
