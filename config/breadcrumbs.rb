@@ -33,7 +33,7 @@ crumb :userAddress do
 end
 
 crumb :userMailPassword do
-  link "メール/パスワード編集", edit_user_registration_path
+  link "登録情報編集", edit_user_registration_path
   parent :userShow
 end
 

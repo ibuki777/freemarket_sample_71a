@@ -29,4 +29,33 @@
           %p.field__text-constraint 必須
           = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード", class: "field__input"
           = render partial: '/errors/error-messages', locals: {user: @user, column: "password_confirmation"}
+
+
+      .sign-main-box.sign-main-box-last
+        %h1.sign-main-box__title 本人確認情報
+        .field
+          = f.label :お名前（全角）, class: "field__text"
+          %p.field__text-constraint 必須
+          .field-box
+            = f.text_field :last_name, placeholder: "性", class: "field-box__input"
+            = f.text_field :first_name, placeholder: "名", class: "field-box__input"
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "last_name"}
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "first_name"}
+
+        .field
+          = f.label :お名前かな（全角）, class: "field__text"
+          %p.field__text-constraint 必須
+          .field-box
+            = f.text_field :last_name_kana, placeholder: "せい", class: "field-box__input"
+            = f.text_field :first_name_kana, placeholder: "めい", class: "field-box__input"
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "last_name_kana"}
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "first_name_kana"}
+
+        .field
+          = f.label :生年月日, class: "field__text"
+          %p.field__text-constraint 必須
+          .field__birthday
+            != sprintf(f.date_select(:birthday, use_month_numbers: true,start_year: Time.now.year, end_year: 1910, prompt:"--", date_separator:'%s'),'年','月')+'日'
+          = render partial: '/errors/error-messages', locals: {user: @user, column: "birthday"}
+
       = f.submit "更新する", class: "actions"
