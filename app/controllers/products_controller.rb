@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :only_signed_in_user, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :withdraw]
   before_action :only_current_user, only: [:edit, :update, :destroy]
 
   def index
@@ -13,7 +13,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images
-
   end
 
   def new
@@ -72,20 +71,20 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(
                                     :name, :explain, :price,
-                                    :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id,
+                                    :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibition_id,
                                     images_attributes:[:image, :_destroy, :id]
                                     ).merge(
-                                      user_id: current_user.id, exhibition_id: 2
+                                      user_id: current_user.id
                                       )
   end
 
   def product_params_update
     params.require(:product).permit(
                                     :name, :explain, :price,
-                                    :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id,
+                                    :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibition_id, 
                                     images_attributes:[:image, :_destroy, :id]
                                     ).merge(
-                                      user_id: current_user.id, exhibition_id: 2
+                                      user_id: current_user.id
                                       )
   end
 

@@ -102,19 +102,19 @@
         }
         .submit{
           height: 48px;
-          width: 360px;
           margin: 40px auto;
           display: flex;
+          justify-content: center;
           &-edit{
             display: block;
             background-color: $mainThemeColor;
-            width: 50%;
+            width: 180px;
             @include submit;
           }
           &-delete{
             display: block;
             background-color: red;
-            width: 50%;
+            width: 180px;
             margin-left: 20px;
             @include submit;
           }

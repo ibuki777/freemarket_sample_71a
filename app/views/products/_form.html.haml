@@ -102,6 +102,11 @@
             %p.label__need 必須
             = render partial: 'layouts/error_messages', locals: {product: @product, column: "deliveryday_id"}
           = f.collection_select :deliveryday_id, Deliveryday.all, :id, :name, prompt: "選択がありません"
+          .label
+            = f.label :image, "出品状態", class: "label__name"
+            %p.label__need 必須
+          = f.collection_select :exhibition_id, Exhibition.where(id:(2..3)), :id, :name
+
         .box__border
 
         .field
@@ -120,5 +125,3 @@
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、
             %br.repost
               法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
-  .exhibition__footer
-    = render "devise/shared/footer"
