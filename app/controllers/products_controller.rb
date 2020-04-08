@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [:show, :edit, :update, :destroy, :withdraw]
   def index
     products = Product.includes(:images).where(exhibition_id: [1,2])
     @category =products.order(created_at: :desc).limit(3)
@@ -10,7 +10,6 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = @product.images
-
   end
 
   def new
@@ -69,20 +68,20 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(
                                     :name, :explain, :price,
-                                    :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id,
+                                    :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibition_id,
                                     images_attributes:[:image, :_destroy, :id]
                                     ).merge(
-                                      user_id: current_user.id, exhibition_id: 2
+                                      user_id: current_user.id
                                       )
   end
 
   def product_params_update
     params.require(:product).permit(
                                     :name, :explain, :price,
-                                    :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id,
+                                    :category_id, :brand_id, :condition_id, :deliveryday_id, :prefecture_id, :burden_id, :exhibition_id, 
                                     images_attributes:[:image, :_destroy, :id]
                                     ).merge(
-                                      user_id: current_user.id, exhibition_id: 2
+                                      user_id: current_user.id
                                       )
   end
 

@@ -35,7 +35,6 @@
             }
           }
         }
-        
       }
       &__btn{
         .detail-btn{
@@ -83,17 +82,7 @@
               object-fit: cover;
             }
             span {
-              position: absolute;
-              top: 15px;
-              left: -5px;
-              .soldout-label{
-                height: 224%;
-                width: 110%;
-                color: red;
-                font-size: 20px;
-                font-weight: bold;
-                transform:rotate(-45deg);
-              }
+              @include soldout_exhibition
             }
           }
           &__description{

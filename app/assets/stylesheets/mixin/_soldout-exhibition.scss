@@ -1,8 +1,8 @@
 //使用の際は親クラスにposition relativeをいれる
 @mixin soldout-exhibition(){
   position: absolute;
-  top: 15px;
-  left: -5px;
+  top: 20px;
+  left: -3px;
   .soldout-label{
     height: 224%;
     width: 110%;
