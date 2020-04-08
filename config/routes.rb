@@ -37,4 +37,7 @@ Rails.application.routes.draw do
 
   post   '/like/:product_id' => 'likes#like',   as: 'like'
   delete '/like/:product_id' => 'likes#unlike', as: 'unlike'
+
+  match "*path" => "application#handle_404", via: :all
+
 end
