@@ -24,5 +24,6 @@ class ApplicationController < ActionController::Base
     @search = @products.result(distinct: true).page(params[:page]).per(2).order("created_at DESC")
     
   end
+  
 
 end

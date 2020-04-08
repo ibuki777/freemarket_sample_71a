@@ -44,6 +44,8 @@
             .condition-checkbox
               = f.check_box :condition_id
               = '全体的に状態が悪い'
+          .detail-search__btn
+            =f.submit "検索する"
   .search-main__right
     .search-main__right--main
       -if @search.present?
