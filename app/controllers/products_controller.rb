@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :only_signed_in_user, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :only_current_user, only: [:edit, :update, :destroy]
+
   def index
     products = Product.includes(:images).where(exhibition_id: [1,2])
     @category =products.order(created_at: :desc).limit(3)
@@ -33,11 +35,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    if current_user.id == @product.user.id
       set_array_edit
-    else
-      redirect_to root_path
-    end
   end
 
   def update
@@ -53,7 +51,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    if current_user.id == @product.user.id && @product.destroy
+    if @product.destroy
       redirect_to root_path
     else
       redirect_to product_path(@product)
@@ -132,6 +130,12 @@ class ProductsController < ApplicationController
   def only_signed_in_user
     unless user_signed_in?
       redirect_to new_user_registration_path
+    end
+  end
+
+  def only_current_user
+    unless current_user.id == @product.user.id
+      redirect_to root_path
     end
   end
 
