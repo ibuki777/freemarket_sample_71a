@@ -6,15 +6,13 @@
 |explain        |text   ||
 |price          |integer|null: false|
 |category_id    |integer|null: false, foreign_key: true|
-|brand_id       |integer|foreign_key: true|
-|condition_id   |integer|null: false, foreign_key: true|
-|burden_id      |integer|null: false, foreign_key: true|
-|delivery_day_id|integer|null: false, foreign_key: true|
+|brand_id       |integer||
+|condition_id   |integer|null: false|
+|burden_id      |integer|null: false|
+|delivery_day_id|integer|null: false|
 |prefecture_id  |integer|null: false|
 |user_id        |integer|null: false, foreign_key: true|
-|exhibiting_id  |integer||
-|sold           |integer||
-
+|exhibition_id  |integer||
 
 ### Association
 has_many :images, dependent: :destroy
@@ -23,13 +21,16 @@ belongs_to :brand
 belongs_to_active_hash :condition
 belongs_to_active_hash :burden
 belongs_to_active_hash :delivery_day
+belongs_to_active_hash :exhibition
+
 belongs_to :user
 has_one :order, dependent: :destroy
 
 ## categoryテーブル
 |Column         |Type   |Options|
 |---------------|-------|-------|
-|genre          |string |null: false|
+|name           |string |null: false|
+|anestry        |string |null: false, index|
 ### Association
 has_many :products
 
@@ -95,9 +96,10 @@ belongs_to :user
 ## orderテーブル
 |Column         |Type   |Options|
 |---------------|-------|-------|
-|shipping_address|string|null: false|
+|address_id     |string |null: false, foreign_key: true|
 |product_id     |integer|null: false, foreign_key: true|
 |user_id        |integer|null: false, foreign_key: true|
 ### Association
 belongs_to :product
 belongs_to :user
+belongs_to :address
