@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :only_signed_in_user, except: [:index, :show]
-  before_action :set_product, only: [:show, :edit, :update, :destroy, :withdraw]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :only_current_user, only: [:edit, :update, :destroy]
 
   def index

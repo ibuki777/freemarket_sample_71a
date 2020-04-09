@@ -5,7 +5,7 @@
     margin-left: 150px;
     background-color:$subBackGround;
     text-align:left;
-    border-right:1px solid white ;
+    border-right:5px solid white ;
     .detail-search{
       padding: 20px 40px;
       &__form{
@@ -48,6 +48,7 @@
   }
   &__right{
     width: 100%;
+    margin-right: 150px;
   
     background-color:$mainWhite;
     &--main{

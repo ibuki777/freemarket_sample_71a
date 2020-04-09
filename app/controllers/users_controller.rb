@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def solded
-    @products =Product.where(user: current_user)
+    @solded_products =Product.where(user: current_user)
   end
 
 
