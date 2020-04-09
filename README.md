@@ -17,22 +17,20 @@
 ### Association
 has_many :images, dependent: :destroy
 belongs_to :category
-belongs_to :brand
-belongs_to_active_hash :condition
-belongs_to_active_hash :burden
-belongs_to_active_hash :delivery_day
-belongs_to_active_hash :exhibition
-
 belongs_to :user
 has_one :order, dependent: :destroy
+has_many :likes, dependent: :destroy
+has_many :liking_users, through: :likes
+
 
 ## categoryテーブル
 |Column         |Type   |Options|
 |---------------|-------|-------|
 |name           |string |null: false|
-|anestry        |string |null: false, index|
+|ancestry        |string |null: false, index|
 ### Association
 has_many :products
+has_ancestry
 
 ## brandテーブル
 |Column         |Type   |Options|
@@ -66,6 +64,9 @@ has_many :products, dependent: :destroy
 has_many :addresses, dependent: :destroy
 has_many :cards, dependent: :destroy
 has_many :orders, dependent: :destroy
+has_many :likes, dependent: :destroy
+has_many :like_products, through: :likes
+
 
 ## addressテーブル
 |Column         |Type   |Options|
@@ -83,6 +84,7 @@ has_many :orders, dependent: :destroy
 |user_id        |integer|null: false, foreign_key: true|
 ### Association
 belongs_to :user
+has_many :orders
 
 ## cardテーブル
 |Column         |Type   |Options|
@@ -103,3 +105,12 @@ belongs_to :user
 belongs_to :product
 belongs_to :user
 belongs_to :address
+
+## likeテーブル
+|Column         |Type   |Options|
+|---------------|-------|-------|
+|product_id     |integer|null: false, foreign_key: true|
+|user_id        |integer|null: false, foreign_key: true|
+### Association
+belongs_to :product
+belongs_to :user

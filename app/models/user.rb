@@ -13,6 +13,6 @@ class User < ApplicationRecord
   has_many :products
 
   has_many :likes, dependent: :destroy
-  has_many :like_stories, through: :likes, source: :story
+  has_many :like_products, through: :likes, source: :product
 
 end
