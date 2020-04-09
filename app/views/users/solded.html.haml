@@ -17,7 +17,7 @@
               %label.tab1_label{for: "tab1"} 販売済み
             .panel_area
               #panel1.tab_panel
-                - @products.where(exhibition_id: 1).each do |product|
+                - @solded_products.where(exhibition_id: 1).each do |product|
                   .mypage_product
                     =link_to product_path(product),class:"abc" do
                       = image_tag product.images.first.image.url, class:"produck_icon_img"
