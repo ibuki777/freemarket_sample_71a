@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy, :withdraw]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   def index
     products = Product.includes(:images).where(exhibition_id: [1,2])
     @category =products.order(created_at: :desc).limit(3)
