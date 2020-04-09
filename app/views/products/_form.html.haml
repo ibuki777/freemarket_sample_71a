@@ -12,7 +12,6 @@
             = f.label :image, "出品画像", class: "label__name"
             %p.label__need 必須
           = render partial: 'layouts/error_messages', locals: {product: @product, column: "images"}
-
           .field__sentence
             最大10枚までアップロードできます
           .cage
