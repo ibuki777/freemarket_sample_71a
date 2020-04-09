@@ -1,0 +1,41 @@
+.order-main
+  .shop-logo
+    = link_to root_path do
+      = image_tag src="/images/material/logo/logo.png", width:"140px", class:"shop-icon"
+  .order-main__box
+    .order-main__box--confirm
+      購入内容の確認
+    .order-main__box--explanation
+      .buy-item-content
+        .buy-item-content__image-box
+          = image_tag @product.images[0].image.url, class: 'buy-item-content__image-box--buy-image'
+        .buy-item-content__name-box
+          .buy-item-name
+            =@product.name
+          .buy-item-box
+            .buy-item-box__price
+              ¥
+              =@amount
+            .buy-item-box__tax
+              (税込み)
+            .buy-item-box__postage
+              送料込み
+    .order-main__box--explanation
+      .item-pay-box
+        .item-pay
+          支払い金額
+        .item-price
+          ="¥"
+          =@amount
+    .order-main__box--explanation
+      .pay-box
+        .pay-box__way
+          配送先住所(登録住所)
+          .adress-box
+            =@address.city
+            =@address.address
+
+    .order-main__box--bottom
+      %button.buy-item-btn
+        =link_to "購入する", product_orders_path(@product), method: :POST,class:"buy-item-btn__link"
+  = render "devise/shared/footer"

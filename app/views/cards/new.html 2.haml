@@ -1,0 +1,9 @@
+.wrapper
+  = render partial: 'products/header'
+  .mypage_contents
+    .left_box
+      =render "users/modules/show_left_content"
+    .right_box
+      .right_content
+        =render "card_form"
+  = render partial: 'devise/shared/footer'
