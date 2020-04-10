@@ -43,6 +43,6 @@ crumb :productShow do
 end
 
 crumb :search do
-  link "【 #{params[:keyword]} 】 の検索結果", searches_path
+  link "【 #{params[:q][:name_cont]} 】 の検索結果", searches_path
   parent :root
 end

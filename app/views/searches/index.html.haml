@@ -28,8 +28,7 @@
     .search-main__right--main
       -if @search.present?
         %h2.search-result-head
-          - @search.first(1).each do |s|
-            = s.name
+          = params[:q][:name_cont]
           %span.search-result-head-text
             の検索結果
         .search-result-number
